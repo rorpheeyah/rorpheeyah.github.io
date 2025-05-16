@@ -11,9 +11,7 @@
 
 ## Summary
 
-Dedicated and innovative Senior Android Developer with extensive experience in enterprise application development and team leadership. Currently serving as a Sub-Leader in the Mobile Department (Android) at KOSIGN, where I oversee development processes and mentor team members. I thrive in collaborative environments that require technical excellence and creative problem-solving.
-
-I am passionate about continuous learning and regularly explore emerging technologies to enhance my development skills. My interests span from mobile architecture optimization to cutting-edge technologies like artificial intelligence and machine learning. I am actively seeking opportunities to pursue a master's degree in AI or related fields to further expand my expertise and contribute to technological advancement.
+Senior Android Developer with expertise in enterprise mobile applications and team leadership as Mobile Department Sub-Leader at KOSIGN. Skilled in modern architecture patterns and mentoring. Seeking advanced studies in AI and emerging technologies.
 
 ---
 
