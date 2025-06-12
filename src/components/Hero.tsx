@@ -1,5 +1,6 @@
 
 import { ArrowDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const scrollToAbout = () => {
@@ -23,13 +24,12 @@ const Hero = () => {
         </div>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in">
-          <a
-            href="/resume.pdf"
-            download
+          <Link
+            to="/cv"
             className="px-8 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-all duration-300 hover:scale-105"
           >
-            Download CV
-          </a>
+            Review CV
+          </Link>
           <button
             onClick={scrollToAbout}
             className="px-8 py-3 border border-border rounded-full font-medium hover:bg-accent transition-all duration-300 hover:scale-105"
