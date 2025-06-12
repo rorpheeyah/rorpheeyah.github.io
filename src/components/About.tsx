@@ -1,9 +1,9 @@
 
 const About = () => {
   const skills = [
-    'JavaScript', 'TypeScript', 'React', 'Vue.js', 'Node.js', 
-    'Python', 'Java', 'Swift', 'Kotlin', 'React Native',
-    'Flutter', 'MongoDB', 'PostgreSQL', 'AWS', 'Docker'
+    'Kotlin', 'Java', 'Android SDK', 'Jetpack Compose', 'MVVM', 
+    'Clean Architecture', 'JavaScript', 'PHP', 'SQL', 'MySQL',
+    'PostgreSQL', 'Git', 'Figma', 'RESTful APIs', 'UI/UX Design'
   ];
 
   return (
@@ -12,9 +12,8 @@ const About = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">About Me</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            I'm a passionate software engineer with expertise in full-stack development, 
-            mobile applications, and modern web technologies. I love turning complex problems 
-            into simple, beautiful, and intuitive solutions.
+            Senior Android Developer with 5+ years of experience building enterprise-grade mobile applications. 
+            Serving as Sub-Leader of the Mobile Department at KOSIGN, I lead development initiatives and mentor junior engineers.
           </p>
         </div>
 
@@ -22,14 +21,13 @@ const About = () => {
           <div>
             <h3 className="text-2xl font-semibold mb-6">My Journey</h3>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              With years of experience in software development, I've worked on diverse projects 
-              ranging from web applications to mobile apps. I'm constantly learning and adapting 
-              to new technologies to deliver cutting-edge solutions.
+              Passionate about scalable mobile architecture, intuitive UI/UX, and the future of mobile development 
+              through AI and emerging technologies. I specialize in Kotlin and Java for enterprise Android applications, 
+              with expertise in modern architecture patterns like MVVM and Clean Architecture.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              I believe in writing clean, maintainable code and creating user experiences that 
-              make a difference. When I'm not coding, you can find me exploring new technologies, 
-              contributing to open source, or sharing knowledge with the developer community.
+              I believe in writing clean, maintainable code and creating user experiences that make a difference. 
+              I'm also exploring AI integration in mobile applications and considering advanced education in AI and mobile computing.
             </p>
           </div>
 

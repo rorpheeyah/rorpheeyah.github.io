@@ -2,25 +2,25 @@
 const Experience = () => {
   const experiences = [
     {
-      title: "Senior Software Engineer",
-      company: "Tech Company",
-      period: "2022 - Present",
-      description: "Leading development of scalable web applications using React, Node.js, and cloud technologies. Mentoring junior developers and driving technical decisions.",
-      technologies: ["React", "Node.js", "TypeScript", "AWS", "MongoDB"]
+      title: "Senior Android Developer & Sub-Leader, Mobile Department",
+      company: "KOSIGN [Korea Software Innovation Global Network]",
+      period: "March 2020 - Present",
+      description: "Leading development of enterprise-level Android applications utilizing Kotlin and Java. Overseeing team operations as Sub-Leader and implementing modern architecture patterns including MVVM and Clean Architecture. Pioneering adoption of Jetpack Compose across multiple projects.",
+      technologies: ["Kotlin", "Java", "Android SDK", "Jetpack Compose", "MVVM", "Clean Architecture"]
     },
     {
-      title: "Full Stack Developer",
-      company: "Digital Agency",
-      period: "2020 - 2022",
-      description: "Developed and maintained multiple client projects, focusing on responsive web design and API integration. Collaborated closely with design and product teams.",
-      technologies: ["Vue.js", "Python", "PostgreSQL", "Docker"]
+      title: "International Assignment – Business Trip",
+      company: "비즈플레이 - Bizplay (KOSIGN - South Korea Division)",
+      period: "October 2022 - August 2023",
+      description: "Selected for a one-year assignment in Busan, South Korea to support collaboration between Cambodian and South Korean mobile development teams. Served as liaison facilitating cross-cultural collaboration and technical communication.",
+      technologies: ["Android", "Cross-platform", "Team Leadership", "Technical Documentation"]
     },
     {
-      title: "Mobile App Developer",
-      company: "Startup",
-      period: "2019 - 2020",
-      description: "Built cross-platform mobile applications using React Native and Flutter. Implemented features from concept to deployment on both iOS and Android platforms.",
-      technologies: ["React Native", "Flutter", "Firebase", "Swift"]
+      title: "Web Developer",
+      company: "PLAN-B Cambodia (BEONE)",
+      period: "November 2018 - January 2019",
+      description: "Developed responsive web applications without third-party frameworks using custom CSS. Built backend functionality and logic using PHP for various client projects.",
+      technologies: ["PHP", "HTML/CSS", "JavaScript", "Custom Frameworks"]
     }
   ];
 
@@ -30,7 +30,7 @@ const Experience = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Experience</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A journey through various roles and technologies, building innovative solutions and growing as a developer.
+            A journey through enterprise mobile development, international collaboration, and technical leadership in Android development.
           </p>
         </div>
 

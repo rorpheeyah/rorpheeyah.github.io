@@ -12,14 +12,14 @@ const Hero = () => {
       <div className="text-center max-w-4xl mx-auto">
         <div className="mb-8 animate-fade-in">
           <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            Rorpheeyah
+            Math Rorpheeyah
           </h1>
           <h2 className="text-2xl md:text-4xl font-light text-foreground mb-4">
-            Software Engineer
+            Senior Android Developer
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Crafting exceptional digital experiences through innovative web and mobile solutions. 
-            Passionate about clean code, user-centric design, and cutting-edge technologies.
+            Building enterprise-grade mobile applications with 5+ years of experience. 
+            Sub-Leader at KOSIGN, passionate about scalable mobile architecture and innovative Android solutions.
           </p>
         </div>
         

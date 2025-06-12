@@ -2,30 +2,30 @@
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with modern UI/UX, payment integration, and admin dashboard.",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe", "AWS"],
+      title: "Enterprise Finance Management Systems",
+      description: "Led development of multiple enterprise-level Android applications including 비즈플레이 On-Premise, 비즈플레이4.0, and card-specific expense management implementations for major Korean companies.",
+      technologies: ["Kotlin", "Java", "Android SDK", "MVVM", "Jetpack Compose"],
       link: "#",
       status: "Live"
     },
     {
-      title: "Task Management App",
-      description: "Cross-platform mobile app for team collaboration and project management with real-time updates.",
-      technologies: ["React Native", "Firebase", "Redux", "TypeScript"],
-      link: "#",
-      status: "In Development"
-    },
-    {
-      title: "Weather Dashboard",
-      description: "Beautiful weather application with detailed forecasts, interactive maps, and location-based alerts.",
-      technologies: ["Vue.js", "Python", "PostgreSQL", "OpenWeather API"],
-      link: "#",
+      title: "Lumhat - Educational Mobile Platform",
+      description: "Educational mobile platform with comprehensive UX research focused on optimizing educational content delivery. Designed complete UI/UX system using Figma with cross-platform functionality.",
+      technologies: ["Kotlin", "Figma", "UX Research", "Cross-platform"],
+      link: "https://apkpure.net/lumhat",
       status: "Live"
     },
     {
-      title: "Portfolio Website",
-      description: "Responsive portfolio website with modern design, dark mode, and smooth animations.",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      title: "DayDo - Productivity & Task Management",
+      description: "Productivity and task management system with research-based efficient task management methodologies. Features intuitive interface and RESTful API integration.",
+      technologies: ["Kotlin", "RESTful API", "Figma", "Task Management"],
+      link: "https://apkpure.net/daydo",
+      status: "Live"
+    },
+    {
+      title: "Business Productivity Suite",
+      description: "Collection of enterprise applications including 트리플러스, 비즈캘린더, 결재함 & KT 결재함, 비즈메모, and 그린메세지 for comprehensive business workflow management.",
+      technologies: ["Kotlin", "Java", "Enterprise Architecture", "Business Logic"],
       link: "#",
       status: "Live"
     }
@@ -37,7 +37,7 @@ const Projects = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Projects</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A showcase of my recent work, demonstrating various technologies and problem-solving approaches.
+            A showcase of enterprise-grade mobile applications and research projects, demonstrating expertise in Android development and modern architecture patterns.
           </p>
         </div>
 
@@ -76,6 +76,8 @@ const Projects = () => {
               <a
                 href={project.link}
                 className="inline-flex items-center text-primary font-medium hover:underline transition-colors duration-300"
+                target={project.link.startsWith('http') ? '_blank' : '_self'}
+                rel={project.link.startsWith('http') ? 'noopener noreferrer' : ''}
               >
                 View Project →
               </a>

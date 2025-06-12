@@ -6,8 +6,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'your.email@example.com',
-      href: 'mailto:your.email@example.com'
+      value: 'mathrorpheeyah@gmail.com',
+      href: 'mailto:mathrorpheeyah@gmail.com'
     },
     {
       icon: Linkedin,
@@ -29,7 +29,7 @@ const Contact = () => {
         <h2 className="text-4xl md:text-5xl font-bold mb-6">Let's Connect</h2>
         <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
           I'm always open to discussing new opportunities, interesting projects, 
-          or just having a conversation about technology and development.
+          or just having a conversation about Android development and mobile technology.
         </p>
 
         <div className="grid md:grid-cols-3 gap-8 mb-12">
@@ -55,7 +55,7 @@ const Contact = () => {
 
         <div className="border-t border-border pt-8">
           <p className="text-muted-foreground">
-            © 2024 Rorpheeyah. Built with React, TypeScript, and Tailwind CSS.
+            © 2024 Math Rorpheeyah. Built with React, TypeScript, and Tailwind CSS.
           </p>
         </div>
       </div>

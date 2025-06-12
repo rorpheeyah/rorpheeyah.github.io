@@ -7,7 +7,7 @@ const CV = () => {
   const handleDownload = () => {
     const link = document.createElement('a');
     link.href = '/resume.pdf';
-    link.download = 'Rorpheeyah_CV.pdf';
+    link.download = 'Math_Rorpheeyah_CV.pdf';
     link.click();
   };
 
@@ -45,11 +45,11 @@ const CV = () => {
             <div className="bg-primary text-primary-foreground p-8">
               <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
                 <div className="flex-1">
-                  <h1 className="text-4xl md:text-5xl font-bold mb-2">Rorpheeyah</h1>
-                  <h2 className="text-xl md:text-2xl font-light opacity-90 mb-4">Software Engineer</h2>
+                  <h1 className="text-4xl md:text-5xl font-bold mb-2">Math Rorpheeyah</h1>
+                  <h2 className="text-xl md:text-2xl font-light opacity-90 mb-4">Senior Android Developer | Sub-Leader Mobile Department</h2>
                   <p className="text-base opacity-80 leading-relaxed max-w-2xl">
-                    Passionate software engineer with expertise in full-stack development, mobile applications, 
-                    and modern web technologies. Committed to creating exceptional user experiences and innovative solutions.
+                    Senior Android Developer with 5+ years of experience building enterprise-grade mobile applications. 
+                    Serving as Sub-Leader of the Mobile Department at KOSIGN, leading development initiatives and mentoring junior engineers.
                   </p>
                 </div>
               </div>
@@ -60,20 +60,22 @@ const CV = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <div className="flex items-center gap-2 text-sm">
                   <Mail className="w-4 h-4 text-primary" />
-                  <span>rorpheeyah@gmail.com</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm">
-                  <Phone className="w-4 h-4 text-primary" />
-                  <span>+60 19-339 0296</span>
+                  <span>mathrorpheeyah@gmail.com</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <MapPin className="w-4 h-4 text-primary" />
-                  <span>Kuala Lumpur, Malaysia</span>
+                  <span>Phnom Penh, Cambodia</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
-                  <Globe className="w-4 h-4 text-primary" />
-                  <a href="https://rorpheeyah.github.io/" className="hover:text-primary transition-colors">
-                    rorpheeyah.github.io
+                  <Linkedin className="w-4 h-4 text-primary" />
+                  <a href="https://linkedin.com/in/rorpheeyah" className="hover:text-primary transition-colors">
+                    linkedin.com/in/rorpheeyah
+                  </a>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <Github className="w-4 h-4 text-primary" />
+                  <a href="https://github.com/rorpheeyah" className="hover:text-primary transition-colors">
+                    github.com/rorpheeyah
                   </a>
                 </div>
               </div>
@@ -84,73 +86,87 @@ const CV = () => {
               {/* Professional Summary */}
               <section>
                 <h3 className="text-2xl font-bold text-primary mb-4 border-b border-border pb-2">
-                  Professional Summary
+                  Summary
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Experienced software engineer with a strong background in full-stack development, mobile applications, 
-                  and system architecture. Proven track record of delivering high-quality solutions using modern technologies 
-                  including React, Node.js, Python, and cloud platforms. Passionate about clean code, user experience, 
-                  and continuous learning.
+                  Senior Android Developer with 5+ years of experience building enterprise-grade mobile applications. 
+                  Serving as Sub-Leader of the Mobile Department at KOSIGN, I lead development initiatives and mentor junior engineers. 
+                  Passionate about scalable mobile architecture, intuitive UI/UX, and the future of mobile development through AI and emerging technologies.
                 </p>
-              </section>
-
-              {/* Technical Skills */}
-              <section>
-                <h3 className="text-2xl font-bold text-primary mb-4 border-b border-border pb-2">
-                  Technical Skills
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <h4 className="font-semibold mb-2 text-foreground">Frontend Development</h4>
-                    <p className="text-sm text-muted-foreground">React, TypeScript, JavaScript, HTML5, CSS3, Tailwind CSS, Next.js, Vue.js</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2 text-foreground">Backend Development</h4>
-                    <p className="text-sm text-muted-foreground">Node.js, Python, Express.js, FastAPI, RESTful APIs, GraphQL</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2 text-foreground">Mobile Development</h4>
-                    <p className="text-sm text-muted-foreground">React Native, Flutter, iOS, Android</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2 text-foreground">Database & Cloud</h4>
-                    <p className="text-sm text-muted-foreground">PostgreSQL, MongoDB, Firebase, AWS, Google Cloud, Docker</p>
-                  </div>
-                </div>
               </section>
 
               {/* Work Experience */}
               <section>
                 <h3 className="text-2xl font-bold text-primary mb-4 border-b border-border pb-2">
-                  Work Experience
+                  Professional Experience
                 </h3>
                 <div className="space-y-6">
                   <div>
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                      <h4 className="text-lg font-semibold text-foreground">Senior Software Engineer</h4>
-                      <span className="text-sm text-muted-foreground">2022 - Present</span>
+                      <h4 className="text-lg font-semibold text-foreground">Senior Android Developer & Sub-Leader, Mobile Department</h4>
+                      <span className="text-sm text-muted-foreground">March 2020 - Present</span>
                     </div>
-                    <p className="text-primary font-medium mb-2">Tech Innovate Solutions</p>
+                    <p className="text-primary font-medium mb-2">KOSIGN [Korea Software Innovation Global Network] | Phnom Penh, Cambodia</p>
                     <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
-                      <li>Led development of enterprise web applications serving 10,000+ users</li>
-                      <li>Architected and implemented microservices using Node.js and containerization</li>
-                      <li>Mentored junior developers and established code review processes</li>
-                      <li>Improved application performance by 40% through optimization techniques</li>
+                      <li>Lead development of enterprise-level Android applications utilizing Kotlin and Java</li>
+                      <li>Oversee team operations as Sub-Leader of the Mobile Department</li>
+                      <li>Implement and optimize modern architecture patterns (MVVM, Clean Architecture)</li>
+                      <li>Pioneer adoption of Jetpack Compose for UI development across multiple projects</li>
+                      <li>Supervise project delegation and provide mentorship to junior developers</li>
+                      <li>Recognized with "Best Rookie" award (November 2020)</li>
                     </ul>
                   </div>
                   
                   <div>
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                      <h4 className="text-lg font-semibold text-foreground">Full Stack Developer</h4>
-                      <span className="text-sm text-muted-foreground">2020 - 2022</span>
+                      <h4 className="text-lg font-semibold text-foreground">International Assignment – Business Trip</h4>
+                      <span className="text-sm text-muted-foreground">October 2022 - August 2023</span>
                     </div>
-                    <p className="text-primary font-medium mb-2">Digital Solutions Corp</p>
+                    <p className="text-primary font-medium mb-2">비즈플레이 - Bizplay (KOSIGN - South Korea Division) | Busan, South Korea</p>
                     <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
-                      <li>Developed responsive web applications using React and TypeScript</li>
-                      <li>Built RESTful APIs with Python and FastAPI</li>
-                      <li>Collaborated with UX/UI designers to implement pixel-perfect designs</li>
-                      <li>Implemented automated testing and CI/CD pipelines</li>
+                      <li>Selected for a one-year assignment to support collaboration between Cambodian and South Korean mobile development teams</li>
+                      <li>Reviewed technical documents from Korean teams, analyzed project requirements, and prepared task breakdowns</li>
+                      <li>Inspected and verified feature behavior across web and mobile platforms</li>
+                      <li>Worked directly with Korean developers, testers, and department heads on feature planning and QA</li>
+                      <li>Served as a liaison between teams, facilitating communication and cross-cultural collaboration</li>
                     </ul>
+                  </div>
+
+                  <div>
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                      <h4 className="text-lg font-semibold text-foreground">Web Developer</h4>
+                      <span className="text-sm text-muted-foreground">November 2018 - January 2019</span>
+                    </div>
+                    <p className="text-primary font-medium mb-2">PLAN-B Cambodia (BEONE) | Phnom Penh, Cambodia</p>
+                    <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+                      <li>Developed responsive web applications without third-party frameworks (custom CSS)</li>
+                      <li>Built backend functionality and logic using PHP</li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+              {/* Technical Skills */}
+              <section>
+                <h3 className="text-2xl font-bold text-primary mb-4 border-b border-border pb-2">
+                  Technical Expertise
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="font-semibold mb-2 text-foreground">Mobile Development (Core Expertise)</h4>
+                    <p className="text-sm text-muted-foreground">Kotlin (Advanced), Java (Advanced), Android SDK, Jetpack Compose</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 text-foreground">Architecture & Patterns</h4>
+                    <p className="text-sm text-muted-foreground">MVVM, Clean Architecture, Android Architecture Components</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 text-foreground">Full-Stack & Database</h4>
+                    <p className="text-sm text-muted-foreground">JavaScript, HTML/CSS, PHP, SQL, MySQL, PostgreSQL</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2 text-foreground">Tools & Design</h4>
+                    <p className="text-sm text-muted-foreground">Git/GitHub/GitLab, Figma, RESTful API Integration</p>
                   </div>
                 </div>
               </section>
@@ -160,36 +176,116 @@ const CV = () => {
                 <h3 className="text-2xl font-bold text-primary mb-4 border-b border-border pb-2">
                   Education
                 </h3>
-                <div>
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                    <h4 className="text-lg font-semibold text-foreground">Bachelor of Computer Science</h4>
-                    <span className="text-sm text-muted-foreground">2016 - 2020</span>
-                  </div>
-                  <p className="text-primary font-medium mb-2">University of Technology Malaysia</p>
-                  <p className="text-sm text-muted-foreground">Specialized in Software Engineering and Database Systems</p>
-                </div>
-              </section>
-
-              {/* Projects */}
-              <section>
-                <h3 className="text-2xl font-bold text-primary mb-4 border-b border-border pb-2">
-                  Notable Projects
-                </h3>
                 <div className="space-y-4">
                   <div>
-                    <h4 className="text-lg font-semibold text-foreground mb-1">E-Commerce Platform</h4>
-                    <p className="text-sm text-muted-foreground mb-2">
-                      Full-stack e-commerce solution with real-time inventory, payment processing, and admin dashboard
-                    </p>
-                    <p className="text-xs text-primary">React • Node.js • PostgreSQL • Stripe API</p>
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                      <h4 className="text-lg font-semibold text-foreground">Bachelor of Science, Computer Science</h4>
+                      <span className="text-sm text-muted-foreground">January 2016 - November 2021</span>
+                    </div>
+                    <p className="text-primary font-medium mb-2">Royal University of Phnom Penh</p>
                   </div>
                   
                   <div>
-                    <h4 className="text-lg font-semibold text-foreground mb-1">Mobile Task Manager</h4>
-                    <p className="text-sm text-muted-foreground mb-2">
-                      Cross-platform mobile app for team collaboration and project management
-                    </p>
-                    <p className="text-xs text-primary">React Native • Firebase • Push Notifications</p>
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                      <h4 className="text-lg font-semibold text-foreground">Advanced Software Development</h4>
+                      <span className="text-sm text-muted-foreground">2019 - 2020</span>
+                    </div>
+                    <p className="text-primary font-medium mb-2">Korea Software HRD Center</p>
+                    <p className="text-sm text-muted-foreground">Specialized in full-stack application development and mobile application research</p>
+                  </div>
+                </div>
+              </section>
+
+              {/* Notable Projects */}
+              <section>
+                <h3 className="text-2xl font-bold text-primary mb-4 border-b border-border pb-2">
+                  Significant Projects & Contributions
+                </h3>
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="text-lg font-semibold text-foreground mb-2">Enterprise Mobile Application Development</h4>
+                    <div className="space-y-3">
+                      <div>
+                        <h5 className="font-medium text-foreground">Finance & Corporate Management Systems</h5>
+                        <p className="text-sm text-muted-foreground">비즈플레이 On-Premise & 비즈플레이4.0, 현대카드/삼성카드/우리카드 비즈플레이, IBK법인카드/KT 법인카드, 비플 법인카드/개인카드, BZPEXPENSE/bzpExpenseGov</p>
+                      </div>
+                      <div>
+                        <h5 className="font-medium text-foreground">Business Productivity Solutions</h5>
+                        <p className="text-sm text-muted-foreground">트리플러스, 비즈캘린더, 결재함 & KT 결재함, 비즈메모, 그린메세지</p>
+                      </div>
+                      <div>
+                        <h5 className="font-medium text-foreground">Financial Technology Implementations</h5>
+                        <p className="text-sm text-muted-foreground">체크페이, 뱅크노트, WABOOKS, WeBill 365</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-lg font-semibold text-foreground mb-2">Academic Research Projects</h4>
+                    <div className="space-y-2">
+                      <div>
+                        <h5 className="font-medium text-foreground">Lumhat - Educational Mobile Platform</h5>
+                        <p className="text-sm text-muted-foreground">Led UX research for educational content delivery, designed comprehensive UI/UX system using Figma</p>
+                      </div>
+                      <div>
+                        <h5 className="font-medium text-foreground">DayDo - Productivity and Task Management System</h5>
+                        <p className="text-sm text-muted-foreground">Researched efficient task management methodologies, implemented backend connectivity through RESTful API integration</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              {/* Awards & Recognition */}
+              <section>
+                <h3 className="text-2xl font-bold text-primary mb-4 border-b border-border pb-2">
+                  Awards & Recognition
+                </h3>
+                <div>
+                  <h4 className="text-lg font-semibold text-foreground mb-1">Best Rookie Award</h4>
+                  <p className="text-sm text-muted-foreground mb-2">Presented by Seol WookHwan (CEO), KOSIGN, November 2020</p>
+                  <p className="text-xs text-primary">LinkedIn Skill Assessments: Android Development, Web Development</p>
+                </div>
+              </section>
+
+              {/* Languages */}
+              <section>
+                <h3 className="text-2xl font-bold text-primary mb-4 border-b border-border pb-2">
+                  Languages
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div>
+                    <h4 className="font-semibold mb-1 text-foreground">Khmer</h4>
+                    <p className="text-sm text-muted-foreground">Native</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1 text-foreground">English</h4>
+                    <p className="text-sm text-muted-foreground">Limited Working Proficiency</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1 text-foreground">Korean</h4>
+                    <p className="text-sm text-muted-foreground">Basic</p>
+                  </div>
+                </div>
+              </section>
+
+              {/* Current Interests */}
+              <section>
+                <h3 className="text-2xl font-bold text-primary mb-4 border-b border-border pb-2">
+                  What I'm Exploring Now
+                </h3>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold text-foreground">Artificial Intelligence & Machine Learning</h4>
+                    <p className="text-sm text-muted-foreground">Exploring how AI can enhance mobile applications through personalization, automation, and smart user experiences.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">Jetpack Compose & Android Architecture</h4>
+                    <p className="text-sm text-muted-foreground">Deepening expertise in Jetpack Compose and refining best practices for scalable, maintainable UI architecture.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">Advanced Education</h4>
+                    <p className="text-sm text-muted-foreground">Considering pursuing a Master's degree in AI, mobile computing, or related fields to strengthen innovation capacity.</p>
                   </div>
                 </div>
               </section>
