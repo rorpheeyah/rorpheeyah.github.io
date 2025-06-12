@@ -1,14 +1,10 @@
-
-import { ArrowLeft, Download, Mail, Phone, MapPin, Globe, Github, Linkedin, ExternalLink } from 'lucide-react';
+import { ArrowLeft, Download, Mail, Phone, MapPin, Globe, Github, Linkedin, ExternalLink, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ThemeToggle from '@/components/ThemeToggle';
 
 const CV = () => {
   const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = '/resume.pdf';
-    link.download = 'Math_Rorpheeyah_CV.pdf';
-    link.click();
+    window.open('/traditional-cv', '_blank');
   };
 
   return (
@@ -57,7 +53,7 @@ const CV = () => {
 
             {/* Contact Info */}
             <div className="bg-muted/30 p-6 border-b border-border">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
                 <div className="flex items-center gap-2 text-sm">
                   <Mail className="w-4 h-4 text-primary" />
                   <span>mathrorpheeyah@gmail.com</span>
@@ -76,6 +72,12 @@ const CV = () => {
                   <Github className="w-4 h-4 text-primary" />
                   <a href="https://github.com/rorpheeyah" className="hover:text-primary transition-colors">
                     github.com/rorpheeyah
+                  </a>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <X className="w-4 h-4 text-primary" />
+                  <a href="https://x.com/rorpheeyah" className="hover:text-primary transition-colors">
+                    x.com/rorpheeyah
                   </a>
                 </div>
               </div>
@@ -146,6 +148,93 @@ const CV = () => {
                 </div>
               </section>
 
+              {/* Notable Projects */}
+              <section>
+                <h3 className="text-2xl font-bold text-primary mb-4 border-b border-border pb-2">
+                  Significant Projects & Contributions
+                </h3>
+                <p className="text-sm text-muted-foreground mb-6">
+                  The following represents a selection of my most active and significant projects. My complete portfolio includes additional enterprise applications and mobile contributions.
+                </p>
+                
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="text-lg font-semibold text-foreground mb-3">Enterprise Mobile Application Development</h4>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Led development and maintenance of multiple enterprise-level applications including:
+                    </p>
+                    
+                    <div className="space-y-4">
+                      <div>
+                        <h5 className="font-medium text-foreground mb-2">Finance & Corporate Management Systems</h5>
+                        <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside ml-4">
+                          <li>비즈플레이 On-Premise & 비즈플레이4.0 - Enterprise expense management platforms</li>
+                          <li>현대카드/삼성카드/우리카드 비즈플레이 - Card-specific expense management implementations</li>
+                          <li>IBK법인카드/KT 법인카드 - Corporate card management systems</li>
+                          <li>비플 법인카드/개인카드 - Card management applications</li>
+                          <li>BZPEXPENSE/bzpExpenseGov - Expense tracking application</li>
+                          <li>비즈플레이(KEIT) - Specialized expense tracking solution</li>
+                        </ul>
+                      </div>
+                      
+                      <div>
+                        <h5 className="font-medium text-foreground mb-2">Business Productivity Solutions</h5>
+                        <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside ml-4">
+                          <li>트리플러스 - Business productivity suite</li>
+                          <li>비즈캘린더 - Calendar management system</li>
+                          <li>결재함 & KT 결재함 - Approval management platforms</li>
+                          <li>비즈메모 - Note-taking application for business</li>
+                          <li>그린메세지 - Messaging platform</li>
+                        </ul>
+                      </div>
+                      
+                      <div>
+                        <h5 className="font-medium text-foreground mb-2">Financial Technology Implementations</h5>
+                        <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside ml-4">
+                          <li>체크페이 - Payment verification system</li>
+                          <li>뱅크노트 - Banking interface solution</li>
+                          <li>WABOOKS - Accounting applications</li>
+                          <li>WeBill 365 - Billing management application</li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <p className="text-xs text-muted-foreground mt-4 italic">
+                      This list represents selected highlights from my project portfolio. I have contributed to numerous additional enterprise applications throughout my career.
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-lg font-semibold text-foreground mb-3">Academic Research Projects</h4>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Developed innovative applications with research components:
+                    </p>
+                    
+                    <div className="space-y-3">
+                      <div>
+                        <h5 className="font-medium text-foreground">Lumhat - Educational mobile platform</h5>
+                        <p className="text-sm text-muted-foreground mb-1">Application Download: apkpure.net/lumhat</p>
+                        <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside ml-4">
+                          <li>Led UX research focused on optimizing educational content delivery</li>
+                          <li>Designed comprehensive UI/UX system using Figma</li>
+                          <li>Implemented cross-platform functionality (mobile and web)</li>
+                        </ul>
+                      </div>
+                      
+                      <div>
+                        <h5 className="font-medium text-foreground">DayDo - Productivity and task management system</h5>
+                        <p className="text-sm text-muted-foreground mb-1">Application Download: apkpure.net/daydo</p>
+                        <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside ml-4">
+                          <li>Researched efficient task management methodologies</li>
+                          <li>Designed intuitive interface using Figma</li>
+                          <li>Implemented backend connectivity through RESTful API integration</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
               {/* Technical Skills */}
               <section>
                 <h3 className="text-2xl font-bold text-primary mb-4 border-b border-border pb-2">
@@ -192,46 +281,6 @@ const CV = () => {
                     </div>
                     <p className="text-primary font-medium mb-2">Korea Software HRD Center</p>
                     <p className="text-sm text-muted-foreground">Specialized in full-stack application development and mobile application research</p>
-                  </div>
-                </div>
-              </section>
-
-              {/* Notable Projects */}
-              <section>
-                <h3 className="text-2xl font-bold text-primary mb-4 border-b border-border pb-2">
-                  Significant Projects & Contributions
-                </h3>
-                <div className="space-y-6">
-                  <div>
-                    <h4 className="text-lg font-semibold text-foreground mb-2">Enterprise Mobile Application Development</h4>
-                    <div className="space-y-3">
-                      <div>
-                        <h5 className="font-medium text-foreground">Finance & Corporate Management Systems</h5>
-                        <p className="text-sm text-muted-foreground">비즈플레이 On-Premise & 비즈플레이4.0, 현대카드/삼성카드/우리카드 비즈플레이, IBK법인카드/KT 법인카드, 비플 법인카드/개인카드, BZPEXPENSE/bzpExpenseGov</p>
-                      </div>
-                      <div>
-                        <h5 className="font-medium text-foreground">Business Productivity Solutions</h5>
-                        <p className="text-sm text-muted-foreground">트리플러스, 비즈캘린더, 결재함 & KT 결재함, 비즈메모, 그린메세지</p>
-                      </div>
-                      <div>
-                        <h5 className="font-medium text-foreground">Financial Technology Implementations</h5>
-                        <p className="text-sm text-muted-foreground">체크페이, 뱅크노트, WABOOKS, WeBill 365</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <h4 className="text-lg font-semibold text-foreground mb-2">Academic Research Projects</h4>
-                    <div className="space-y-2">
-                      <div>
-                        <h5 className="font-medium text-foreground">Lumhat - Educational Mobile Platform</h5>
-                        <p className="text-sm text-muted-foreground">Led UX research for educational content delivery, designed comprehensive UI/UX system using Figma</p>
-                      </div>
-                      <div>
-                        <h5 className="font-medium text-foreground">DayDo - Productivity and Task Management System</h5>
-                        <p className="text-sm text-muted-foreground">Researched efficient task management methodologies, implemented backend connectivity through RESTful API integration</p>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </section>

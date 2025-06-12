@@ -1,5 +1,5 @@
 
-import { Mail, Linkedin, Github } from 'lucide-react';
+import { Mail, Linkedin, Github, X } from 'lucide-react';
 
 const Contact = () => {
   const contactInfo = [
@@ -20,6 +20,12 @@ const Contact = () => {
       label: 'GitHub',
       value: 'github.com/rorpheeyah',
       href: 'https://github.com/rorpheeyah'
+    },
+    {
+      icon: X,
+      label: 'X (Twitter)',
+      value: 'x.com/rorpheeyah',
+      href: 'https://x.com/rorpheeyah'
     }
   ];
 
@@ -32,7 +38,7 @@ const Contact = () => {
           or just having a conversation about Android development and mobile technology.
         </p>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {contactInfo.map((contact, index) => {
             const IconComponent = contact.icon;
             return (

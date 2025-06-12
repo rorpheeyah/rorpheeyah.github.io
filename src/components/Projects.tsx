@@ -1,88 +1,192 @@
 
 const Projects = () => {
-  const projects = [
+  const projectCategories = [
     {
-      title: "Enterprise Finance Management Systems",
-      description: "Led development of multiple enterprise-level Android applications including 비즈플레이 On-Premise, 비즈플레이4.0, and card-specific expense management implementations for major Korean companies.",
-      technologies: ["Kotlin", "Java", "Android SDK", "MVVM", "Jetpack Compose"],
-      link: "#",
-      status: "Live"
+      title: "Finance & Corporate Management Systems",
+      description: "Enterprise expense management and corporate card solutions",
+      projects: [
+        {
+          name: "비즈플레이 On-Premise & 비즈플레이4.0",
+          description: "Enterprise expense management platforms with comprehensive workflow automation",
+          image: "/placeholder.svg",
+          technologies: ["Kotlin", "MVVM", "Enterprise Architecture"]
+        },
+        {
+          name: "현대카드/삼성카드/우리카드 비즈플레이",
+          description: "Card-specific expense management implementations for major Korean financial institutions",
+          image: "/placeholder.svg",
+          technologies: ["Kotlin", "Financial APIs", "Security"]
+        },
+        {
+          name: "IBK법인카드/KT 법인카드",
+          description: "Corporate card management systems with real-time transaction tracking",
+          image: "/placeholder.svg",
+          technologies: ["Java", "Kotlin", "Payment Integration"]
+        },
+        {
+          name: "BZPEXPENSE/bzpExpenseGov",
+          description: "Government and enterprise expense tracking applications",
+          image: "/placeholder.svg",
+          technologies: ["Android SDK", "Government Standards", "Security"]
+        }
+      ]
     },
     {
-      title: "Lumhat - Educational Mobile Platform",
-      description: "Educational mobile platform with comprehensive UX research focused on optimizing educational content delivery. Designed complete UI/UX system using Figma with cross-platform functionality.",
-      technologies: ["Kotlin", "Figma", "UX Research", "Cross-platform"],
-      link: "https://apkpure.net/lumhat",
-      status: "Live"
+      title: "Business Productivity Solutions",
+      description: "Comprehensive business workflow and productivity applications",
+      projects: [
+        {
+          name: "트리플러스",
+          description: "Business productivity suite with integrated workflow management",
+          image: "/placeholder.svg",
+          technologies: ["Kotlin", "Jetpack Compose", "Productivity Tools"]
+        },
+        {
+          name: "비즈캘린더",
+          description: "Advanced calendar management system for business scheduling",
+          image: "/placeholder.svg",
+          technologies: ["Java", "Calendar APIs", "Business Logic"]
+        },
+        {
+          name: "결재함 & KT 결재함",
+          description: "Approval management platforms for corporate decision workflows",
+          image: "/placeholder.svg",
+          technologies: ["Kotlin", "Workflow Engine", "Corporate Integration"]
+        },
+        {
+          name: "비즈메모 & 그린메세지",
+          description: "Note-taking and messaging platforms for business communication",
+          image: "/placeholder.svg",
+          technologies: ["Android SDK", "Real-time Messaging", "Business Tools"]
+        }
+      ]
     },
     {
-      title: "DayDo - Productivity & Task Management",
-      description: "Productivity and task management system with research-based efficient task management methodologies. Features intuitive interface and RESTful API integration.",
-      technologies: ["Kotlin", "RESTful API", "Figma", "Task Management"],
-      link: "https://apkpure.net/daydo",
-      status: "Live"
+      title: "Financial Technology Implementations",
+      description: "Payment systems and financial technology solutions",
+      projects: [
+        {
+          name: "체크페이",
+          description: "Payment verification system with advanced security features",
+          image: "/placeholder.svg",
+          technologies: ["Kotlin", "Payment Security", "Verification APIs"]
+        },
+        {
+          name: "뱅크노트",
+          description: "Banking interface solution for streamlined financial operations",
+          image: "/placeholder.svg",
+          technologies: ["Java", "Banking APIs", "Financial UI/UX"]
+        },
+        {
+          name: "WABOOKS",
+          description: "Comprehensive accounting applications for business financial management",
+          image: "/placeholder.svg",
+          technologies: ["Android SDK", "Accounting Logic", "Data Analytics"]
+        },
+        {
+          name: "WeBill 365",
+          description: "Billing management application with automated invoice processing",
+          image: "/placeholder.svg",
+          technologies: ["Kotlin", "Billing Systems", "Automation"]
+        }
+      ]
     },
     {
-      title: "Business Productivity Suite",
-      description: "Collection of enterprise applications including 트리플러스, 비즈캘린더, 결재함 & KT 결재함, 비즈메모, and 그린메세지 for comprehensive business workflow management.",
-      technologies: ["Kotlin", "Java", "Enterprise Architecture", "Business Logic"],
-      link: "#",
-      status: "Live"
+      title: "Academic Research Projects",
+      description: "Educational and productivity applications with research components",
+      projects: [
+        {
+          name: "Lumhat",
+          description: "Educational mobile platform optimizing content delivery through UX research",
+          image: "/placeholder.svg",
+          technologies: ["Kotlin", "UX Research", "Educational Tech"],
+          link: "https://apkpure.net/lumhat"
+        },
+        {
+          name: "DayDo",
+          description: "Productivity and task management system with research-based methodologies",
+          image: "/placeholder.svg",
+          technologies: ["Kotlin", "Task Management", "RESTful APIs"],
+          link: "https://apkpure.net/daydo"
+        }
+      ]
     }
   ];
 
   return (
     <section id="projects" className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Projects</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A showcase of enterprise-grade mobile applications and research projects, demonstrating expertise in Android development and modern architecture patterns.
+            A comprehensive showcase of enterprise-grade mobile applications organized by domain expertise, 
+            demonstrating leadership in Android development and modern architecture patterns.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="bg-accent/20 rounded-xl p-6 border border-border hover:bg-accent/30 transition-all duration-300 hover:scale-[1.02] group"
-            >
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="text-xl font-semibold group-hover:text-primary transition-colors duration-300">
-                  {project.title}
-                </h3>
-                <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                  project.status === 'Live' 
-                    ? 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300'
-                    : 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-300'
-                }`}>
-                  {project.status}
-                </span>
-              </div>
-              
-              <p className="text-muted-foreground leading-relaxed mb-6">{project.description}</p>
-              
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1 bg-background rounded-full text-sm font-medium border border-border"
-                  >
-                    {tech}
-                  </span>
-                ))}
+        <div className="space-y-16">
+          {projectCategories.map((category, categoryIndex) => (
+            <div key={categoryIndex} className="bg-accent/10 rounded-2xl p-8">
+              <div className="text-center mb-10">
+                <h3 className="text-3xl font-bold text-primary mb-4">{category.title}</h3>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{category.description}</p>
               </div>
 
-              <a
-                href={project.link}
-                className="inline-flex items-center text-primary font-medium hover:underline transition-colors duration-300"
-                target={project.link.startsWith('http') ? '_blank' : '_self'}
-                rel={project.link.startsWith('http') ? 'noopener noreferrer' : ''}
-              >
-                View Project →
-              </a>
+              <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                {category.projects.map((project, projectIndex) => (
+                  <div
+                    key={projectIndex}
+                    className="bg-background rounded-xl p-6 border border-border hover:shadow-lg transition-all duration-300 hover:scale-[1.02] group"
+                  >
+                    <div className="aspect-video bg-accent/20 rounded-lg mb-4 overflow-hidden">
+                      <img
+                        src={project.image}
+                        alt={project.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+
+                    <h4 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300">
+                      {project.name}
+                    </h4>
+                    
+                    <p className="text-muted-foreground leading-relaxed mb-4">
+                      {project.description}
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    {project.link && (
+                      <a
+                        href={project.link}
+                        className="inline-flex items-center text-primary font-medium hover:underline transition-colors duration-300"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View Project →
+                      </a>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <p className="text-muted-foreground italic">
+            This represents selected highlights from my project portfolio. I have contributed to numerous additional 
+            enterprise applications throughout my career at KOSIGN and during international assignments.
+          </p>
         </div>
       </div>
     </section>
