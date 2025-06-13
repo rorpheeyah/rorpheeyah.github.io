@@ -6,25 +6,21 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'mathrorpheeyah@gmail.com',
       href: 'mailto:mathrorpheeyah@gmail.com'
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      value: 'linkedin.com/in/rorpheeyah',
       href: 'https://linkedin.com/in/rorpheeyah'
     },
     {
       icon: Github,
       label: 'GitHub',
-      value: 'github.com/rorpheeyah',
       href: 'https://github.com/rorpheeyah'
     },
     {
       icon: X,
       label: 'X (Twitter)',
-      value: 'x.com/rorpheeyah',
       href: 'https://x.com/rorpheeyah'
     }
   ];
@@ -51,9 +47,6 @@ const Contact = () => {
               >
                 <IconComponent className="w-8 h-8 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
                 <h3 className="font-semibold mb-2">{contact.label}</h3>
-                <p className="text-muted-foreground group-hover:text-primary transition-colors duration-300">
-                  {contact.value}
-                </p>
               </a>
             );
           })}

@@ -53,10 +53,12 @@ const CV = () => {
 
             {/* Contact Info */}
             <div className="bg-muted/30 p-6 border-b border-border">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
                 <div className="flex items-center gap-2 text-sm">
                   <Mail className="w-4 h-4 text-primary" />
-                  <span>mathrorpheeyah@gmail.com</span>
+                  <a href="mailto:mathrorpheeyah@gmail.com" className="hover:text-primary transition-colors">
+                    mathrorpheeyah@gmail.com
+                  </a>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <MapPin className="w-4 h-4 text-primary" />
@@ -72,12 +74,6 @@ const CV = () => {
                   <Github className="w-4 h-4 text-primary" />
                   <a href="https://github.com/rorpheeyah" className="hover:text-primary transition-colors">
                     github.com/rorpheeyah
-                  </a>
-                </div>
-                <div className="flex items-center gap-2 text-sm">
-                  <X className="w-4 h-4 text-primary" />
-                  <a href="https://x.com/rorpheeyah" className="hover:text-primary transition-colors">
-                    x.com/rorpheeyah
                   </a>
                 </div>
               </div>
