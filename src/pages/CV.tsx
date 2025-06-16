@@ -1,10 +1,17 @@
 import { ArrowLeft, Download, Mail, Phone, MapPin, Globe, Github, Linkedin, ExternalLink, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ThemeToggle from '@/components/ThemeToggle';
+import cvPdf from '../assets/documents/cv.pdf';
+import profileImage from '../assets/images/profile.png';
 
 const CV = () => {
   const handleDownload = () => {
-    window.open('/traditional-cv', '_blank');
+    const link = document.createElement('a');
+    link.href = cvPdf;
+    link.download = 'Math_Rorpheeyah_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -47,6 +54,32 @@ const CV = () => {
                     Senior Android Developer with 5+ years of experience building enterprise-grade mobile applications. 
                     Serving as Sub-Leader of the Mobile Department at KOSIGN, leading development initiatives and mentoring junior engineers.
                   </p>
+                </div>
+                
+                {/* Professional Profile Photo */}
+                <div className="flex-shrink-0">
+                  <div className="group relative">
+                    {/* Outer glow ring */}
+                    <div className="absolute -inset-1 bg-gradient-to-r from-white/20 to-white/10 rounded-full blur-sm group-hover:from-white/30 group-hover:to-white/20 transition-all duration-500"></div>
+                    
+                    {/* Glass morphism container */}
+                    <div className="relative w-32 h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 rounded-full bg-white/10 backdrop-blur-md border border-white/20 p-1 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105">
+                      {/* Profile image */}
+                      <img
+                        src={profileImage}
+                        alt="Math Rorpheeyah - Senior Android Developer"
+                        className="w-full h-full object-cover rounded-full ring-2 ring-white/20 hover:ring-white/40 transition-all duration-500"
+                      />
+                      
+                      {/* Shine effect overlay */}
+                      <div className="absolute inset-1 rounded-full bg-gradient-to-tr from-white/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    
+                    {/* Professional status indicator */}
+                    <div className="absolute bottom-2 right-2 md:bottom-3 md:right-3 w-4 h-4 md:w-5 md:h-5 bg-green-500 rounded-full border-2 border-white shadow-lg animate-pulse">
+                      <div className="absolute inset-0 bg-green-400 rounded-full animate-ping opacity-75"></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

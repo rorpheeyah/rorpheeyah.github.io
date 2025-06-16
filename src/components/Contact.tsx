@@ -54,7 +54,7 @@ const Contact = () => {
 
         <div className="border-t border-border pt-8">
           <p className="text-muted-foreground">
-            © 2024 Math Rorpheeyah. Built with React, TypeScript, and Tailwind CSS.
+            © 2025 Math Rorpheeyah. Built with React, TypeScript, and Tailwind CSS.
           </p>
         </div>
       </div>
