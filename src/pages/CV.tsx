@@ -1,14 +1,12 @@
 import { ArrowLeft, Download, Mail, Phone, MapPin, Globe, Github, Linkedin, ExternalLink, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ThemeToggle from '@/components/ThemeToggle';
-import cvPdf from '../assets/documents/cv.pdf';
-import profileImage from '../assets/images/profile.png';
 
 const CV = () => {
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = cvPdf;
-    link.download = 'Math_Rorpheeyah_CV.pdf';
+    link.href = '/resume.pdf';
+    link.download = 'Math_Rorpheeyah_Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -66,7 +64,7 @@ const CV = () => {
                     <div className="relative w-32 h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 rounded-full bg-white/10 backdrop-blur-md border border-white/20 p-1 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105">
                       {/* Profile image */}
                       <img
-                        src={profileImage}
+                        src="/profile.png"
                         alt="Math Rorpheeyah - Senior Android Developer"
                         className="w-full h-full object-cover rounded-full ring-2 ring-white/20 hover:ring-white/40 transition-all duration-500"
                       />

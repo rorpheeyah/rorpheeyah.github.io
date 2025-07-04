@@ -1,12 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import { ExternalLink, X, Calendar, Code, Users, Grid3X3, List, Plus } from "lucide-react";
+import { ExternalLink, X, Code } from "lucide-react";
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
-  const [activeFilter, setActiveFilter] = useState('all');
-  const [viewMode, setViewMode] = useState('compact'); // 'detailed' or 'compact'
-  const [showAllProjects, setShowAllProjects] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -82,7 +79,7 @@ const Projects = () => {
           featured: false
         },
         {
-          name: "IBK 법인카드 – 한도조회를 원터치로",
+          name: "IBK 법인카드",
           description: "IBK Industrial Bank corporate card management app with one-touch credit limit inquiry and real-time transaction tracking",
           remoteImage: "https://play-lh.googleusercontent.com/jAxy5lu2REvRX2mrJyL97lZ1zCtz2_Gz5GxV6dd6uSyumhTVD8gh7gi97L0q_HKVnw=w480-h960-rw",
           image: "/placeholder.svg",
@@ -361,45 +358,13 @@ const Projects = () => {
     }
   ];
 
-  // Flatten all projects and add category info
+  // Flatten all projects
   const allProjects = projectCategories.flatMap(category =>
     category.projects.map(project => ({
       ...project,
       categoryTitle: category.title
     }))
   );
-
-  const featuredProjects = allProjects.filter(p => p.featured);
-  const filteredProjects = activeFilter === 'all' ? allProjects : 
-                         activeFilter === 'featured' ? featuredProjects :
-                         allProjects.filter(p => p.category === activeFilter);
-  
-  const projectsLimit = 12;
-  const [displayedProjects, setDisplayedProjects] = useState([]);
-
-  useEffect(() => {
-    setShowAllProjects(false);
-  }, [activeFilter]);
-
-  useEffect(() => {
-    if (showAllProjects) {
-      // Add "More Projects" placeholder as the last item when showing all projects
-      const moreProjectsPlaceholder = {
-        name: 'More Projects',
-        description: 'Additional projects exist but are not included in this portfolio',
-        image: '/placeholder.svg',
-        remoteImage: null,
-        category: 'placeholder',
-        categoryTitle: 'But not included',
-        technologies: [],
-        link: '#',
-        featured: false
-      };
-      setDisplayedProjects([...filteredProjects, moreProjectsPlaceholder]);
-    } else {
-      setDisplayedProjects(filteredProjects.slice(0, projectsLimit));
-    }
-  }, [showAllProjects, filteredProjects]);
 
   const openProject = (project) => {
     setSelectedProject(project);
@@ -409,297 +374,118 @@ const Projects = () => {
     setSelectedProject(null);
   };
 
-  const filters = [
-    { id: 'all', label: 'All Projects', count: allProjects.length },
-    { id: 'featured', label: 'Featured', count: featuredProjects.length },
-    { id: 'finance', label: 'Finance', count: allProjects.filter(p => p.category === 'finance').length },
-    { id: 'research', label: 'Research', count: allProjects.filter(p => p.category === 'research').length }
-  ];
-
   return (
-    <section id="projects" className="py-20 px-6" ref={sectionRef}>
-      <div className="max-w-7xl mx-auto">
+    <section id="projects" className="py-24 px-6 bg-background text-foreground" ref={sectionRef}>
+      <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className={`text-4xl md:text-5xl font-bold mb-6 transition-all duration-1000 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'}`}>
+          <h2 className={`text-3xl md:text-4xl font-medium mb-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             Projects
           </h2>
-          <p className={`text-xl text-muted-foreground max-w-3xl mx-auto mb-8 transition-all duration-1000 delay-200 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'}`}>
-            A showcase of enterprise-grade mobile applications demonstrating expertise in Android development and modern architecture patterns.
+          <p className={`text-base md:text-lg text-muted-foreground max-w-2xl mx-auto transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            A collection of Android applications I've built, maintained, and contributed to throughout my career in enterprise mobile development.
           </p>
-
-          {/* View Controls */}
-          <div className={`flex flex-wrap justify-center items-center gap-4 mb-6 transition-all duration-1000 delay-300 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'}`}>
-            <div className="flex items-center space-x-2 bg-accent/50 rounded-full p-1">
-              <button
-                onClick={() => setViewMode('detailed')}
-                className={`p-2 rounded-full transition-colors ${viewMode === 'detailed' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:bg-accent'}`}
-                aria-label="Detailed view"
-              >
-                <Grid3X3 className="w-4 h-4" />
-              </button>
-              <button
-                onClick={() => setViewMode('compact')}
-                className={`p-2 rounded-full transition-colors ${viewMode === 'compact' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:bg-accent'}`}
-                aria-label="Compact view"
-              >
-                <List className="w-4 h-4" />
-              </button>
-            </div>
-
-            {/* Filter Tabs */}
-            <div className={`flex flex-wrap justify-center gap-2 transition-all duration-1000 delay-400 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'}`}>
-              {filters.map((filter) => (
-                <button
-                  key={filter.id}
-                  onClick={() => setActiveFilter(filter.id)}
-                  className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
-                    activeFilter === filter.id
-                      ? 'bg-primary text-primary-foreground shadow-lg scale-105'
-                      : 'bg-accent/50 text-muted-foreground hover:bg-accent hover:text-foreground hover:scale-105'
-                  }`}
-                >
-                  {filter.label}
-                  <span className="ml-2 text-xs opacity-70">({filter.count})</span>
-                </button>
-              ))}
-            </div>
-          </div>
         </div>
 
-        {/* Projects Grid */}
-        <div className={`grid gap-6 ${
-          viewMode === 'detailed' 
-            ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' 
-            : 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6'
-        }`}>
-          {displayedProjects.map((project, index) => (
-            <div
-              key={`${project.name}-${index}`}
-              className={`group cursor-pointer transition-all duration-500 ${
-                viewMode === 'detailed' ? 'hover:scale-105' : 'hover:scale-110'
-              } ${
-                isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'
-              }`}
-              style={{ animationDelay: `${index * 100}ms` }}
-              onClick={() => project.name !== 'More Projects' && openProject(project)}
-            >
-              <div className={`relative rounded-2xl transition-all duration-300 ${
-                project.name === 'More Projects' 
-                  ? 'border-2 border-dashed border-border/30 bg-accent/5 hover:bg-accent/10' 
-                  : 'bg-background border border-border/50 hover:border-primary/50'
-              } ${
-                viewMode === 'detailed' 
-                  ? 'p-6 hover:shadow-xl h-full flex flex-col' 
-                  : 'p-4 hover:shadow-md flex flex-col items-center'
-              } ${
-                project.name === 'More Projects' ? 'items-center justify-center' : ''
-              }`}>
-                {/* App Icon */}
-                <div className={`relative ${
-                  viewMode === 'detailed' ? 'mb-4 w-16 h-16' : 'w-12 h-12 mb-2'
-                }`}>
-                  <div className={`rounded-xl overflow-hidden ${
-                    project.name === 'More Projects' ? 'bg-muted/20' : 'bg-accent/20'
-                  } flex items-center justify-center transition-transform duration-300 ${
-                    viewMode === 'detailed' ? 'group-hover:scale-110 w-full h-full' : 'w-full h-full'
-                  }`}>
-                    {project.name === 'More Projects' ? (
-                      <Plus className={`text-muted-foreground/50 ${
-                        viewMode === 'detailed' ? 'w-8 h-8' : 'w-6 h-6'
-                      }`} />
-                    ) : (
+        {/* Projects Container - Matching Scale.com's rounded container */}
+        <div className="border border-border rounded-2xl p-4 md:p-8 bg-card">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-8">
+            {allProjects.map((project, index) => (
+              <div
+                key={project.name}
+                className={`group cursor-pointer transition-all duration-500 ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+                style={{ animationDelay: `${index * 100}ms` }}
+                onClick={() => openProject(project)}
+              >
+                <div className="flex flex-col items-center text-center">
+                  {/* App Icon */}
+                  <div className="relative">
+                    <div className="w-12 h-12 md:w-16 md:h-16 mb-2 md:mb-4 rounded-xl overflow-hidden bg-accent flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <img
                         src={project.remoteImage || project.image}
                         alt={project.name}
                         onError={(e) => { e.currentTarget.src = project.image || "/placeholder.svg"; }}
                         className="w-full h-full object-cover rounded-xl"
                       />
-                    )}
+                    </div>
+                    
+                    {/* Status Dot */}
+                    <div className={`absolute -top-1 -right-1 w-2.5 h-2.5 md:w-3 md:h-3 rounded-full border-2 border-card ${
+                      project.category === 'research' 
+                        ? 'bg-green-500' 
+                        : 'bg-blue-500'
+                    }`} />
                   </div>
-                  {/* Featured indicator removed */}
+
+                  {/* Project Name */}
+                  <h3 className="text-xs md:text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300 line-clamp-2 text-center">
+                    {project.name}
+                  </h3>
                 </div>
-
-                {viewMode === 'detailed' ? (
-                  <>
-                    <div className="flex-1 flex flex-col">
-                      <h3 className={`text-lg font-semibold mb-2 text-center transition-colors duration-300 line-clamp-2 ${
-                        project.name === 'More Projects' 
-                          ? 'text-muted-foreground/70' 
-                          : 'group-hover:text-primary'
-                      }`}>
-                        {project.name}
-                      </h3>
-                      
-                      <p className={`text-sm text-center mb-4 line-clamp-3 flex-1 ${
-                        project.name === 'More Projects' 
-                          ? 'text-muted-foreground/60' 
-                          : 'text-muted-foreground'
-                      }`}>
-                        {project.description}
-                      </p>
-
-                      {/* Category Badge */}
-                      <div className="flex justify-center mb-4">
-                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                          project.name === 'More Projects' 
-                            ? 'bg-muted/10 text-muted-foreground/50'
-                            : project.category === 'finance' 
-                              ? 'bg-blue-500/10 text-blue-500'
-                              : 'bg-green-500/10 text-green-500'
-                        }`}>
-                          {project.categoryTitle}
-                        </span>
-                      </div>
-
-                      {/* Tech Stack Preview */}
-                      <div className="flex flex-wrap justify-center gap-1">
-                        {project.name === 'More Projects' ? (
-                          <span className="px-4 py-2 bg-muted/10 text-muted-foreground/50 rounded-lg text-xs font-medium">
-                            End of Portfolio
-                          </span>
-                        ) : (
-                          <>
-                            {project.technologies.slice(0, 3).map((tech, techIndex) => (
-                              <span
-                                key={techIndex}
-                                className="px-2 py-1 bg-primary/5 text-primary rounded text-xs font-medium"
-                              >
-                                {tech}
-                              </span>
-                            ))}
-                            {project.technologies.length > 3 && (
-                              <span className="px-2 py-1 bg-accent text-muted-foreground rounded text-xs">
-                                +{project.technologies.length - 3}
-                              </span>
-                            )}
-                          </>
-                        )}
-                      </div>
-                    </div>
-                  </>
-                ) : (
-                  <div className="w-full text-center">
-                    <h3 className={`text-sm font-medium transition-colors duration-300 line-clamp-2 ${
-                      project.name === 'More Projects' 
-                        ? 'text-muted-foreground/70' 
-                        : 'group-hover:text-primary'
-                    }`}>
-                      {project.name}
-                    </h3>
-                    <div className="mt-1">
-                      <span className={`text-xs px-2 py-0.5 rounded-full ${
-                        project.name === 'More Projects' 
-                          ? 'bg-muted/10 text-muted-foreground/50'
-                          : project.category === 'finance' 
-                            ? 'bg-blue-500/10 text-blue-500'
-                            : 'bg-green-500/10 text-green-500'
-                      }`}>
-                        {project.name === 'More Projects' ? 'Not included' : project.category}
-                      </span>
-                    </div>
-                  </div>
-                )}
               </div>
-            </div>
-          ))}
-          
-          {/* Show More/Less Button */}
-          {filteredProjects.length > projectsLimit && (
-            <div className={`${
-              viewMode === 'detailed' 
-                ? 'col-span-1 md:col-span-2 lg:col-span-3 xl:col-span-4' 
-                : 'col-span-2 sm:col-span-3 md:col-span-4 lg:col-span-5 xl:col-span-6'
-            }`}>
-              {!showAllProjects ? (
-                <button
-                  onClick={() => setShowAllProjects(true)}
-                  className="w-full py-4 bg-accent/10 hover:bg-accent/20 text-muted-foreground hover:text-foreground rounded-xl font-medium transition-all duration-300 flex items-center justify-center gap-2"
-                >
-                  <Plus className="w-5 h-5" />
-                  Show All Projects ({filteredProjects.length - projectsLimit} more)
-                </button>
-              ) : (
-                <button
-                  onClick={() => setShowAllProjects(false)}
-                  className="w-full py-4 text-muted-foreground hover:text-foreground font-medium transition-all duration-300 flex items-center justify-center gap-2"
-                >
-                  <X className="w-4 h-4" />
-                  Show Less
-                </button>
-              )}
-            </div>
-          )}
-
+            ))}
+          </div>
         </div>
 
-        {/* Removed duplicate show more buttons - functionality moved to grid footer */}
-
-        {/* Enhanced Modal */}
+        {/* Modal */}
         {selectedProject && (
           <div
-            className="fixed inset-0 bg-black/60 backdrop-blur-md flex justify-center items-center z-50 p-4"
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm flex justify-center items-center z-50 p-4"
             onClick={closeModal}
           >
             <div
-              className="bg-background rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative border border-border/50 shadow-2xl animate-scale-in"
+              className="bg-card rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative border border-border"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
               <button
                 onClick={closeModal}
-                className="absolute top-6 right-6 z-10 p-2 rounded-full bg-accent/50 hover:bg-accent text-muted-foreground hover:text-foreground transition-all duration-300"
-                aria-label="Close modal"
+                className="absolute top-4 right-4 z-10 p-2 rounded-lg bg-accent hover:bg-accent/80 text-muted-foreground hover:text-foreground transition-all duration-300"
               >
                 <X className="w-5 h-5" />
               </button>
 
               {/* Header */}
-              <div className="p-8 border-b border-border/50">
-                <div className="flex items-start space-x-6">
-                  <div className="w-20 h-20 rounded-2xl overflow-hidden bg-accent/20 flex items-center justify-center flex-shrink-0">
+              <div className="p-6 md:p-8 border-b border-border">
+                <div className="flex items-start space-x-4 md:space-x-6">
+                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl overflow-hidden bg-accent flex items-center justify-center flex-shrink-0">
                     <img
                       src={selectedProject.remoteImage || selectedProject.image}
                       alt={selectedProject.name}
                       onError={(e) => { e.currentTarget.src = selectedProject.image || "/placeholder.svg"; }}
-                      className="w-full h-full object-cover rounded-2xl"
+                      className="w-full h-full object-cover rounded-xl"
                     />
                   </div>
                   <div className="flex-1">
-                    <div className="flex items-center space-x-3 mb-3">
-                      <h3 className="text-2xl font-bold text-foreground">
-                        {selectedProject.name}
-                      </h3>
-                      {/* Featured indicator removed */}
-                    </div>
-                    <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${
-                      selectedProject.category === 'finance' 
-                        ? 'bg-blue-500/10 text-blue-500'
-                        : 'bg-green-500/10 text-green-500'
-                    }`}>
-                      {selectedProject.categoryTitle}
+                    <h3 className="text-xl md:text-2xl font-medium text-foreground mb-2">
+                      {selectedProject.name}
+                    </h3>
+                    <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
+                      {selectedProject.category}
                     </span>
                   </div>
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-8">
-                <p className="text-muted-foreground leading-relaxed mb-8 text-lg">
+              <div className="p-6 md:p-8">
+                <p className="text-muted-foreground leading-relaxed mb-8">
                   {selectedProject.description}
                 </p>
 
                 {/* Technologies */}
                 <div className="mb-8">
-                  <h4 className="text-lg font-semibold mb-4 flex items-center">
-                    <Code className="w-5 h-5 mr-2 text-primary" />
-                    Technologies Used
+                  <h4 className="text-lg font-medium mb-4 text-foreground flex items-center">
+                    <Code className="w-5 h-5 mr-2" />
+                    Technologies
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedProject.technologies.map((tech, index) => (
                       <span
                         key={index}
-                        className="px-4 py-2 bg-primary/10 text-primary rounded-lg text-sm font-medium hover:bg-primary/20 transition-colors duration-300"
+                        className="px-3 py-1 bg-accent text-muted-foreground rounded text-sm"
                       >
                         {tech}
                       </span>
@@ -714,9 +500,9 @@ const Projects = () => {
                       href={selectedProject.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center space-x-2 px-8 py-4 bg-primary text-primary-foreground rounded-xl font-medium hover:bg-primary/90 transition-all duration-300 hover:scale-105 shadow-lg"
+                      className="inline-flex items-center space-x-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all duration-300"
                     >
-                      <ExternalLink className="w-5 h-5" />
+                      <ExternalLink className="w-4 h-4" />
                       <span>View on Play Store</span>
                     </a>
                   </div>

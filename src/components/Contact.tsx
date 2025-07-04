@@ -1,5 +1,4 @@
-
-import { Mail, Linkedin, Github, X } from 'lucide-react';
+import { Mail, Linkedin, Github, X, Send, Instagram } from 'lucide-react';
 
 const Contact = () => {
   const contactInfo = [
@@ -20,21 +19,31 @@ const Contact = () => {
     },
     {
       icon: X,
-      label: 'X (Twitter)',
+      label: 'X',
       href: 'https://x.com/rorpheeyah'
+    },
+    {
+      icon: Send,
+      label: 'Telegram',
+      href: 'http://t.me/rorpheeyah'
+    },
+    {
+      icon: Instagram,
+      label: 'Instagram',
+      href: 'https://www.instagram.com/rorpheeyah'
     }
   ];
 
   return (
-    <section id="contact" className="py-20 px-6 bg-accent/20">
+    <section id="contact" className="py-20 px-6">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-6">Let's Connect</h2>
-        <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
+        <h2 className="text-4xl font-bold mb-4 text-foreground">Let's Connect</h2>
+        <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
           I'm always open to discussing new opportunities, interesting projects, 
           or just having a conversation about Android development and mobile technology.
         </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="flex flex-wrap justify-center gap-8 mb-16">
           {contactInfo.map((contact, index) => {
             const IconComponent = contact.icon;
             return (
@@ -43,18 +52,18 @@ const Contact = () => {
                 href={contact.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-6 bg-background rounded-xl border border-border hover:shadow-lg transition-all duration-300 hover:scale-105"
+                className="group flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors duration-200"
               >
-                <IconComponent className="w-8 h-8 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="font-semibold mb-2">{contact.label}</h3>
+                <IconComponent className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
+                <span className="text-sm font-medium">{contact.label}</span>
               </a>
             );
           })}
         </div>
 
-        <div className="border-t border-border pt-8">
-          <p className="text-muted-foreground">
-            © 2025 Math Rorpheeyah. Built with React, TypeScript, and Tailwind CSS.
+        <div className="border-t border-border/50 pt-8">
+          <p className="text-sm text-muted-foreground">
+            © 2025 Math Rorpheeyah
           </p>
         </div>
       </div>

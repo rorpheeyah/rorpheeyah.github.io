@@ -1,49 +1,19 @@
 import { ArrowDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import profileImage from '../assets/images/profile.png';
 
 const Hero = () => {
-  const [displayText, setDisplayText] = useState('');
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
   const titles = ['Senior Android Developer', 'Sub-Leader Mobile Department', 'Enterprise Mobile Architect'];
-  const timeoutRef = useRef<NodeJS.Timeout>();
 
   useEffect(() => {
-    const currentTitle = titles[currentTitleIndex];
-    
-    const type = () => {
-      if (!isDeleting) {
-        // Typing forward
-        if (displayText.length < currentTitle.length) {
-          setDisplayText(currentTitle.slice(0, displayText.length + 1));
-          timeoutRef.current = setTimeout(type, 100);
-        } else {
-          // Finished typing, wait then start deleting
-          timeoutRef.current = setTimeout(() => setIsDeleting(true), 2000);
-        }
-      } else {
-        // Deleting
-        if (displayText.length > 0) {
-          setDisplayText(displayText.slice(0, -1));
-          timeoutRef.current = setTimeout(type, 50);
-        } else {
-          // Finished deleting, move to next title
-          setIsDeleting(false);
-          setCurrentTitleIndex((prev) => (prev + 1) % titles.length);
-        }
-      }
-    };
+    const interval = setInterval(() => {
+      setCurrentTitleIndex((prev) => (prev + 1) % titles.length);
+    }, 3000); // Change every 3 seconds
 
-    timeoutRef.current = setTimeout(type, isDeleting ? 50 : 100);
-
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
-  }, [displayText, currentTitleIndex, isDeleting, titles]);
+    return () => clearInterval(interval);
+  }, [titles.length]);
 
   const scrollToAbout = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
@@ -68,11 +38,19 @@ const Hero = () => {
             <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 bg-gradient-to-r from-primary via-primary/80 to-secondary bg-clip-text text-transparent animate-gradient-x leading-tight">
               Math Rorpheeyah
             </h1>
-            <div className="h-12 md:h-16 lg:h-20 flex items-center justify-center">
-              <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light text-foreground min-h-[1.2em] text-center">
-                {displayText}
-                <span className="animate-pulse ml-1">|</span>
-              </h2>
+            <div className="h-12 md:h-16 lg:h-20 flex items-center justify-center relative">
+              {titles.map((title, index) => (
+                <h2 
+                  key={index}
+                  className={`absolute text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light text-foreground transition-all duration-1000 ease-in-out ${
+                    index === currentTitleIndex 
+                      ? 'opacity-100 translate-y-0' 
+                      : 'opacity-0 translate-y-4'
+                  }`}
+                >
+                  {title}
+                </h2>
+              ))}
             </div>
             <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mt-6 animate-fade-in-up-delayed">
               Senior Android Developer with 5+ years of experience building enterprise-grade mobile applications. 
