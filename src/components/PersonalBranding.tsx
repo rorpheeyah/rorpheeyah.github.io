@@ -22,11 +22,13 @@ const PersonalBranding = () => {
   const [selectedAsset, setSelectedAsset] = useState<BrandAsset | null>(null);
   const [brandingData, setBrandingData] = useState<BrandingData | null>(null);
   const [error, setError] = useState<string | null>(null);
+    const [loading, setLoading] = useState(true);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const fetchBrandingData = async () => {
       try {
+          setLoading(true);
         const response = await fetch('/content/branding.json');
 
         if (!response.ok) {
@@ -38,6 +40,8 @@ const PersonalBranding = () => {
       } catch (error) {
         console.error('Error fetching branding data:', error);
         setError(error instanceof Error ? error.message : 'Failed to load data');
+      } finally {
+          setLoading(false);
       }
     };
 
@@ -81,7 +85,39 @@ const PersonalBranding = () => {
     setSelectedAsset(null);
   };
 
-  return (
+    if (loading) {
+        return (
+            <section id="branding" className="py-20 px-6" ref={sectionRef}>
+                <div className="max-w-5xl mx-auto">
+                    <div className="text-center">
+                        <div className="animate-pulse">
+                            <div className="h-8 bg-gray-300 rounded w-48 mx-auto mb-4"></div>
+                            <div className="h-4 bg-gray-300 rounded w-64 mx-auto"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        );
+    }
+
+    if (error) {
+        return (
+            <section id="branding" className="py-20 px-6" ref={sectionRef}>
+                <div className="max-w-5xl mx-auto">
+                    <div className="text-center">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-red-500">Error</h2>
+                        <p className="text-muted-foreground">{error}</p>
+                    </div>
+                </div>
+            </section>
+        );
+    }
+
+    if (!brandingData) {
+        return null;
+    }
+
+    return (
       <section id="branding" className="py-20 px-6" ref={sectionRef}>
         <div className="max-w-5xl mx-auto">
           {/* Header */}
