@@ -23,7 +23,7 @@ const Index = () => {
         <Navigation onOpenCV={openCVModal}/>
         <Hero onOpenCV={openCVModal}/>
       <About />
-      <Experience />
+        <Experience onOpenCV={openCVModal}/>
       <Education />
       <TechnicalSkills />
       <Projects />

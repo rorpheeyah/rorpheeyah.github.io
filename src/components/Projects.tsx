@@ -38,7 +38,7 @@ const Projects = () => {
   if (loading) {
     return (
         <section id="projects" className="py-24 px-6 lg:px-8 bg-background text-foreground" ref={sectionRef}>
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="text-center">
               <div className="animate-pulse">
                 <div className="h-12 bg-muted rounded mb-4 mx-auto max-w-md"></div>
@@ -76,7 +76,7 @@ const Projects = () => {
 
   return (
       <section id="projects" className="py-24 px-6 lg:px-8 bg-background text-foreground" ref={sectionRef}>
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-20">
           <h2 className={`text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -90,7 +90,8 @@ const Projects = () => {
         {/* Projects Container - Scale AI-inspired design */}
         <div
             className="border border-border/50 rounded-2xl p-6 md:p-12 bg-card">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-6 md:gap-8">
+            <div
+                className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-6 md:gap-8">
             {allProjects.map((project, index) => (
               <div
                 key={project.name}
@@ -104,20 +105,20 @@ const Projects = () => {
                   {/* App Icon */}
                   <div className="relative">
                     <div
-                        className="w-16 h-16 md:w-20 md:h-20 mb-3 md:mb-4 rounded-2xl overflow-hidden bg-accent/50 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-border/20 group-hover:border-border/40">
+                        className="w-12 h-12 md:w-14 md:h-14 mb-2 md:mb-3 rounded-2xl overflow-hidden bg-accent/50 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-border/20 group-hover:border-border/40">
                       <img
                         src={project.remoteImage || project.image}
                         alt={project.name}
                         onError={(e) => {
                             e.currentTarget.src = project.image || "/images/placeholder.svg";
                         }}
-                        className="w-full h-full object-cover rounded-2xl"
+                        className="w-full h-full object-cover rounded-xl"
                       />
                     </div>
                   </div>
 
                   {/* Project Name */}
-                  <h3 className="text-sm md:text-base font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300 line-clamp-2 text-center leading-tight">
+                    <h3 className="text-xs md:text-sm text-muted-foreground group-hover:text-foreground transition-colors">
                     {project.name}
                   </h3>
                 </div>

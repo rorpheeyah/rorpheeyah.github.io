@@ -54,7 +54,7 @@ const Education = () => {
   if (loading) {
     return (
         <section id="education" className="py-20 px-6" ref={sectionRef}>
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
               <div className="animate-pulse">
                 <div className="h-8 bg-muted rounded mb-6 max-w-md mx-auto"></div>
@@ -87,7 +87,7 @@ const Education = () => {
 
   return (
     <section id="education" className="py-20 px-6" ref={sectionRef}>
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <h2 className={`text-3xl md:text-4xl font-bold mb-6 transition-all duration-1000 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'}`}>
             {content?.education?.title || "Education"}

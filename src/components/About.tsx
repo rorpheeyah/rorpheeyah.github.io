@@ -44,7 +44,7 @@ const About = () => {
     if (loading) {
         return (
             <section id="about" className="py-20 px-6" ref={sectionRef}>
-                <div className="max-w-6xl mx-auto">
+                <div className="max-w-5xl mx-auto">
                     <div className="text-center mb-16">
                         <div className="animate-pulse">
                             <div className="h-12 bg-muted rounded mb-6 max-w-md mx-auto"></div>
@@ -71,12 +71,12 @@ const About = () => {
 
     return (
     <section id="about" className="py-20 px-6" ref={sectionRef}>
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <h2 className={`text-4xl md:text-5xl font-bold mb-6 transition-all duration-1000 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'}`}>
               {aboutData.title}
           </h2>
-          <p className={`text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-200 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'}`}>
+          <p className={`text-xl text-muted-foreground max-w-6xl mx-auto leading-relaxed transition-all duration-1000 delay-200 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-10'}`}>
               {aboutData.description}
           </p>
         </div>
