@@ -88,7 +88,7 @@ export const useCVContent = () => {
 
                 const isProduction = import.meta.env.PROD;
                 const url = isProduction
-                    ? `https://raw.githubusercontent.com/rorpheeyah/rorpheeyah.github.io/main/public/content/cv.json`
+                    ? `/content/cv.json`
                     : `/content/cv.json`;
 
                 const response = await fetch(url);
@@ -117,7 +117,7 @@ export const useCVContent = () => {
         try {
             const isProduction = import.meta.env.PROD;
             const url = isProduction
-                ? `https://raw.githubusercontent.com/rorpheeyah/rorpheeyah.github.io/main/public/content/cv.json`
+                ? `/content/cv.json`
                 : `/content/cv.json`;
 
             const response = await fetch(url);

@@ -64,14 +64,28 @@ const Projects = () => {
     );
   }
 
-  const projectCategories = content.projectCategories;
+    const projectCategories = content?.projectCategories || [];
 
-  // Flatten all projects
+    // Additional safety check for empty or invalid project categories
+    if (!projectCategories || projectCategories.length === 0) {
+        return (
+            <section id="projects" className="py-24 px-6 lg:px-8 bg-background text-foreground" ref={sectionRef}>
+                <div className="max-w-7xl mx-auto">
+                    <div className="text-center">
+                        <h2 className="text-4xl font-semibold mb-4">Projects</h2>
+                        <p className="text-muted-foreground">No projects available at the moment.</p>
+                    </div>
+                </div>
+            </section>
+        );
+    }
+
+    // Flatten all projects
   const allProjects = projectCategories.flatMap(category =>
-      category.projects.map(project => ({
+      category?.projects?.map(project => ({
         ...project,
         categoryTitle: category.title
-      }))
+      })) || []
   );
 
   return (

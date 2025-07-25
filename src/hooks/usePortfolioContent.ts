@@ -145,7 +145,7 @@ export const usePortfolioContent = () => {
             const contentPromises = contentFiles.map(async (file) => {
                 const isProduction = import.meta.env.PROD;
                 const url = isProduction
-                    ? `https://raw.githubusercontent.com/rorpheeyah/rorpheeyah.github.io/main/public/content/${file}.json`
+                    ? `/content/${file}.json`
                     : `/content/${file}.json`;
 
                 const response = await fetch(url);
