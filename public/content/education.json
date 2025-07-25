@@ -1,0 +1,33 @@
+{
+  "title": "Education & Training",
+  "subtitle": "Academic foundation and professional development in software engineering and mobile development.",
+  "education": [
+    {
+      "degree": "Bachelor of Science, Computer Science",
+      "institution": "Royal University of Phnom Penh",
+      "period": "January 2016 - November 2021",
+      "location": "Phnom Penh, Cambodia",
+      "logo": "ic_logo_rupp",
+      "website": "https://www.rupp.edu.kh",
+      "skills": ["Data Structures", "Algorithms", "Software Engineering", "Database Systems", "Web Development"]
+    },
+    {
+      "degree": "Advanced Software Development",
+      "institution": "Korea Software HRD Center",
+      "period": "2019 - 2020",
+      "location": "Phnom Penh, Cambodia",
+      "logo": "ic_logo_hrd",
+      "website": "https://kshrd.com.kh",
+      "skills": ["Full-stack Development", "Mobile Application Research", "Software Architecture", "Design Patterns"]
+    },
+    {
+      "degree": "App Development with JAVA",
+      "institution": "Cambodia-Korea Cooperation Center (CKCC)",
+      "period": "2018-2019",
+      "location": "Phnom Penh, Cambodia",
+      "logo": "ic_logo_ckcc",
+      "website": "https://www.ckcc.edu.kh",
+      "skills": ["Java Development", "Application Development Principles", "Project Management"]
+    }
+  ]
+}
