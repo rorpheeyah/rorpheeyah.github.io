@@ -1,4 +1,4 @@
-
+import {useState} from 'react';
 import ThemeToggle from '@/components/ThemeToggle';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
@@ -9,20 +9,28 @@ import Contact from '@/components/Contact';
 import Education from '@/components/Education';
 import TechnicalSkills from '@/components/TechnicalSkills';
 import PersonalBranding from '@/components/PersonalBranding';
+import CVModal from '@/components/CVModal';
 
 const Index = () => {
-  return (
+    const [isCVModalOpen, setIsCVModalOpen] = useState(false);
+
+    const openCVModal = () => setIsCVModalOpen(true);
+    const closeCVModal = () => setIsCVModalOpen(false);
+
+    return (
     <div className="min-h-screen bg-background text-foreground">
       <ThemeToggle />
-      <Navigation />
-      <Hero />
+        <Navigation onOpenCV={openCVModal}/>
+        <Hero onOpenCV={openCVModal}/>
       <About />
       <Experience />
       <Education />
       <TechnicalSkills />
       <Projects />
       <PersonalBranding />
-      <Contact />
+        <Contact onOpenCV={openCVModal}/>
+
+        <CVModal isOpen={isCVModalOpen} onClose={closeCVModal}/>
     </div>
   );
 };

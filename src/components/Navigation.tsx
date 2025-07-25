@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Sun, Moon, User, FileText, Mail, Home, Briefcase, FolderOpen, Palette, Phone, ChevronUp } from 'lucide-react';
-import {useNavigate} from 'react-router-dom';
 import {useTheme} from '../contexts/ThemeContext';
 
-const Navigation = () => {
+interface NavigationProps {
+  onOpenCV: () => void;
+}
+
+const Navigation = ({onOpenCV}: NavigationProps) => {
   const [activeSection, setActiveSection] = useState('hero');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -11,13 +14,11 @@ const Navigation = () => {
   const [showGoToTop, setShowGoToTop] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [scrollTimeout, setScrollTimeout] = useState<NodeJS.Timeout | null>(null);
-  const navigate = useNavigate();
-
-    const {isDarkMode, toggleTheme} = useTheme();
+  const {isDarkMode, toggleTheme} = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'experience', 'projects', 'branding', 'contact'];
+      const sections = ['hero', 'about', 'experience', 'projects', 'contact'];
       const scrollPosition = window.scrollY + 100;
       const currentScrollY = window.scrollY;
       
@@ -85,14 +86,13 @@ const Navigation = () => {
     setShowGoToTop(false); // Hide immediately after clicking
   };
 
-    const handleToggleTheme = () => {
-        toggleTheme();
+  const handleToggleTheme = () => {
+    toggleTheme();
     setIsProfileDropdownOpen(false);
   };
 
   const openCV = () => {
-    // Navigate to CV page using React Router
-    navigate('/cv');
+    onOpenCV();
     setIsProfileDropdownOpen(false);
   };
 
@@ -114,7 +114,6 @@ const Navigation = () => {
     { id: 'about', label: 'About' },
     { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
-    { id: 'branding', label: 'Branding' },
     { id: 'contact', label: 'Contact' },
   ];
 
@@ -123,13 +122,12 @@ const Navigation = () => {
     { icon: User, label: 'About', action: () => scrollToSection('about'), section: 'about' },
     { icon: Briefcase, label: 'Experience', action: () => scrollToSection('experience'), section: 'experience' },
     { icon: FolderOpen, label: 'Projects', action: () => scrollToSection('projects'), section: 'projects' },
-    { icon: Palette, label: 'Branding', action: () => scrollToSection('branding'), section: 'branding' },
     { icon: Phone, label: 'Contact', action: () => scrollToSection('contact'), section: 'contact' },
   ];
 
   // Get logo source based on theme
   const getLogoSrc = () => {
-      return isDarkMode ? '/ic_seal_horizontal_white_filled.png' : '/ic_seal_horizontal_black_filled.png';
+    return isDarkMode ? '/images/seals/ic_seal_horizontal_white_filled.png' : '/images/seals/ic_seal_horizontal_black_filled.png';
   };
 
   return (
@@ -207,7 +205,7 @@ const Navigation = () => {
                   {/* Profile Header */}
                   <div className="flex items-center space-x-3 px-3 py-2 mb-2">
                     <img
-                      src="/profile.png"
+                        src="/images/profile.png"
                       alt="Profile"
                       className="w-10 h-10 rounded-full object-cover"
                       onError={(e) => {

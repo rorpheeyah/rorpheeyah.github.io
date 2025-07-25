@@ -1,10 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
 import { Calendar, MapPin, ChevronDown, ChevronUp, Award } from 'lucide-react';
+import {usePortfolioContent} from '../hooks/usePortfolioContent';
 
 const Experience = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [expandedItems, setExpandedItems] = useState<Set<number>>(new Set());
   const sectionRef = useRef<HTMLElement>(null);
+
+  const {content, loading, error} = usePortfolioContent();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -33,62 +36,37 @@ const Experience = () => {
     setExpandedItems(newExpanded);
   };
 
-  const experiences = [
-    {
-      title: "Senior Android Developer & Sub-Leader, Mobile Department",
-      company: "KOSIGN (Korea Software Innovation Global Network)",
-      period: "March 2020 - Present",
-      location: "Phnom Penh, Cambodia",
-      type: "Full-time",
-      logo: "ic_logo_kosign",
-      description: "Leading development of enterprise-level Android applications utilizing Kotlin and Java. Overseeing team operations as Sub-Leader and implementing modern architecture patterns including MVVM and Clean Architecture. Pioneering adoption of Jetpack Compose across multiple projects.",
-      achievements: [
-        "Lead development of enterprise-level Android applications utilizing Kotlin and Java",
-        "Oversee team operations as Sub-Leader of the Mobile Department",
-        "Implement and optimize modern architecture patterns (MVVM, Clean Architecture)",
-        "Pioneer adoption of Jetpack Compose for UI development across multiple projects",
-        "Supervise project delegation and provide mentorship to junior developers",
-        "Recognized with 'Best Rookie' award (November 2020)"
-      ],
-      technologies: ["Kotlin", "Java", "Android SDK", "Jetpack Compose", "MVVM", "Clean Architecture"],
-      award: "Best Rookie Award - November 2020"
-    },
-    {
-      title: "International Assignment - Business Trip",
-      company: "비즈플레이 - Bizplay (KOSIGN - South Korea Division)",
-      period: "October 2022 - August 2023",
-      location: "Busan, South Korea",
-      type: "International Assignment",
-      logo: "ic_logo_bizplay",
-      description: "Selected for a one-year assignment to support collaboration between the Cambodian and South Korean mobile development teams. Served as liaison facilitating cross-cultural collaboration and technical communication.",
-      achievements: [
-        "Selected for a one-year assignment to support collaboration between Cambodian and South Korean mobile development teams",
-        "Reviewed technical documents from Korean teams, analyzed project requirements, and prepared task breakdowns for the Cambodian team",
-        "Inspected and verified feature behavior across web and mobile platforms to ensure consistency and alignment",
-        "Worked directly with Korean developers, testers, and department heads (부장) on feature planning, QA, and production readiness",
-        "Served as a liaison between teams, facilitating communication, resolving blockers, and ensuring smooth cross-cultural collaboration",
-        "Participated in cross-functional meetings and contributed to strengthening partnerships between global teams"
-      ],
-      technologies: ["Android", "Cross-platform Development", "Team Leadership", "Technical Documentation", "International Collaboration"]
-    },
-    {
-      title: "Web Developer",
-      company: "PLAN-B Cambodia (BEONE)",
-      period: "November 2018 - January 2019",
-      location: "Phnom Penh, Cambodia",
-      type: "Full-time",
-      logo: "ic_logo_planb",
-      description: "Developed responsive web applications without third-party frameworks using custom CSS. Built backend functionality and logic using PHP for various client projects.",
-      achievements: [
-        "Developed responsive web applications without third-party frameworks (custom CSS)",
-        "Built backend functionality and logic using PHP",
-        "Created custom solutions for various client projects",
-        "Gained foundational experience in full-stack web development",
-        "Worked with design teams to implement responsive user interfaces"
-      ],
-      technologies: ["PHP", "HTML/CSS", "JavaScript", "Custom Frameworks", "Responsive Design"]
-    }
-  ];
+  // Show loading state
+  if (loading) {
+    return (
+        <section id="experience" className="py-20 px-6" ref={sectionRef}>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <div className="animate-pulse">
+                <div className="h-10 bg-muted rounded mb-4 mx-auto max-w-md"></div>
+                <div className="h-6 bg-muted rounded mx-auto max-w-2xl"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+    );
+  }
+
+  // Show error state
+  if (error || !content) {
+    return (
+        <section id="experience" className="py-20 px-6" ref={sectionRef}>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Experience</h2>
+              <p className="text-muted-foreground">Failed to load experience data. Please try again later.</p>
+            </div>
+          </div>
+        </section>
+    );
+  }
+
+  const experiences = content.experience;
 
   return (
     <section id="experience" className="py-20 px-6" ref={sectionRef}>
@@ -127,9 +105,12 @@ const Experience = () => {
                       </h3>
                       <div className="flex items-center gap-2 text-muted-foreground mb-2">
                         <img
-                          src={`/${exp.logo}.png`}
-                          alt={exp.company}
-                          className="w-5 h-5 object-contain"
+                            className="w-8 h-8 object-contain"
+                            src={`/images/logos/${exp.logo}.png`}
+                            alt={`${exp.company} logo`}
+                            onError={(e) => {
+                              e.currentTarget.style.display = 'none';
+                            }}
                         />
                         <span className="font-medium">{exp.company}</span>
                       </div>

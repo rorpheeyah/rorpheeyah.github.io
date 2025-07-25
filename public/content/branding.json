@@ -1,0 +1,63 @@
+{
+  "title": "Personal Branding",
+  "subtitle": "Professional identity and visual elements that represent my work and values in the tech industry.",
+  "description": "These design elements reflect my commitment to clean, modern aesthetics and professional excellence in mobile development.",
+  "assets": [
+    {
+      "id": "circle",
+      "name": "Circle Seal",
+      "description": "Circular version of the personal seal",
+      "category": "seal",
+      "image": "/images/seals/ic_seal_circle.png",
+      "downloadUrl": "/images/seals/ic_seal_circle.png"
+    },
+    {
+      "id": "circle-filled",
+      "name": "Circle Seal (Filled)",
+      "description": "Filled circular version of the personal seal",
+      "category": "seal",
+      "image": "/images/seals/ic_seal_circle_filled.png",
+      "downloadUrl": "/images/seals/ic_seal_circle_filled.png"
+    },
+    {
+      "id": "horizontal",
+      "name": "Horizontal Seal",
+      "description": "Horizontal layout of the personal seal",
+      "category": "seal",
+      "image": "/images/seals/ic_seal_horizontal.png",
+      "downloadUrl": "/images/seals/ic_seal_horizontal.png"
+    },
+    {
+      "id": "horizontal-black",
+      "name": "Horizontal Seal (Black)",
+      "description": "Black horizontal version of the personal seal",
+      "category": "seal",
+      "image": "/images/seals/ic_seal_horizontal_black.png",
+      "downloadUrl": "/images/seals/ic_seal_horizontal_black.png"
+    },
+    {
+      "id": "horizontal-white",
+      "name": "Horizontal Seal (White)",
+      "description": "White horizontal version of the personal seal",
+      "category": "seal",
+      "image": "/images/seals/ic_seal_horizontal_white.png",
+      "downloadUrl": "/images/seals/ic_seal_horizontal_white.png"
+    },
+    {
+      "id": "square",
+      "name": "Square Seal",
+      "description": "Square version of the personal seal",
+      "category": "seal",
+      "image": "/images/seals/ic_seal_square.png",
+      "downloadUrl": "/images/seals/ic_seal_square.png"
+    },
+    {
+      "id": "rect",
+      "name": "Rectangular Seal",
+      "description": "Rectangular version of the personal seal",
+      "category": "seal",
+      "image": "/images/seals/ic_seal_rect.png",
+      "downloadUrl": "/images/seals/ic_seal_rect.png"
+    }
+  ]
+}
