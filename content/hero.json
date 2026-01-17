@@ -1,0 +1,55 @@
+{
+  "name": "Math Rorpheeyah",
+  "titles": [
+    "Senior Android Developer",
+    "Mobile Team Lead",
+    "Enterprise Solutions Architect"
+  ],
+  "description": "Senior Android Developer with 5+ years of experience creating enterprise-grade mobile applications with robust security implementations. I specialize in modern Android architecture, security solutions, and lead development initiatives while mentoring junior engineers.",
+  "socialLinks": [
+    {
+      "href": "https://github.com/rorpheeyah",
+      "icon": "FaGithub",
+      "label": "GitHub",
+      "external": true
+    },
+    {
+      "href": "https://linkedin.com/in/rorpheeyah",
+      "icon": "FaLinkedin",
+      "label": "LinkedIn",
+      "external": true
+    },
+    {
+      "href": "mailto:mathrorpheeyah@gmail.com",
+      "icon": "FaEnvelope",
+      "label": "Email",
+      "external": false
+    }
+  ],
+  "achievements": [
+    {
+      "icon": "HiOutlineBriefcase",
+      "title": "5+ Years",
+      "subtitle": "Experience"
+    },
+    {
+      "icon": "HiOutlineUserGroup",
+      "title": "Team Lead",
+      "subtitle": "Mobile"
+    },
+    {
+      "icon": "HiOutlineAcademicCap",
+      "title": "Enterprise",
+      "subtitle": "Solutions"
+    },
+    {
+      "icon": "HiOutlineLocationMarker",
+      "title": "Cambodia",
+      "subtitle": "Phnom Penh"
+    }
+  ],
+  "availability": {
+    "status": "available",
+    "responseTime": "Usually within 24 hours"
+  }
+}

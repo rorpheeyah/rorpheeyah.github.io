@@ -1,0 +1,67 @@
+{
+  "title": "Let's Connect",
+  "subtitle": "Ready to collaborate on your next mobile project or discuss opportunities in enterprise Android development.",
+  "description": "I'm always interested in challenging projects, mentorship opportunities, and connecting with fellow developers. Whether you're looking for technical expertise or want to discuss the latest in Android development, I'd love to hear from you.",
+  "email": "mathrorpheeyah@gmail.com",
+  "phone": "+855 12 345 678",
+  "location": "Phnom Penh, Cambodia",
+  "status": "Available for opportunities",
+  "social": [
+    {
+      "name": "Email",
+      "url": "mailto:mathrorpheeyah@gmail.com",
+      "value": "mathrorpheeyah@gmail.com",
+      "description": "For project inquiries and collaborations",
+      "icon": "email"
+    },
+    {
+      "name": "Location",
+      "url": "https://maps.google.com/?q=Phnom+Penh,+Cambodia",
+      "value": "Phnom Penh, Cambodia",
+      "description": "Based in Cambodia",
+      "icon": "location"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://linkedin.com/in/rorpheeyah",
+      "value": "linkedin.com/in/rorpheeyah",
+      "description": "Professional networking and opportunities",
+      "icon": "linkedin"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/rorpheeyah",
+      "value": "github.com/rorpheeyah",
+      "description": "Open source projects",
+      "icon": "github"
+    },
+    {
+      "name": "X",
+      "url": "https://x.com/rorpheeyah",
+      "value": "x.com/rorpheeyah",
+      "description": "Tech discussions",
+      "icon": "twitter"
+    },
+    {
+      "name": "Telegram",
+      "url": "https://t.me/rorpheeyah",
+      "value": "t.me/rorpheeyah",
+      "description": "Quick messaging",
+      "icon": "telegram"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/rorpheeyah",
+      "value": "instagram.com/rorpheeyah",
+      "description": "Behind the scenes",
+      "icon": "instagram"
+    },
+    {
+      "name": "Facebook",
+      "url": "https://facebook.com/rorpheeyah",
+      "value": "facebook.com/rorpheeyah",
+      "description": "Community updates",
+      "icon": "facebook"
+    }
+  ]
+}

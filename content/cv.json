@@ -1,0 +1,322 @@
+{
+  "title": "Curriculum Vitae",
+  "subtitle": "Senior Android Developer & Sub-Leader, Mobile Department",
+  "personal": {
+    "name": "Math Rorpheeyah",
+    "title": "Senior Android Developer & Sub-Leader, Mobile Department",
+    "location": "Phnom Penh, Cambodia",
+    "availability": "Available for opportunities",
+    "profileImage": "/images/profile.png"
+  },
+  "contacts": [
+    {
+      "icon": "Mail",
+      "label": "Email",
+      "href": "mailto:mathrorpheeyah@gmail.com",
+      "value": "mathrorpheeyah@gmail.com",
+      "description": "For project inquiries and collaborations"
+    },
+    {
+      "icon": "MapPin",
+      "label": "Location",
+      "href": "https://maps.google.com/?q=Phnom+Penh,+Cambodia",
+      "value": "Phnom Penh, Cambodia",
+      "description": "Based in Cambodia"
+    },
+    {
+      "icon": "FaLinkedin",
+      "label": "LinkedIn",
+      "href": "https://linkedin.com/in/rorpheeyah",
+      "value": "linkedin.com/in/rorpheeyah",
+      "description": "Professional networking and opportunities"
+    },
+    {
+      "icon": "FaGithub",
+      "label": "GitHub",
+      "href": "https://github.com/rorpheeyah",
+      "value": "github.com/rorpheeyah",
+      "description": "Open source projects"
+    },
+    {
+      "icon": "FaXTwitter",
+      "label": "X",
+      "href": "https://x.com/rorpheeyah",
+      "value": "x.com/rorpheeyah",
+      "description": "Tech discussions"
+    },
+    {
+      "icon": "FaTelegram",
+      "label": "Telegram",
+      "href": "https://t.me/rorpheeyah",
+      "value": "t.me/rorpheeyah",
+      "description": "Quick messaging"
+    },
+    {
+      "icon": "FaInstagram",
+      "label": "Instagram",
+      "href": "https://www.instagram.com/rorpheeyah",
+      "value": "instagram.com/rorpheeyah",
+      "description": "Behind the scenes"
+    },
+    {
+      "icon": "FaFacebook",
+      "label": "Facebook",
+      "href": "https://facebook.com/rorpheeyah",
+      "value": "facebook.com/rorpheeyah",
+      "description": "Community updates"
+    }
+  ],
+  "summary": "Senior Android Developer with 5+ years of experience building enterprise-grade mobile applications with comprehensive security implementations. Serving as Sub-Leader of the Mobile Department at KOSIGN, I lead development initiatives, mentor junior engineers, and specialize in mobile app security using industry-standard enterprise solutions. Expert in Google Play Console management, secure coding practices, and third-party security library integration. Passionate about scalable mobile architecture, intuitive UI/UX, and the future of mobile development through AI and emerging technologies.",
+  "highlights": [
+    {
+      "icon": "Trophy",
+      "text": "Best Rookie Award 2020"
+    },
+    {
+      "icon": "Globe",
+      "text": "International Assignment (South Korea)"
+    },
+    {
+      "icon": "Users",
+      "text": "Sub-Leader of Mobile Department"
+    },
+    {
+      "icon": "Zap",
+      "text": "5+ Years Mobile Development Experience"
+    }
+  ],
+  "professionalOverview": [
+    {
+      "title": "Leadership",
+      "icon": "Users",
+      "description": "Leading the Mobile Department as Sub-Leader, mentoring junior developers, and driving technical initiatives across multiple projects."
+    },
+    {
+      "title": "Mobile & Security",
+      "icon": "Code",
+      "description": "Specialized in Android development with deep expertise in Kotlin, Java, modern architecture patterns, and comprehensive mobile security implementations using industry-standard enterprise solutions."
+    },
+    {
+      "title": "Global Experience",
+      "icon": "Globe",
+      "description": "International assignment in South Korea, facilitating cross-cultural collaboration and gaining valuable insights into global development practices."
+    }
+  ],
+  "experiences": [
+    {
+      "title": "Senior Android Developer & Sub-Leader, Mobile Department",
+      "company": "KOSIGN [Korea Software Innovation Global Network]",
+      "location": "Phnom Penh, Cambodia",
+      "period": "March 2020 - Present",
+      "type": "Full-time",
+      "icon": "Briefcase",
+      "achievements": [
+        "Lead development of enterprise-level Android applications utilizing Kotlin and Java",
+        "Oversee team operations as Sub-Leader of the Mobile Department",
+        "Implement and optimize modern architecture patterns (MVVM, Clean Architecture)",
+        "Pioneer adoption of Jetpack Compose for UI development across multiple projects",
+        "Implement comprehensive mobile security solutions using industry-standard enterprise solutions for data protection and secure coding practices",
+        "Manage complete Google Play Console operations including app deployment, internal testing, release management, policy compliance, and violation resolution",
+        "Handle sensitive data encryption, secure authentication, and implement third-party security libraries with custom AAR integration via local Maven publishing",
+        "Conduct security testing using sample malware applications to validate security implementations",
+        "Manage Google Play Console updates including target API level requirements, native library compatibility (16KB page size), Firebase/FCM integration, and Crashlytics implementation",
+        "Test and validate push notifications using Postman and coordinate third-party library updates with vendors",
+        "Supervise project delegation and provide mentorship to junior developers",
+        "Recognized with \"Best Rookie\" award (November 2020)"
+      ]
+    },
+    {
+      "title": "International Assignment – Business Trip",
+      "company": "비즈플레이 - Bizplay (KOSIGN - South Korea Division)",
+      "location": "Busan, South Korea",
+      "period": "October 2022 - August 2023",
+      "type": "Assignment",
+      "icon": "Briefcase",
+      "achievements": [
+        "Selected for a one-year assignment to support collaboration between the Cambodian and South Korean mobile development teams",
+        "Reviewed technical documents from Korean teams, analyzed project requirements, and prepared task breakdowns for the Cambodia team",
+        "Analyzed and implemented security documentation and guidelines for mobile applications, including third-party security library integration manuals",
+        "Implemented and tested security solutions using industry-standard enterprise solutions, ensuring proper AAR file integration and local Maven publishing setup",
+        "Inspected and verified feature behavior across Android mobile applications to ensure consistency and alignment with specifications",
+        "Worked directly with Korean developers, testers, and department heads (부장) on mobile app feature planning, QA, and production readiness",
+        "Coordinated security testing procedures and validated implementations against malware detection systems",
+        "Served as a liaison between teams, facilitating communication, resolving blockers, and ensuring smooth cross-cultural collaboration",
+        "Participated in cross-functional meetings and contributed to strengthening partnerships between global teams"
+      ]
+    },
+    {
+      "title": "Web Developer",
+      "company": "PLAN-B Cambodia (BEONE)",
+      "location": "Phnom Penh, Cambodia",
+      "period": "November 2018 - January 2019",
+      "type": "Full-time",
+      "icon": "Briefcase",
+      "achievements": [
+        "Developed responsive web applications without third-party frameworks (custom CSS)",
+        "Built backend functionality and logic using PHP"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "category": "Professional Android Applications",
+      "items": [
+        {
+          "name": "Bizplay Enterprise Suite",
+          "description": "Expense management platform with corporate card integration serving major Korean corporations (Hyundai, Samsung, Woori, IBK, KT)"
+        },
+        {
+          "name": "Financial Management Systems",
+          "description": "Corporate card applications and government expense tracking solutions (BZPEXPENSE, bzpExpenseGov, KEIT) with enterprise security protocols"
+        },
+        {
+          "name": "Business Productivity Suite",
+          "description": "Calendar management, approval workflows, and messaging applications for enterprise clients"
+        }
+      ]
+    },
+    {
+      "category": "Academic Projects",
+      "items": [
+        {
+          "name": "Lumhat Educational Platform",
+          "description": "Cross-platform educational application with UX research focus and optimized content delivery"
+        },
+        {
+          "name": "DayDo Task Management",
+          "description": "Productivity application with advanced task management methodologies and RESTful API integration"
+        }
+      ]
+    }
+  ],
+  "skills": {
+    "mobile": [
+      "Kotlin (Advanced)",
+      "Java (Advanced)",
+      "Android SDK",
+      "Jetpack Compose",
+      "MVVM",
+      "Clean Architecture",
+      "Android Architecture Components"
+    ],
+    "security": [
+      "Mobile App Security Implementation",
+      "Secure Coding Practices",
+      "Data Encryption & Protection",
+      "Third-party Security Libraries Integration",
+      "Raonsecure Solutions (TouchEn mTranskey, mVaccine, Appiron)",
+      "Stealien AppSuit",
+      "Security Testing & Malware Analysis",
+      "AAR Library Management & Local Maven Publishing"
+    ],
+    "backend": [
+      "RESTful API Integration",
+      "PHP (Intermediate)",
+      "MySQL",
+      "PostgreSQL",
+      "Backend System Integration"
+    ],
+    "frontend": [
+      "JavaScript (Intermediate)",
+      "HTML/CSS (Intermediate)",
+      "Responsive Design"
+    ],
+    "devops": [
+      "Google Play Console Management",
+      "App Store Deployment & Release Management",
+      "Internal Testing & Beta Distribution",
+      "App Policy Compliance & Violation Resolution",
+      "Firebase Integration & FCM",
+      "Crashlytics Implementation",
+      "API Testing with Postman",
+      "Android Studio",
+      "Git/GitHub/GitLab",
+      "Database Design"
+    ],
+    "design": [
+      "Figma (Advanced)",
+      "Adobe Illustrator",
+      "Adobe Photoshop",
+      "Photopea",
+      "UI/UX Design",
+      "Logo Design & Branding",
+      "Print Design (Business Cards, Banners, Invitations)",
+      "Visual Identity Development",
+      "Graphic Design for Mobile Applications"
+    ]
+  },
+  "education": [
+    {
+      "degree": "Bachelor of Science, Computer Science",
+      "institution": "Royal University of Phnom Penh",
+      "period": "January 2016 - November 2021",
+      "details": "Comprehensive computer science education with focus on software engineering principles",
+      "icon": "GraduationCap"
+    },
+    {
+      "degree": "Advanced Software Development",
+      "institution": "Korea Software HRD Center",
+      "period": "2019 - 2020",
+      "details": "Specialized in full-stack application development and mobile application research",
+      "icon": "BookOpen"
+    },
+    {
+      "degree": "App Development with JAVA",
+      "institution": "Cambodia-Korea Cooperation Center (CKCC)",
+      "period": "2018-2019",
+      "details": "Focused on Java application development principles and practices",
+      "icon": "Code"
+    }
+  ],
+  "languages": [
+    {
+      "name": "Khmer",
+      "level": "Native"
+    },
+    {
+      "name": "English",
+      "level": "Limited Working Proficiency"
+    },
+    {
+      "name": "Korean",
+      "level": "Basic"
+    }
+  ],
+  "securityReferences": {
+    "title": "Security Technologies References",
+    "items": [
+      {
+        "category": "Enterprise security solutions implemented",
+        "technologies": [
+          {
+            "name": "TouchEn mTranskey",
+            "url": "https://www.raonsecure.com/en/solution/mtranskey"
+          },
+          {
+            "name": "mVaccine",
+            "url": "https://www.raonsecure.com/en/solution/mvaccine"
+          },
+          {
+            "name": "Appiron",
+            "url": "https://www.raonsecure.com/en/solution/appiron"
+          }
+        ]
+      },
+      {
+        "category": "Mobile security suite",
+        "technologies": [
+          {
+            "name": "Stealien AppSuit",
+            "url": "https://stealien.com/en/products/series/mobile-app-security-solution"
+          }
+        ]
+      }
+    ]
+  },
+  "downloads": {
+    "cv": {
+      "filename": "Math_Rorpheeyah_CV.pdf",
+      "path": "/cv.pdf"
+    }
+  }
+}

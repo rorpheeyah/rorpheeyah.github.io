@@ -1,0 +1,97 @@
+{
+  "title": "Experience",
+  "subtitle": "A journey through enterprise mobile development, international collaboration, and technical leadership.",
+  "experiences": [
+    {
+      "title": "Senior Android Developer & Technical Team Lead",
+      "company": "KOSIGN (Korea Software Innovation Global Network)",
+      "period": "March 2020 - Present",
+      "location": "Phnom Penh, Cambodia",
+      "type": "Full-time",
+      "logo": "ic_logo_kosign",
+      "description": "Leading development of enterprise-level Android applications utilizing Kotlin and Java for major financial institutions. Overseeing a mobile team of 12+ engineers with direct mentorship of junior developers, two of whom advanced to senior positions. Implementing comprehensive security solutions for financial-grade enterprise mobile applications used by major corporations including Samsung, Hyundai, and KT.",
+      "achievements": [
+        "Lead development of enterprise-level Android applications utilizing Kotlin and Java",
+        "Direct and oversee technical operations for a mobile team of 12+ engineers, providing architectural guidance and code quality standards",
+        "Implement and optimize modern architecture patterns (MVVM, Clean Architecture)",
+        "Pioneer adoption of Jetpack Compose for UI development across multiple projects",
+        "Implement comprehensive mobile security solutions using industry-standard enterprise solutions for data protection and secure coding practices",
+        "Manage complete Google Play Console operations including app deployment, internal testing, release management, policy compliance, and violation resolution",
+        "Handle sensitive data encryption, secure authentication, and implement third-party security libraries with custom AAR integration via local Maven publishing",
+        "Conduct security testing using sample malware applications to validate security implementations",
+        "Manage Google Play Console updates including target API level requirements, native library compatibility (16KB page size), Firebase/FCM integration, and Crashlytics implementation",
+        "Test and validate push notifications using Postman and coordinate third-party library updates with vendors",
+        "Mentor and develop 12+ engineers including guiding 2 junior developers to senior-level positions through structured technical coaching",
+        "Recognized with 'Best Rookie' award (November 2020)"
+      ],
+      "technologies": [
+        "Kotlin",
+        "Java",
+        "Android SDK",
+        "Jetpack Compose",
+        "MVVM",
+        "Clean Architecture",
+        "Mobile Security",
+        "Enterprise Solutions",
+        "Google Play Console",
+        "Firebase",
+        "Crashlytics"
+      ],
+      "award": "Best Rookie Award - November 2020"
+    },
+    {
+      "title": "Senior Android Developer - International Assignment",
+      "company": "비즈플레이 - Bizplay (KOSIGN - South Korea Division)",
+      "period": "October 2022 - August 2023",
+      "location": "Busan, South Korea",
+      "type": "International Assignment",
+      "logo": "ic_logo_bizplay",
+      "description": "Selected for strategic one-year international assignment to strengthen collaboration between global mobile development teams. Led technical documentation analysis, project requirement planning, and implemented advanced security solutions for enterprise applications.",
+      "achievements": [
+        "Selected for a one-year assignment to support collaboration between the Cambodian and South Korean mobile development teams",
+        "Reviewed technical documents from Korean teams, analyzed project requirements, and prepared task breakdowns for the Cambodia team",
+        "Analyzed and implemented security documentation and guidelines for mobile applications, including third-party security library integration manuals",
+        "Implemented and tested security solutions using industry-standard enterprise solutions, ensuring proper AAR file integration and local Maven publishing setup",
+        "Inspected and verified feature behavior across Android mobile applications to ensure consistency and alignment with specifications",
+        "Worked directly with Korean developers, testers, and department heads (부장) on mobile app feature planning, QA, and production readiness",
+        "Coordinated security testing procedures and validated implementations against malware detection systems",
+        "Served as a liaison between teams, facilitating communication, resolving blockers, and ensuring smooth cross-cultural collaboration",
+        "Participated in cross-functional meetings and contributed to strengthening partnerships between global teams"
+      ],
+      "technologies": [
+        "Android",
+        "Mobile Security",
+        "Cross-platform Development",
+        "Team Leadership",
+        "Technical Documentation",
+        "International Collaboration",
+        "Security Testing",
+        "AAR Integration"
+      ]
+    },
+    {
+      "title": "Web Developer",
+      "company": "PLAN-B Cambodia (BEONE)",
+      "period": "November 2018 - January 2019",
+      "location": "Phnom Penh, Cambodia",
+      "type": "Full-time",
+      "logo": "ic_logo_planb",
+      "description": "Developed responsive web applications without third-party frameworks using custom CSS. Built backend functionality and logic using PHP for various client projects.",
+      "achievements": [
+        "Developed responsive web applications without third-party frameworks (custom CSS)",
+        "Built backend functionality and logic using PHP",
+        "Created custom solutions for various client projects",
+        "Gained foundational experience in full-stack web development",
+        "Worked with design teams to implement responsive user interfaces"
+      ],
+      "technologies": [
+        "PHP",
+        "HTML/CSS",
+        "JavaScript",
+        "Custom Frameworks",
+        "Responsive Design",
+        "Full-stack Development"
+      ]
+    }
+  ]
+}
