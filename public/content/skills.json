@@ -1,0 +1,64 @@
+{
+  "title": "Technical Skills",
+  "subtitle": "Programming languages, frameworks, and tools I use to build enterprise mobile applications.",
+  "skills": {
+    "mobile": [
+      "Kotlin (Advanced)",
+      "Java (Advanced)",
+      "Android SDK (Expert)",
+      "Jetpack Compose",
+      "MVVM Architecture (Specialist)",
+      "Clean Architecture (Advanced)",
+      "Android Architecture Components (Expert)"
+    ],
+    "security": [
+      "Enterprise Mobile Security Architecture (Specialist)",
+      "Secure Coding Practices (Advanced)",
+      "Data Encryption & Protection (Expert)",
+      "Third-party Security Libraries Integration (Advanced)",
+      "Raonsecure Solutions Implementation Specialist (TouchEn mTranskey, mVaccine, Appiron)",
+      "Stealien AppSuit Security Framework Implementation",
+      "Security Vulnerability Assessment & Penetration Testing",
+      "Security Testing & Malware Analysis",
+      "Financial-grade Security Protocol Implementation",
+      "AAR Library Security & Local Maven Publishing"
+    ],
+    "backend": [
+      "RESTful API Integration (Advanced)",
+      "API Design & Documentation",
+      "PHP (Intermediate)",
+      "MySQL (Proficient)",
+      "PostgreSQL (Proficient)",
+      "Backend System Integration (Advanced)"
+    ],
+    "frontend": [
+      "JavaScript (Intermediate)",
+      "HTML/CSS (Intermediate)",
+      "Responsive Design"
+    ],
+    "devops": [
+      "Google Play Console Management (Expert)",
+      "App Store Deployment & Release Management (Advanced)",
+      "CI/CD Pipeline Configuration",
+      "Internal Testing & Beta Distribution Management",
+      "App Policy Compliance & Violation Resolution",
+      "Firebase Integration & FCM Implementation (Advanced)",
+      "Crashlytics Implementation & Error Monitoring",
+      "API Testing & Automation with Postman",
+      "Android Studio & Development Toolchain",
+      "Git/GitHub/GitLab Version Control (Advanced)",
+      "Database Schema Design & Optimization"
+    ],
+    "design": [
+      "Figma (Advanced)",
+      "Adobe Illustrator",
+      "Adobe Photoshop",
+      "Photopea",
+      "UI/UX Design",
+      "Logo Design & Branding",
+      "Print Design (Business Cards, Banners, Invitations)",
+      "Visual Identity Development",
+      "Graphic Design for Mobile Applications"
+    ]
+  }
+}

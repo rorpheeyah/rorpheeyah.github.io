@@ -1,0 +1,46 @@
+{
+  "title": "About Me",
+  "description": "I've been building Android apps for over 5 years, focusing mainly on enterprise solutions for financial and business clients. My work involves leading development teams, teaching junior developers, and implementing security features in mobile apps. I'm based in Phnom Penh, Cambodia, and I genuinely enjoy solving complex problems and helping others grow in their careers.",
+  "stats": [
+    {
+      "icon": "Code",
+      "value": "5+",
+      "label": "Years Experience"
+    },
+    {
+      "icon": "Trophy",
+      "value": "30+",
+      "label": "Enterprise Apps Built"
+    },
+    {
+      "icon": "Users",
+      "value": "12+",
+      "label": "Engineers Mentored"
+    },
+    {
+      "icon": "Award",
+      "value": "1",
+      "label": "Best Rookie Award"
+    }
+  ],
+  "achievements": [
+    {
+      "icon": "Users",
+      "title": "Mentorship & Teaching",
+      "description": "Mentored 12+ junior developers, helping 2 advance to senior positions through hands-on guidance and code reviews",
+      "highlight": true
+    },
+    {
+      "icon": "Award",
+      "title": "Best Rookie Award",
+      "description": "KOSIGN, November 2020",
+      "highlight": true
+    },
+    {
+      "icon": "BookOpen",
+      "title": "International Experience",
+      "description": "One-year assignment in Busan, South Korea (2022-2023)",
+      "highlight": false
+    }
+  ]
+}
