@@ -135,18 +135,18 @@
       "type": "Full-time",
       "icon": "Briefcase",
       "achievements": [
-        "Lead development of enterprise-level Android applications utilizing Kotlin and Java",
-        "Oversee team operations as Sub-Leader of the Mobile Department",
-        "Implement and optimize modern architecture patterns (MVVM, Clean Architecture)",
-        "Pioneer adoption of Jetpack Compose for UI development across multiple projects",
-        "Implement comprehensive mobile security solutions using industry-standard enterprise solutions for data protection and secure coding practices",
-        "Manage complete Google Play Console operations including app deployment, internal testing, release management, policy compliance, and violation resolution",
-        "Handle sensitive data encryption, secure authentication, and implement third-party security libraries with custom AAR integration via local Maven publishing",
-        "Conduct security testing using sample malware applications to validate security implementations",
-        "Manage Google Play Console updates including target API level requirements, native library compatibility (16KB page size), Firebase/FCM integration, and Crashlytics implementation",
-        "Test and validate push notifications using Postman and coordinate third-party library updates with vendors",
-        "Supervise project delegation and provide mentorship to junior developers",
-        "Recognized with \"Best Rookie\" award (November 2020)"
+        "Lead Android development using Kotlin and Java for enterprise applications",
+        "Manage mobile team operations as Sub-Leader",
+        "Build apps using MVVM and Clean Architecture patterns",
+        "Introduced Jetpack Compose to the team for modern UI development",
+        "Implement mobile security features including data encryption and secure authentication",
+        "Handle all Google Play Console tasks: app releases, testing, compliance, and policy issues",
+        "Integrate third-party security libraries using custom AAR files and local Maven",
+        "Test app security by running malware detection validation",
+        "Keep apps updated with latest API requirements, Firebase, and Crashlytics",
+        "Test push notifications and work with vendors on library updates",
+        "Mentor junior developers and delegate project tasks",
+        "Received \"Best Rookie\" award in November 2020"
       ]
     },
     {
@@ -157,15 +157,15 @@
       "type": "Assignment",
       "icon": "Briefcase",
       "achievements": [
-        "Selected for a one-year assignment to support collaboration between the Cambodian and South Korean mobile development teams",
-        "Reviewed technical documents from Korean teams, analyzed project requirements, and prepared task breakdowns for the Cambodia team",
-        "Analyzed and implemented security documentation and guidelines for mobile applications, including third-party security library integration manuals",
-        "Implemented and tested security solutions using industry-standard enterprise solutions, ensuring proper AAR file integration and local Maven publishing setup",
-        "Inspected and verified feature behavior across Android mobile applications to ensure consistency and alignment with specifications",
-        "Worked directly with Korean developers, testers, and department heads (부장) on mobile app feature planning, QA, and production readiness",
-        "Coordinated security testing procedures and validated implementations against malware detection systems",
-        "Served as a liaison between teams, facilitating communication, resolving blockers, and ensuring smooth cross-cultural collaboration",
-        "Participated in cross-functional meetings and contributed to strengthening partnerships between global teams"
+        "Spent one year in South Korea working with both Cambodian and Korean development teams",
+        "Reviewed technical docs from Korean teams and broke down tasks for the Cambodia team",
+        "Worked with security documentation and helped implement security features in our apps",
+        "Set up and tested security SDKs using proper integration methods",
+        "Checked features across Android apps to make sure everything worked as expected",
+        "Worked directly with Korean developers and managers on app features and QA",
+        "Helped with security testing procedures",
+        "Bridged communication between teams and helped solve technical issues",
+        "Joined cross-team meetings and helped strengthen partnerships"
       ]
     },
     {

@@ -11,6 +11,16 @@ const Projects = () => {
 
   const { content, loading, error } = usePortfolioContent();
 
+  // Get project data early
+  const projectCategories = content?.projectCategories || [];
+  const allProjects = projectCategories.flatMap(category =>
+    category?.projects?.map(project => ({
+      ...project,
+      categoryTitle: category.title
+    })) || []
+  );
+
+  // Section visibility observer
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -27,6 +37,23 @@ const Projects = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  // Progressive loading observer
+  useEffect(() => {
+    if (!loaderRef.current || displayedCount >= allProjects.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setDisplayedCount(prev => Math.min(prev + 16, allProjects.length));
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(loaderRef.current);
+    return () => observer.disconnect();
+  }, [displayedCount, allProjects.length]);
 
   const openProject = (project) => {
     setSelectedProject(project);
@@ -66,8 +93,6 @@ const Projects = () => {
     );
   }
 
-  const projectCategories = content?.projectCategories || [];
-
   // Additional safety check for empty or invalid project categories
   if (!projectCategories || projectCategories.length === 0) {
     return (
@@ -81,31 +106,6 @@ const Projects = () => {
       </section>
     );
   }
-
-  // Flatten all projects
-  const allProjects = projectCategories.flatMap(category =>
-    category?.projects?.map(project => ({
-      ...project,
-      categoryTitle: category.title
-    })) || []
-  );
-
-  // Progressive loading observer
-  useEffect(() => {
-    if (!loaderRef.current || displayedCount >= allProjects.length) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setDisplayedCount(prev => Math.min(prev + 16, allProjects.length));
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    observer.observe(loaderRef.current);
-    return () => observer.disconnect();
-  }, [displayedCount, allProjects.length]);
 
   // Only show the projects up to displayedCount
   const visibleProjects = allProjects.slice(0, displayedCount);

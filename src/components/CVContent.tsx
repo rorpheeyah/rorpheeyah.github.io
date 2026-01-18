@@ -23,14 +23,14 @@ import {
     FaInstagram,
     FaFacebook
 } from 'react-icons/fa';
-import {FaWhatsapp, FaXTwitter} from 'react-icons/fa6';
+import { FaWhatsapp, FaXTwitter } from 'react-icons/fa6';
 
 interface CVContentProps {
     showShareButton?: boolean;
     onShare?: () => void;
 }
 
-const CVContent: React.FC<CVContentProps> = ({showShareButton = false, onShare}) => {
+const CVContent: React.FC<CVContentProps> = ({ showShareButton = false, onShare }) => {
 
     const contacts = [
         {
@@ -262,16 +262,17 @@ const CVContent: React.FC<CVContentProps> = ({showShareButton = false, onShare})
     ];
 
     const languages = [
-        {name: 'Khmer', level: 'Native'},
-        {name: 'English', level: 'Limited Working Proficiency'},
-        {name: 'Korean', level: 'Basic'},
+        { name: 'Khmer', level: 'Native' },
+        { name: 'English', level: 'Limited Working Proficiency' },
+        { name: 'Korean', level: 'Basic' },
     ];
 
     const highlights = [
-        {icon: Trophy, text: 'Best Rookie Award 2020'},
-        {icon: Globe, text: 'International Assignment (South Korea)'},
-        {icon: Users, text: 'Technical Team Lead'},
-        {icon: Zap, text: '5+ Years Mobile Development Experience'},
+        { icon: Users, text: 'Mentored 12+ Junior Developers' },
+        { icon: Trophy, text: 'Best Rookie Award 2020' },
+        { icon: Globe, text: 'International Assignment (South Korea)' },
+        { icon: Briefcase, text: 'Sub-Leader of Mobile Department' },
+        { icon: Zap, text: '5+ Years Mobile Development Experience' },
     ];
 
     const downloadCV = () => {
@@ -307,7 +308,7 @@ const CVContent: React.FC<CVContentProps> = ({showShareButton = false, onShare})
                                     <p className="text-xl text-muted-foreground mb-6">Senior Android Developer</p>
                                     <div className="flex flex-col gap-4 text-sm text-muted-foreground">
                                         <span className="flex items-center justify-center gap-2">
-                                            <MapPin className="w-4 h-4"/>
+                                            <MapPin className="w-4 h-4" />
                                             Phnom Penh, Cambodia
                                         </span>
                                         <span className="flex items-center justify-center gap-2">
@@ -335,7 +336,7 @@ const CVContent: React.FC<CVContentProps> = ({showShareButton = false, onShare})
                                     <p className="text-xl text-muted-foreground mb-6">Senior Android Developer</p>
                                     <div className="flex flex-col sm:flex-row gap-6 text-sm text-muted-foreground">
                                         <span className="flex items-center gap-2">
-                                            <MapPin className="w-4 h-4"/>
+                                            <MapPin className="w-4 h-4" />
                                             Phnom Penh, Cambodia
                                         </span>
                                         <span className="flex items-center gap-2">
@@ -357,7 +358,7 @@ const CVContent: React.FC<CVContentProps> = ({showShareButton = false, onShare})
                                         className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground border border-border rounded-lg hover:border-primary/50 hover:bg-accent/50 transition-all duration-200 group"
                                     >
                                         <social.icon
-                                            className="w-4 h-4 group-hover:text-primary transition-colors duration-200"/>
+                                            className="w-4 h-4 group-hover:text-primary transition-colors duration-200" />
                                         {social.label}
                                     </a>
                                 ))}
@@ -372,7 +373,7 @@ const CVContent: React.FC<CVContentProps> = ({showShareButton = false, onShare})
                                             title={social.label}
                                         >
                                             <social.icon
-                                                className="w-4 h-4 group-hover:text-primary transition-colors duration-200"/>
+                                                className="w-4 h-4 group-hover:text-primary transition-colors duration-200" />
                                         </a>
                                     ))}
                                 </div>
@@ -383,13 +384,13 @@ const CVContent: React.FC<CVContentProps> = ({showShareButton = false, onShare})
                         <div className="lg:w-80">
                             <div className="border border-border rounded-xl p-6 bg-card/50 backdrop-blur-sm">
                                 <h3 className="text-lg font-semibold mb-6 flex items-center gap-2">
-                                    <Award className="w-5 h-5 text-primary"/>
+                                    <Award className="w-5 h-5 text-primary" />
                                     Highlights
                                 </h3>
                                 <div className="space-y-4">
                                     {highlights.map((highlight, index) => (
                                         <div key={index} className="flex items-center gap-3">
-                                            <highlight.icon className="w-4 h-4 text-primary flex-shrink-0"/>
+                                            <highlight.icon className="w-4 h-4 text-primary flex-shrink-0" />
                                             <span className="text-sm text-muted-foreground">{highlight.text}</span>
                                         </div>
                                     ))}
@@ -402,72 +403,11 @@ const CVContent: React.FC<CVContentProps> = ({showShareButton = false, onShare})
 
             {/* CV Content */}
             <div className="max-w-5xl mx-auto px-6 lg:px-8 py-16">
-                {/* Summary */}
-                <section className="mb-16">
-                    <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-border/30 flex items-center gap-2">
-                        <Users className="w-5 h-5 text-primary"/>
-                        Summary
-                    </h2>
-                    <div className="bg-card/30 rounded-lg p-6 border border-border/50">
-                        <p className="text-muted-foreground leading-relaxed">
-                            Senior Android Developer with 5+ years of experience creating enterprise-grade mobile
-                            applications with robust security implementations. I lead development initiatives, 
-                            mentor junior engineers, and specialize in modern Android architecture and security solutions.
-                            My expertise spans Google Play Console management, secure coding practices, and third-party security
-                            library integration for high-profile enterprise clients. Passionate about creating scalable mobile 
-                            architecture, intuitive UI/UX, and the integration of AI and emerging technologies into mobile development.
-                        </p>
-                    </div>
-                </section>
-
-                {/* Professional Overview */}
-                <section className="mb-16">
-                    <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-border/30 flex items-center gap-2">
-                        <Briefcase className="w-5 h-5 text-primary"/>
-                        Professional Overview
-                    </h2>
-
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                        <div className="bg-card/30 rounded-lg p-6 border border-border/50">
-                            <h3 className="font-semibold mb-3 flex items-center gap-2">
-                                <Users className="w-4 h-4 text-primary"/>
-                                Leadership
-                            </h3>
-                            <p className="text-muted-foreground text-sm leading-relaxed">
-                                Technical team lead driving development initiatives, mentoring junior engineers, 
-                                and guiding strategic technical direction across multiple enterprise projects.
-                            </p>
-                        </div>
-
-                        <div className="bg-card/30 rounded-lg p-6 border border-border/50">
-                            <h3 className="font-semibold mb-3 flex items-center gap-2">
-                                <Code className="w-4 h-4 text-primary"/>
-                                Mobile & Security
-                            </h3>
-                            <p className="text-muted-foreground text-sm leading-relaxed">
-                                Expert in Android development with advanced proficiency in Kotlin, Java, modern
-                                architecture patterns (MVVM, Clean Architecture), and enterprise-grade mobile security 
-                                implementations for high-profile corporate clients.
-                            </p>
-                        </div>
-
-                        <div className="bg-card/30 rounded-lg p-6 border border-border/50">
-                            <h3 className="font-semibold mb-3 flex items-center gap-2">
-                                <Globe className="w-4 h-4 text-primary"/>
-                                Global Experience
-                            </h3>
-                            <p className="text-muted-foreground text-sm leading-relaxed">
-                                Selected for strategic international assignment in South Korea, leading technical initiatives and
-                                gaining valuable experience in global enterprise development practices and cross-cultural collaboration.
-                            </p>
-                        </div>
-                    </div>
-                </section>
 
                 {/* Work Experience */}
                 <section className="mb-16">
                     <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-border/30 flex items-center gap-2">
-                        <Briefcase className="w-5 h-5 text-primary"/>
+                        <Briefcase className="w-5 h-5 text-primary" />
                         Work Experience
                     </h2>
 
@@ -483,7 +423,7 @@ const CVContent: React.FC<CVContentProps> = ({showShareButton = false, onShare})
                                     <div className="mt-3 lg:mt-0">
                                         <span
                                             className="inline-flex items-center gap-1 text-xs px-3 py-1 bg-primary/10 text-primary rounded-full">
-                                            <exp.icon className="w-3 h-3"/>
+                                            <exp.icon className="w-3 h-3" />
                                             {exp.type}
                                         </span>
                                     </div>
@@ -502,34 +442,12 @@ const CVContent: React.FC<CVContentProps> = ({showShareButton = false, onShare})
                     </div>
                 </section>
 
-                {/* Notable Projects */}
-                <section className="mb-16">
-                    <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-border/30">
-                        Notable Projects
-                    </h2>
 
-                    <div className="space-y-8">
-                        {projects.map((category, index) => (
-                            <div key={index}>
-                                <h3 className="text-lg font-semibold mb-4 text-primary">{category.category}</h3>
-
-                                <div className="grid grid-cols-1 gap-4">
-                                    {category.items.map((project, idx) => (
-                                        <div key={idx} className="bg-card/20 rounded-lg p-4 border border-border/30">
-                                            <h4 className="font-medium mb-2">{project.name}</h4>
-                                            <p className="text-sm text-muted-foreground leading-relaxed">{project.description}</p>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </section>
 
                 {/* Technical Skills */}
                 <section className="mb-16">
                     <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-border/30 flex items-center gap-2">
-                        <Code className="w-5 h-5 text-primary"/>
+                        <Code className="w-5 h-5 text-primary" />
                         Technical Skills
                     </h2>
 
@@ -586,17 +504,17 @@ const CVContent: React.FC<CVContentProps> = ({showShareButton = false, onShare})
                         <div className="text-xs text-muted-foreground space-y-1">
                             <p>• Enterprise security solutions implemented:
                                 <a href="https://www.raonsecure.com/en/solution/mtranskey" target="_blank"
-                                   rel="noopener noreferrer" className="text-primary hover:underline ml-1">TouchEn
+                                    rel="noopener noreferrer" className="text-primary hover:underline ml-1">TouchEn
                                     mTranskey</a>,
                                 <a href="https://www.raonsecure.com/en/solution/mvaccine" target="_blank"
-                                   rel="noopener noreferrer" className="text-primary hover:underline ml-1">mVaccine</a>,
+                                    rel="noopener noreferrer" className="text-primary hover:underline ml-1">mVaccine</a>,
                                 <a href="https://www.raonsecure.com/en/solution/appiron" target="_blank"
-                                   rel="noopener noreferrer" className="text-primary hover:underline ml-1">Appiron</a>
+                                    rel="noopener noreferrer" className="text-primary hover:underline ml-1">Appiron</a>
                             </p>
                             <p>• Mobile security suite:
                                 <a href="https://stealien.com/en/products/series/mobile-app-security-solution"
-                                   target="_blank" rel="noopener noreferrer"
-                                   className="text-primary hover:underline ml-1">Stealien AppSuit</a>
+                                    target="_blank" rel="noopener noreferrer"
+                                    className="text-primary hover:underline ml-1">Stealien AppSuit</a>
                             </p>
                         </div>
                     </div>
@@ -656,7 +574,7 @@ const CVContent: React.FC<CVContentProps> = ({showShareButton = false, onShare})
                                 rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                                 className="flex items-center gap-3 p-4 rounded-lg hover:bg-muted/30 transition-colors duration-200 group"
                             >
-                                <contact.icon className="w-5 h-5 text-primary flex-shrink-0"/>
+                                <contact.icon className="w-5 h-5 text-primary flex-shrink-0" />
                                 <div className="flex-1">
                                     <p className="font-medium text-sm">{contact.label}</p>
                                     <p className="text-xs text-muted-foreground mb-1">{contact.value}</p>
@@ -676,7 +594,7 @@ const CVContent: React.FC<CVContentProps> = ({showShareButton = false, onShare})
                                 onClick={downloadCV}
                                 className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
                             >
-                                <Download className="w-4 h-4"/>
+                                <Download className="w-4 h-4" />
                                 Download PDF
                             </button>
 
@@ -685,7 +603,7 @@ const CVContent: React.FC<CVContentProps> = ({showShareButton = false, onShare})
                                     onClick={onShare}
                                     className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium border border-border rounded-lg hover:bg-accent transition-colors"
                                 >
-                                    <Share2 className="w-4 h-4"/>
+                                    <Share2 className="w-4 h-4" />
                                     Share CV
                                 </button>
                             )}
