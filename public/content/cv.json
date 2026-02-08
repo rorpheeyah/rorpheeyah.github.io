@@ -3,8 +3,10 @@
   "subtitle": "Senior Android Developer & Sub-Leader, Mobile Department",
   "personal": {
     "name": "Math Rorpheeyah",
-    "title": "Senior Android Developer & Sub-Leader, Mobile Department",
+    "title": "Senior Android Developer",
     "location": "Phnom Penh, Cambodia",
+    "email": "mathrorpheeyah@gmail.com",
+    "website": "rorpheeyah.github.io",
     "availability": "Available for opportunities",
     "profileImage": "/images/profile.png"
   },
@@ -17,18 +19,11 @@
       "description": "For project inquiries and collaborations"
     },
     {
-      "icon": "MapPin",
-      "label": "Location",
-      "href": "https://maps.google.com/?q=Phnom+Penh,+Cambodia",
-      "value": "Phnom Penh, Cambodia",
-      "description": "Based in Cambodia"
-    },
-    {
       "icon": "FaLinkedin",
       "label": "LinkedIn",
       "href": "https://linkedin.com/in/rorpheeyah",
       "value": "linkedin.com/in/rorpheeyah",
-      "description": "Professional networking and opportunities"
+      "description": "Professional networking"
     },
     {
       "icon": "FaGithub",
@@ -36,37 +31,9 @@
       "href": "https://github.com/rorpheeyah",
       "value": "github.com/rorpheeyah",
       "description": "Open source projects"
-    },
-    {
-      "icon": "FaXTwitter",
-      "label": "X",
-      "href": "https://x.com/rorpheeyah",
-      "value": "x.com/rorpheeyah",
-      "description": "Tech discussions"
-    },
-    {
-      "icon": "FaTelegram",
-      "label": "Telegram",
-      "href": "https://t.me/rorpheeyah",
-      "value": "t.me/rorpheeyah",
-      "description": "Quick messaging"
-    },
-    {
-      "icon": "FaInstagram",
-      "label": "Instagram",
-      "href": "https://www.instagram.com/rorpheeyah",
-      "value": "instagram.com/rorpheeyah",
-      "description": "Behind the scenes"
-    },
-    {
-      "icon": "FaFacebook",
-      "label": "Facebook",
-      "href": "https://facebook.com/rorpheeyah",
-      "value": "facebook.com/rorpheeyah",
-      "description": "Community updates"
     }
   ],
-  "summary": "Senior Android Developer with over 5 years of experience developing enterprise-grade mobile applications with comprehensive security implementations. Currently serving as Sub-Leader of the Mobile Department at KOSIGN, where I lead development initiatives, mentor junior engineers, and establish technical standards. My research interests include mobile application security, modern Android architecture patterns, and developer education through structured mentorship programs. Expert in Google Play Console management, secure coding practices, and third-party security library integration for high-profile enterprise clients.",
+  "summary": "Senior Android Developer with 5+ years of experience building secure, scalable, and high-performance mobile applications using Kotlin and modern Android architecture. Proven track record in fintech-related systems, cross-team collaboration, and international project delivery. Passionate about clean code, security best practices, and delivering reliable financial products with real-world impact.",
   "highlights": [
     {
       "icon": "Users",
@@ -89,43 +56,7 @@
       "text": "5+ Years Mobile Development Experience"
     }
   ],
-  "mentorship": {
-    "title": "Teaching & Mentorship",
-    "description": "Dedicated to developing the next generation of mobile engineers through structured mentorship and knowledge sharing",
-    "achievements": [
-      {
-        "title": "Junior Developer Mentorship Program",
-        "period": "2020 - Present",
-        "description": "Mentored 12+ junior Android developers through structured guidance, code reviews, and hands-on project collaboration. Two mentees successfully advanced to senior-level positions.",
-        "impact": "2 promotions to senior developer roles"
-      },
-      {
-        "title": "Technical Training & Workshops",
-        "description": "Led internal training sessions on Android architecture patterns, security best practices, and modern development workflows"
-      },
-      {
-        "title": "Code Review & Quality Assurance",
-        "description": "Established code review standards and conducted daily reviews to ensure code quality, knowledge transfer, and team skill development"
-      }
-    ]
-  },
-  "professionalOverview": [
-    {
-      "title": "Technical Leadership & Team Development",
-      "icon": "Users",
-      "description": "Leading the Mobile Department as Sub-Leader, developing junior engineers through structured mentorship, and driving technical excellence across enterprise projects."
-    },
-    {
-      "title": "Core Research Areas",
-      "icon": "Code",
-      "description": "Specialized in Android development with deep expertise in Kotlin, Java, modern architecture patterns (MVVM, Clean Architecture), and comprehensive mobile security implementations using industry-standard enterprise solutions."
-    },
-    {
-      "title": "International Collaboration",
-      "icon": "Globe",
-      "description": "Strategic international assignment in South Korea, facilitating cross-cultural collaboration and advancing global development practices through knowledge exchange."
-    }
-  ],
+  "professionalOverview": [],
   "experiences": [
     {
       "title": "Senior Android Developer & Sub-Leader, Mobile Department",
@@ -135,18 +66,12 @@
       "type": "Full-time",
       "icon": "Briefcase",
       "achievements": [
-        "Lead Android development using Kotlin and Java for enterprise applications",
-        "Manage mobile team operations as Sub-Leader",
-        "Build apps using MVVM and Clean Architecture patterns",
-        "Introduced Jetpack Compose to the team for modern UI development",
-        "Implement mobile security features including data encryption and secure authentication",
-        "Handle all Google Play Console tasks: app releases, testing, compliance, and policy issues",
-        "Integrate third-party security libraries using custom AAR files and local Maven",
-        "Test app security by running malware detection validation",
-        "Keep apps updated with latest API requirements, Firebase, and Crashlytics",
-        "Test push notifications and work with vendors on library updates",
-        "Mentor junior developers and delegate project tasks",
-        "Received \"Best Rookie\" award in November 2020"
+        "Led development of enterprise-level Android applications using Kotlin and modern architecture, ensuring scalability, security, and long-term maintainability.",
+        "Served as Sub-Leader of the Mobile Department, coordinating task allocation and technical direction.",
+        "Mentored junior developers and enforced clean architecture and coding standards.",
+        "Introduced Jetpack Compose into production projects to modernize UI development.",
+        "Collaborated with backend, QA, and product teams to deliver stable, scalable releases.",
+        "Received “Best Rookie” award (Nov 2020)."
       ]
     },
     {
@@ -157,15 +82,11 @@
       "type": "Assignment",
       "icon": "Briefcase",
       "achievements": [
-        "Spent one year in South Korea working with both Cambodian and Korean development teams",
-        "Reviewed technical docs from Korean teams and broke down tasks for the Cambodia team",
-        "Worked with security documentation and helped implement security features in our apps",
-        "Set up and tested security SDKs using proper integration methods",
-        "Checked features across Android apps to make sure everything worked as expected",
-        "Worked directly with Korean developers and managers on app features and QA",
-        "Helped with security testing procedures",
-        "Bridged communication between teams and helped solve technical issues",
-        "Joined cross-team meetings and helped strengthen partnerships"
+        "Selected for a one-year assignment working with Korean fintech teams.",
+        "Translated technical requirements into actionable tasks for the Cambodian mobile team.",
+        "Ensured feature consistency across web and mobile platforms.",
+        "Acted as the main liaison between Cambodian and Korean developers, QA, and managers.",
+        "Supported feature planning, QA cycles, and production deployments."
       ]
     },
     {
@@ -176,97 +97,49 @@
       "type": "Full-time",
       "icon": "Briefcase",
       "achievements": [
-        "Developed responsive web applications without third-party frameworks (custom CSS)",
-        "Built backend functionality and logic using PHP"
+        "Developed responsive web applications using custom CSS.",
+        "Built backend features using PHP and SQL."
       ]
     }
   ],
-  "projects": [
-    {
-      "category": "Professional Android Applications",
-      "items": [
-        {
-          "name": "Bizplay Enterprise Suite",
-          "description": "Expense management platform with corporate card integration serving major Korean corporations (Hyundai, Samsung, Woori, IBK, KT)"
-        },
-        {
-          "name": "Financial Management Systems",
-          "description": "Corporate card applications and government expense tracking solutions (BZPEXPENSE, bzpExpenseGov, KEIT) with enterprise security protocols"
-        },
-        {
-          "name": "Business Productivity Suite",
-          "description": "Calendar management, approval workflows, and messaging applications for enterprise clients"
-        }
-      ]
-    },
-    {
-      "category": "Academic Projects",
-      "items": [
-        {
-          "name": "Lumhat Educational Platform",
-          "description": "Cross-platform educational application with UX research focus and optimized content delivery"
-        },
-        {
-          "name": "DayDo Task Management",
-          "description": "Productivity application with advanced task management methodologies and RESTful API integration"
-        }
-      ]
-    }
-  ],
+  "projects": [],
   "skills": {
-    "mobile": [
-      "Kotlin (Advanced)",
-      "Java (Advanced)",
+    "Mobile Development": [
+      "Kotlin",
+      "Java",
       "Android SDK",
+      "Jetpack (ViewModel, LiveData, StateFlow, Room, Navigation, DataStore)",
       "Jetpack Compose",
       "MVVM",
+      "MVI",
       "Clean Architecture",
-      "Android Architecture Components"
+      "modular design",
+      "Coroutines",
+      "Flow"
     ],
-    "security": [
-      "Mobile App Security Implementation",
-      "Secure Coding Practices",
-      "Data Encryption & Protection",
-      "Third-party Security Libraries Integration",
-      "Raonsecure Solutions (TouchEn mTranskey, mVaccine, Appiron)",
-      "Stealien AppSuit",
-      "Security Testing & Malware Analysis",
-      "AAR Library Management & Local Maven Publishing"
+    "Networking & Security": [
+      "RESTful APIs",
+      "Retrofit",
+      "OkHttp",
+      "HTTPS",
+      "token-based authentication",
+      "Android Keystore",
+      "encrypted storage",
+      "Secure session and data handling"
     ],
-    "backend": [
-      "RESTful API Integration",
-      "PHP (Intermediate)",
-      "MySQL",
-      "PostgreSQL",
-      "Backend System Integration"
-    ],
-    "frontend": [
-      "JavaScript (Intermediate)",
-      "HTML/CSS (Intermediate)",
-      "Responsive Design"
-    ],
-    "devops": [
-      "Google Play Console Management",
-      "App Store Deployment & Release Management",
-      "Internal Testing & Beta Distribution",
-      "App Policy Compliance & Violation Resolution",
-      "Firebase Integration & FCM",
-      "Crashlytics Implementation",
-      "API Testing with Postman",
+    "Tools & DevOps": [
+      "Git (GitHub, GitLab)",
+      "CI/CD pipelines",
       "Android Studio",
-      "Git/GitHub/GitLab",
-      "Database Design"
+      "Firebase (Crashlytics, Analytics)"
     ],
-    "design": [
-      "Figma (Advanced)",
-      "Adobe Illustrator",
-      "Adobe Photoshop",
-      "Photopea",
-      "UI/UX Design",
-      "Logo Design & Branding",
-      "Print Design (Business Cards, Banners, Invitations)",
-      "Visual Identity Development",
-      "Graphic Design for Mobile Applications"
+    "Supporting Skills": [
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "PHP",
+      "SQL (MySQL, PostgreSQL)",
+      "Figma (UI prototyping)"
     ]
   },
   "education": [
@@ -274,21 +147,21 @@
       "degree": "Bachelor of Science, Computer Science",
       "institution": "Royal University of Phnom Penh",
       "period": "January 2016 - November 2021",
-      "details": "Comprehensive computer science education with focus on software engineering principles",
+      "details": "",
       "icon": "GraduationCap"
     },
     {
       "degree": "Advanced Software Development",
       "institution": "Korea Software HRD Center",
       "period": "2019 - 2020",
-      "details": "Specialized in full-stack application development and mobile application research",
+      "details": "Specialized in full-stack development with a focus on mobile application research and practical implementation.",
       "icon": "BookOpen"
     },
     {
-      "degree": "App Development with JAVA",
+      "degree": "Professional Development Courses",
       "institution": "Cambodia-Korea Cooperation Center (CKCC)",
       "period": "2018-2019",
-      "details": "Focused on Java application development principles and practices",
+      "details": "App Development with JAVA (2018-2019), Web Application Development (2018)",
       "icon": "Code"
     }
   ],
@@ -299,44 +172,13 @@
     },
     {
       "name": "English",
-      "level": "Limited Working Proficiency"
+      "level": "Working Proficiency"
     },
     {
       "name": "Korean",
       "level": "Basic"
     }
   ],
-  "securityReferences": {
-    "title": "Security Technologies References",
-    "items": [
-      {
-        "category": "Enterprise security solutions implemented",
-        "technologies": [
-          {
-            "name": "TouchEn mTranskey",
-            "url": "https://www.raonsecure.com/en/solution/mtranskey"
-          },
-          {
-            "name": "mVaccine",
-            "url": "https://www.raonsecure.com/en/solution/mvaccine"
-          },
-          {
-            "name": "Appiron",
-            "url": "https://www.raonsecure.com/en/solution/appiron"
-          }
-        ]
-      },
-      {
-        "category": "Mobile security suite",
-        "technologies": [
-          {
-            "name": "Stealien AppSuit",
-            "url": "https://stealien.com/en/products/series/mobile-app-security-solution"
-          }
-        ]
-      }
-    ]
-  },
   "downloads": {
     "cv": {
       "filename": "Math_Rorpheeyah_CV.pdf",

@@ -9,7 +9,13 @@
       "location": "Phnom Penh, Cambodia",
       "logo": "ic_logo_rupp",
       "website": "https://www.rupp.edu.kh",
-      "skills": ["Data Structures", "Algorithms", "Software Engineering", "Database Systems", "Web Development"]
+      "skills": [
+        "Data Structures",
+        "Algorithms",
+        "Software Engineering",
+        "Database Systems",
+        "Web Application Development"
+      ]
     },
     {
       "degree": "Advanced Software Development",
@@ -18,7 +24,12 @@
       "location": "Phnom Penh, Cambodia",
       "logo": "ic_logo_hrd",
       "website": "https://kshrd.com.kh",
-      "skills": ["Full-stack Development", "Mobile Application Research", "Software Architecture", "Design Patterns"]
+      "skills": [
+        "Web Application Development",
+        "Android Application Development",
+        "Java",
+        "Spring Boot"
+      ]
     },
     {
       "degree": "App Development with JAVA",
@@ -27,7 +38,10 @@
       "location": "Phnom Penh, Cambodia",
       "logo": "ic_logo_ckcc",
       "website": "https://www.ckcc.edu.kh",
-      "skills": ["Java Development", "Application Development Principles", "Project Management"]
+      "skills": [
+        "Java Application Development",
+        "Java Swing"
+      ]
     }
   ]
 }
