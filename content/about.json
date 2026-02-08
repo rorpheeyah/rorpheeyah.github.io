@@ -1,6 +1,6 @@
 {
   "title": "About Me",
-  "description": "Senior Android Developer with 5+ years of experience creating enterprise-grade mobile applications with robust security implementations. I lead development initiatives, mentor junior engineers, and specialize in modern Android architecture and security solutions. My expertise spans Google Play Console management, secure coding practices, and third-party security library integration for high-profile enterprise clients. Passionate about creating scalable mobile architecture, intuitive UI/UX, and the integration of AI and emerging technologies into mobile development.",
+  "description": "Senior Android Developer and Mobile Department Sub-Leader with over 5 years of experience in enterprise application development. Specializing in secure financial solutions, modern Android architecture, and team mentorship. Dedicated to building robust mobile ecosystems and fostering engineering excellence.",
   "stats": [
     {
       "icon": "Code",
@@ -25,6 +25,12 @@
   ],
   "achievements": [
     {
+      "icon": "Users",
+      "title": "Mentorship & Teaching",
+      "description": "Mentored 12+ junior developers, helping 2 advance to senior positions through hands-on guidance and code reviews",
+      "highlight": true
+    },
+    {
       "icon": "Award",
       "title": "Best Rookie Award",
       "description": "KOSIGN, November 2020",
@@ -35,12 +41,6 @@
       "title": "International Experience",
       "description": "One-year assignment in Busan, South Korea (2022-2023)",
       "highlight": false
-    },
-    {
-      "icon": "Code",
-      "title": "Technical Leadership",
-      "description": "Led enterprise Android development teams of 12+ engineers, with 2 junior developers advancing to senior-level positions under my mentorship",
-      "highlight": true
     }
   ]
 }
