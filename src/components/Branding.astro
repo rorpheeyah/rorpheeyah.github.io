@@ -15,14 +15,14 @@ const MARKS: Record<string, any> = {
 };
 ---
 
-<section id="branding" class="py-20 px-6">
+<section id="branding" class="py-16 px-6">
   <div class="max-w-5xl mx-auto text-center">
-    <h2 class="text-3xl md:text-4xl font-bold mb-3">{branding.title}</h2>
-    <p class="text-muted-foreground mb-14">{branding.subtitle}</p>
+    <h2 class="text-3xl md:text-4xl font-bold mb-2">{branding.title}</h2>
+    <p class="text-sm text-muted-foreground mb-8">{branding.subtitle}</p>
 
-    {/* Each mark renders at or above the minimum width stated by the kit, with
-        its clear space of one eighth of the rendered width on every side. */}
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-12 mb-14 justify-items-center">
+    {/* One row on desktop. Each mark holds the minimum width stated by the kit
+        and carries its own clear space, which also serves as the gap. */}
+    <div class="flex flex-wrap justify-center items-start mb-8">
       {branding.marks.map((mark) => {
         const Mark = MARKS[mark.id];
         if (!Mark) return null;
@@ -37,10 +37,7 @@ const MARKS: Record<string, any> = {
                 focusable="false"
               />
             </div>
-            <figcaption class="mt-4">
-              <span class="block font-medium text-foreground">{mark.name}</span>
-              <span class="block text-sm text-muted-foreground mt-1 max-w-xs">{mark.description}</span>
-            </figcaption>
+            <figcaption class="text-xs text-muted-foreground">{mark.name}</figcaption>
           </figure>
         );
       })}
