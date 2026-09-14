@@ -1,5 +1,12 @@
 # Follow-up request: nav-scale square seal
 
+> **Resolved — 14 September 2026.** The author delivered `seal-nav.svg`
+> (32 × 32 minimum, 7.6KB), amended `RULES.md` so navigation may use either
+> `signature-compact.svg` or `seal-nav.svg` at the owner's choice with neither
+> replacing the other, stated that a visible bilingual name is not mandatory in
+> navigation, and renamed `circle-b.svg` to `circle.svg` at source. The site now
+> uses the nav seal. This document is kept as the record of the request.
+
 A second request to the author of `portfolio-identity-web-2026-09-14`.
 
 Copy the block below verbatim. Everything outside it is context for us.
