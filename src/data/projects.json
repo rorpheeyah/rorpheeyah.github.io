@@ -141,21 +141,6 @@
           "category": "finance"
         },
         {
-          "name": "bzpExpenseGov",
-          "description": "Government-specific expense tracking application with enhanced security and compliance features for public sector organizations",
-          "remoteImage": "https://example.com/images/bzpexpense.png",
-          "image": "/images/placeholder.svg",
-          "link": "#",
-          "technologies": [
-            "Java",
-            "XML",
-            "Government Standards",
-            "Public Sector Compliance",
-            "Enhanced Security"
-          ],
-          "category": "finance"
-        },
-        {
           "name": "트리플러스",
           "description": "HD Hyundai Department Store integrated business productivity suite with workflow management and expense tracking",
           "remoteImage": "https://play-lh.googleusercontent.com/QAOwa6XXyR1lBc0pLuJdI8SLU6ryn1pNvLv0Eljxo5XFsG5JQJqNdMuqNU4TLmA-BQ=w480-h960-rw",
