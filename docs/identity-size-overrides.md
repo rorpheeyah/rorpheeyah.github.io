@@ -11,7 +11,7 @@ request new resource kit."*
 
 | Mark | Kit minimum | Rendered | Where |
 |---|---:|---:|---|
-| `seal-nav.svg` | 32 × 32 | **24 × 24** | desktop and mobile navigation |
+| `signature-horizontal-{black,paper}.svg` (V2 Final) | 640 wide | **109 × 36** | desktop and mobile navigation |
 | `seal-open.svg` | 160 × 160 | **48 / 56** | branding section |
 | `seal-rounded.svg` | 160 × 160 | **48 / 56** | branding section |
 | `seal-framed.svg` | 192 × 192 | **48 / 56** | branding section |
@@ -20,8 +20,17 @@ request new resource kit."*
 Branding marks render at 48px below the `md` breakpoint and 56px above it,
 matching the project icons in `Projects.astro`.
 
-Clear space is still honoured proportionally: the nav seal keeps 1/8 of its
-rendered width (3px at 24px).
+The navigation mark is the V2 Final horizontal signature at 109 × 36 — about
+17% of the 640px width its own rules state. Because those files carry hardcoded
+fills rather than `currentColor`, they are served as external images and swapped
+by theme in CSS, so only the applied file is fetched and neither is inlined into
+the HTML.
+
+Two alternatives are already in the repo and swap in cleanly:
+
+- `src/assets/identity/seal-nav.svg` — 32px minimum, the most compact option
+- `src/assets/identity/signature-compact.svg` — 144 × 36, the only fully
+  compliant navigation choice, purpose-drawn so the name survives small sizes
 
 ## What this trades away
 

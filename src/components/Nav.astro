@@ -1,6 +1,5 @@
 ---
 import { Icon } from 'astro-icon/components';
-import SealNav from '@/assets/identity/seal-nav.svg';
 
 const navItems = [
   { id: 'hero', label: 'Home', icon: 'lucide:home' },
@@ -19,7 +18,7 @@ const navItems = [
 >
   <div class="flex items-center space-x-6">
     <a href="#hero" class="identity identity-desktop" aria-label="Math Rorpheeyah / ម៉ាត់រ៉ភីយ៉ះ — Home">
-      <SealNav width={24} height={24} aria-hidden="true" focusable="false" />
+      <span class="identity-sig" aria-hidden="true"></span>
     </a>
 
     {navItems.map((item) => (
@@ -51,7 +50,7 @@ const navItems = [
 >
   <div class="flex items-center justify-between px-4 py-3 min-h-[60px]">
     <a href="#hero" class="identity identity-mobile" aria-label="Math Rorpheeyah / ម៉ាត់រ៉ភីយ៉ះ — Home">
-      <SealNav width={24} height={24} aria-hidden="true" focusable="false" />
+      <span class="identity-sig" aria-hidden="true"></span>
     </a>
 
     <div class="relative">
@@ -231,15 +230,22 @@ const navItems = [
     display: block;
     flex: none;
   }
-  /* Clear space kept at 1/8 of the rendered width. Size is below the kit's
-     32px minimum at the owner's direction; see docs/identity-size-overrides.md */
+  /* V2 Final horizontal signature. These files carry hardcoded fills rather
+     than currentColor, so they are served as external images and swapped by
+     theme in CSS; only the applied one is fetched. Rendered at 36px high
+     (109px wide), below the 640px minimum the V2 rules state for this mark,
+     at the owner's direction. See docs/identity-size-overrides.md */
   .identity-desktop,
   .identity-mobile {
-    padding: 3px;
+    padding: 4px;
   }
-  .identity-desktop :global(svg),
-  .identity-mobile :global(svg) {
-    width: 24px;
-    height: 24px;
+  .identity-sig {
+    display: block;
+    width: 109px;
+    height: 36px;
+    background: url('/images/identity/signature-horizontal-black.svg') center / contain no-repeat;
+  }
+  :global(.dark) .identity-sig {
+    background-image: url('/images/identity/signature-horizontal-paper.svg');
   }
 </style>
