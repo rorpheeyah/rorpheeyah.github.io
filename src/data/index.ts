@@ -102,10 +102,6 @@ export interface Branding {
 export interface Contact {
   title: string;
   subtitle: string;
-  description: string;
-  email: string;
-  phone: string;
-  location: string;
   status: string;
   social: { name: string; url: string; value: string; description: string; icon: string }[];
 }
