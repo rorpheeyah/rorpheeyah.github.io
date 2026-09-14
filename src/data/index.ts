@@ -96,7 +96,6 @@ export interface Skills {
 export interface Branding {
   title: string;
   subtitle: string;
-  rights?: string;
   marks: { id: string; name: string; description: string; minWidth: number }[];
 }
 
