@@ -11,7 +11,7 @@ request new resource kit."*
 
 | Mark | Kit minimum | Rendered | Where |
 |---|---:|---:|---|
-
+| `signature-compact.svg` | 144 × 36 | **96 × 24** | desktop and mobile navigation |
 | `seal-open.svg` | 160 × 160 | **48 / 56** | branding section |
 | `seal-rounded.svg` | 160 × 160 | **48 / 56** | branding section |
 | `seal-framed.svg` | 192 × 192 | **48 / 56** | branding section |
@@ -20,9 +20,9 @@ request new resource kit."*
 Branding marks render at 48px below the `md` breakpoint and 56px above it,
 matching the project icons in `Projects.astro`.
 
-Navigation uses `signature-compact.svg` at its stated 144 × 36 minimum, so the
-navigation mark is **not** an override — it is fully compliant. Only the
-branding-section sizes depart from the kit.
+Navigation uses `signature-compact.svg` at **96 × 24**, sized to sit at the
+nav's text scale (links are 14px with a 20px line-height). The kit states a
+144 × 36 minimum for this mark.
 
 ## What this trades away
 
