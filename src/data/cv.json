@@ -16,14 +16,14 @@
       "label": "Email",
       "href": "mailto:mathrorpheeyah@gmail.com",
       "value": "mathrorpheeyah@gmail.com",
-      "description": "For project inquiries and collaborations"
+      "description": "Best way to reach me for work inquiries"
     },
     {
       "icon": "FaLinkedin",
       "label": "LinkedIn",
       "href": "https://linkedin.com/in/rorpheeyah",
       "value": "linkedin.com/in/rorpheeyah",
-      "description": "Professional networking"
+      "description": "Professional profile and updates"
     },
     {
       "icon": "FaGithub",
@@ -33,7 +33,7 @@
       "description": "Open source projects"
     }
   ],
-  "summary": "Senior Android Developer with 6+ years of experience in Kotlin, fintech, security SDK integration, and modern Android architecture. Experienced in technical leadership, mentoring, and cross-border collaboration between Cambodian and Korean teams.",
+  "summary": "Senior Android Developer with more than six years of experience in Kotlin, fintech, security SDK integration, and modern Android architecture. Experienced in technical leadership, mentoring, and collaboration across teams in Cambodia and South Korea.",
   "highlights": [
     {
       "icon": "Users",
@@ -62,7 +62,7 @@
       "title": "Senior Android Developer & Sub-Leader, Mobile Department",
       "company": "KOSIGN [Korea Software Innovation Global Network]",
       "location": "Phnom Penh, Cambodia",
-      "period": "March 2020 - Present",
+      "period": "March 2020 to Present",
       "type": "Full-time",
       "icon": "Briefcase",
       "achievements": [
@@ -76,14 +76,14 @@
       ]
     },
     {
-      "title": "International Assignment – Business Trip",
-      "company": "비즈플레이 - Bizplay (KOSIGN - South Korea Division)",
+      "title": "International Assignment, Business Trip",
+      "company": "Bizplay (비즈플레이), KOSIGN South Korea Division",
       "location": "Busan, South Korea",
-      "period": "October 2022 - August 2023",
+      "period": "October 2022 to August 2023",
       "type": "Assignment",
       "icon": "Briefcase",
       "achievements": [
-        "Selected for a one-year assignment working with Korean fintech teams.",
+        "Selected for a one year assignment working with Korean fintech teams.",
         "Translated technical requirements into actionable tasks for the Cambodian mobile team.",
         "Ensured feature consistency across web and mobile platforms.",
         "Acted as the main liaison between Cambodian and Korean developers, QA, and managers.",
@@ -94,7 +94,7 @@
       "title": "Web Developer",
       "company": "PLAN-B Cambodia (BEONE)",
       "location": "Phnom Penh, Cambodia",
-      "period": "November 2018 - January 2019",
+      "period": "November 2018 to January 2019",
       "type": "Full-time",
       "icon": "Briefcase",
       "achievements": [
@@ -130,7 +130,6 @@
     ],
     "Tools & DevOps": [
       "Git (GitHub, GitLab)",
-      "CI/CD pipelines",
       "Android Studio",
       "Firebase (Crashlytics, Analytics)"
     ],
@@ -147,22 +146,22 @@
     {
       "degree": "Bachelor of Science, Computer Science",
       "institution": "Royal University of Phnom Penh",
-      "period": "January 2016 - November 2021",
+      "period": "January 2016 to November 2021",
       "details": "",
       "icon": "GraduationCap"
     },
     {
       "degree": "Advanced Software Development",
       "institution": "Korea Software HRD Center",
-      "period": "2019 - 2020",
+      "period": "2019 to 2020",
       "details": "Specialized in full-stack development with a focus on mobile application research and practical implementation.",
       "icon": "BookOpen"
     },
     {
       "degree": "Professional Development Courses",
       "institution": "Cambodia-Korea Cooperation Center (CKCC)",
-      "period": "2018-2019",
-      "details": "App Development with JAVA (2018-2019), Web Application Development (2018)",
+      "period": "2018 to 2019",
+      "details": "App Development with JAVA (2018 to 2019), Web Application Development (2018)",
       "icon": "Code"
     }
   ],

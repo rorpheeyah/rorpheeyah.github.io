@@ -1,11 +1,11 @@
 {
   "title": "Experience",
-  "subtitle": "A journey through enterprise mobile development, international collaboration, and technical leadership.",
+  "subtitle": "An overview of my career so far, from enterprise mobile development to an international assignment and, more recently, a technical leadership role.",
   "experiences": [
     {
       "title": "Senior Android Developer & Sub-Leader, Mobile Department",
       "company": "KOSIGN (Korea Software Innovation Global Network)",
-      "period": "March 2020 - Present",
+      "period": "March 2020 to Present",
       "location": "Phnom Penh, Cambodia",
       "type": "Full-time",
       "logo": "ic_logo_kosign",
@@ -37,16 +37,16 @@
         "Firebase",
         "Crashlytics"
       ],
-      "award": "Best Rookie Award - KOSIGN, December 2020"
+      "award": "Best Rookie Award, KOSIGN, December 2020"
     },
     {
-      "title": "Senior Android Developer - International Assignment",
-      "company": "비즈플레이 - Bizplay (KOSIGN - South Korea Division)",
-      "period": "October 2022 - August 2023",
+      "title": "Senior Android Developer, International Assignment",
+      "company": "Bizplay (비즈플레이), KOSIGN South Korea Division",
+      "period": "October 2022 to August 2023",
       "location": "Busan, South Korea",
       "type": "International Assignment",
       "logo": "ic_logo_bizplay",
-      "description": "Selected for strategic one-year international assignment to strengthen collaboration between global mobile development teams. Led technical documentation analysis, project requirement planning, and implemented advanced security solutions for enterprise applications.",
+      "description": "Selected for a one year international assignment to strengthen collaboration between the Cambodian and South Korean mobile teams. Led technical documentation review, defined project requirements, and delivered advanced security solutions for enterprise applications.",
       "achievements": [
         "Selected for a one-year assignment to support collaboration between the Cambodian and South Korean mobile development teams",
         "Reviewed technical documents from Korean teams, analyzed project requirements, and prepared task breakdowns for the Cambodia team",
@@ -72,7 +72,7 @@
     {
       "title": "Web Developer",
       "company": "PLAN-B Cambodia (BEONE)",
-      "period": "November 2018 - January 2019",
+      "period": "November 2018 to January 2019",
       "location": "Phnom Penh, Cambodia",
       "type": "Full-time",
       "logo": "ic_logo_planb",

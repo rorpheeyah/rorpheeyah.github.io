@@ -15,32 +15,32 @@ const HIGHLIGHTED = ['Kotlin', 'Java', 'Jetpack Compose', 'MVVM', 'Clean Archite
 
 // These blocks were hardcoded in the previous component rather than held in content.
 const summaryCards = [
-  { title: 'Core Android', body: 'Kotlin, Java, MVVM, Clean Architecture, Jetpack Compose' },
-  { title: 'Security Expertise', body: 'Mobile Security Architecture, Data Encryption, Financial-grade Security Solutions' },
-  { title: 'Operations', body: 'Google Play Console Management, Release Management, Internal Testing' },
+  { title: 'Core Android', body: 'Kotlin, Java, MVVM, Clean Architecture, and Jetpack Compose' },
+  { title: 'Security', body: 'Mobile security architecture, data encryption, and security for financial applications' },
+  { title: 'Operations', body: 'Google Play Console, release management, and internal testing' },
 ];
 
 const expertise = [
   {
     title: 'Financial Security',
     points: [
-      'Enterprise-grade security implementations for banking applications',
-      'Financial data encryption and secure storage',
+      'Security for banking applications, built to enterprise standards',
+      'Encryption and secure storage for financial data',
     ],
   },
   {
     title: 'Enterprise Deployment',
     points: [
-      'On-premise security solution implementation for corporate clients',
-      'Large-scale deployment strategies for corporate applications',
+      'On premise security solutions for corporate clients',
+      'Scalable deployment for large corporate applications',
     ],
   },
   {
-    title: 'Cross-Cultural Development',
+    title: 'International Collaboration',
     points: [
-      'International team collaboration methodologies',
-      'Technical documentation standardization across global teams',
-      'Knowledge transfer protocols for international development',
+      'Close collaboration with international development teams',
+      'Consistent technical documentation across teams',
+      'Knowledge sharing across global teams',
     ],
   },
 ];
@@ -63,7 +63,7 @@ const expertise = [
     </div>
 
     <div class="mb-10">
-      <h3 class="text-xl font-semibold mb-4 text-center">Industry-Specific Expertise</h3>
+      <h3 class="text-xl font-semibold mb-4 text-center">Areas of Expertise</h3>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         {expertise.map((group) => (
           <div class="bg-card/30 rounded-lg p-5 border border-border/50 hover:border-primary/30 transition-all duration-300">

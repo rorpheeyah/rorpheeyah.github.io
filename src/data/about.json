@@ -1,6 +1,6 @@
 {
   "title": "About Me",
-  "description": "Senior Android Developer and Sub-Leader of the Mobile Department at KOSIGN, with 6+ years of experience in enterprise Android development. My work spans Kotlin and modern Android architecture, fintech systems, enterprise security SDK integration, and collaboration across Cambodian and Korean teams.",
+  "description": "Senior Android Developer and Sub-Leader of the Mobile Department at KOSIGN, with more than six years in enterprise Android development. My work centres on Kotlin and modern Android architecture across fintech systems and enterprise security SDK integration, in close collaboration with teams in Cambodia and South Korea.",
   "stats": [
     {
       "icon": "Code",
@@ -34,7 +34,7 @@
     {
       "icon": "BookOpen",
       "title": "International Experience",
-      "description": "Assignment with Bizplay in Busan, South Korea (Oct 2022 - Aug 2023)",
+      "description": "Assignment with Bizplay in Busan, South Korea, from October 2022 to August 2023",
       "highlight": false
     }
   ]
