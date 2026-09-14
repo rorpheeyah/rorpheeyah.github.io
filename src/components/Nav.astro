@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
+import SignatureCompact from '@/assets/identity/signature-compact.svg';
 
 const navItems = [
   { id: 'hero', label: 'Home', icon: 'lucide:home' },
@@ -18,7 +19,7 @@ const navItems = [
 >
   <div class="flex items-center space-x-6">
     <a href="#hero" class="identity identity-desktop" aria-label="Math Rorpheeyah / ម៉ាត់រ៉ភីយ៉ះ — Home">
-      <span class="identity-sig" aria-hidden="true"></span>
+      <SignatureCompact width={144} height={36} aria-hidden="true" focusable="false" />
     </a>
 
     {navItems.map((item) => (
@@ -50,7 +51,7 @@ const navItems = [
 >
   <div class="flex items-center justify-between px-4 py-3 min-h-[60px]">
     <a href="#hero" class="identity identity-mobile" aria-label="Math Rorpheeyah / ម៉ាត់រ៉ភីយ៉ះ — Home">
-      <span class="identity-sig" aria-hidden="true"></span>
+      <SignatureCompact width={144} height={36} aria-hidden="true" focusable="false" />
     </a>
 
     <div class="relative">
@@ -230,22 +231,18 @@ const navItems = [
     display: block;
     flex: none;
   }
-  /* V2 Final horizontal signature. These files carry hardcoded fills rather
-     than currentColor, so they are served as external images and swapped by
-     theme in CSS; only the applied one is fetched. Rendered at 36px high
-     (109px wide), below the 640px minimum the V2 rules state for this mark,
-     at the owner's direction. See docs/identity-size-overrides.md */
+  /* signature-compact at its stated 144 x 36 minimum, with clear space of
+     1/8 of the rendered height. Painted with currentColor, so one inherited
+     colour covers it: ink on the light ground, paper on the dark. */
   .identity-desktop,
   .identity-mobile {
-    padding: 4px;
+    padding: 4.5px;
   }
-  .identity-sig {
+  .identity-desktop :global(svg),
+  .identity-mobile :global(svg) {
     display: block;
-    width: 109px;
+    width: 144px;
     height: 36px;
-    background: url('/images/identity/signature-horizontal-black.svg') center / contain no-repeat;
-  }
-  :global(.dark) .identity-sig {
-    background-image: url('/images/identity/signature-horizontal-paper.svg');
+    flex: none;
   }
 </style>

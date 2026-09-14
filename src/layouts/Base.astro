@@ -48,7 +48,11 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400;1,500&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/svg+xml" href="/images/icons/ic_favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/images/icons/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="256x256" href="/images/icons/favicon-256.png" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
 
     {/* Applies the stored theme before first paint, so the page does not flash. */}
     <script is:inline>
