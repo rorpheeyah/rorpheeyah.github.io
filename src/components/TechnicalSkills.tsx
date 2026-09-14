@@ -80,7 +80,7 @@ const TechnicalSkills = () => {
           </div>
           <div className="bg-primary/10 rounded-lg p-4 border border-primary/20">
             <h3 className="font-medium mb-2 text-primary">Operations</h3>
-            <p className="text-sm text-foreground">Google Play Console Management, Release Management, CI/CD Implementation</p>
+            <p className="text-sm text-foreground">Google Play Console Management, Release Management, Internal Testing</p>
           </div>
         </div>
         
@@ -97,7 +97,7 @@ const TechnicalSkills = () => {
                 </li>
                 <li className="text-sm text-muted-foreground flex items-start gap-2">
                   <span className="text-primary mt-1 text-xs">•</span>
-                  <span>Financial data encryption & PCI compliance implementation</span>
+                  <span>Financial data encryption and secure storage</span>
                 </li>
                 <li className="text-sm text-muted-foreground flex items-start gap-2">
                   <span className="text-primary mt-1 text-xs">•</span>
@@ -155,7 +155,7 @@ const TechnicalSkills = () => {
                     </div>
                     <div className="space-y-3">
                         {skillsData.skills.mobile.map((skill, index) => {
-                            const isHighlighted = ['Kotlin (Advanced)', 'Java (Advanced)', 'Jetpack Compose', 'MVVM', 'Clean Architecture'].includes(skill);
+                            const isHighlighted = ['Kotlin', 'Java', 'Jetpack Compose', 'MVVM', 'Clean Architecture'].includes(skill);
                             return (
                                 <div key={skill} className="flex items-center justify-between">
                                     <span className={`text-sm ${isHighlighted ? 'text-primary font-medium' : 'text-foreground'}`}>{skill}</span>
