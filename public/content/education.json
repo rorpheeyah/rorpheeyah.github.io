@@ -42,6 +42,19 @@
         "Java Application Development",
         "Java Swing"
       ]
+    },
+    {
+      "degree": "Web Application Development",
+      "institution": "Cambodia-Korea Cooperation Center (CKCC)",
+      "period": "2018",
+      "location": "Phnom Penh, Cambodia",
+      "logo": "ic_logo_ckcc",
+      "website": "https://www.ckcc.edu.kh",
+      "skills": [
+        "Web Application Development",
+        "HTML/CSS",
+        "JavaScript"
+      ]
     }
   ]
 }

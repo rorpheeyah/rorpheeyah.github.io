@@ -33,15 +33,15 @@
       "description": "Open source projects"
     }
   ],
-  "summary": "Senior Android Developer with 5+ years of experience building secure, scalable, and high-performance mobile applications using Kotlin and modern Android architecture. Proven track record in fintech-related systems, cross-team collaboration, and international project delivery. Passionate about clean code, security best practices, and delivering reliable financial products with real-world impact.",
+  "summary": "Senior Android Developer with 6+ years of experience in Kotlin, fintech, security SDK integration, and modern Android architecture. Experienced in technical leadership, mentoring, and cross-border collaboration between Cambodian and Korean teams.",
   "highlights": [
     {
       "icon": "Users",
-      "text": "Mentored 12+ Junior Developers"
+      "text": "Mentor Junior Developers"
     },
     {
       "icon": "Trophy",
-      "text": "Best Rookie Award 2020"
+      "text": "Best Rookie Award, KOSIGN 2020"
     },
     {
       "icon": "Globe",
@@ -53,7 +53,7 @@
     },
     {
       "icon": "Zap",
-      "text": "5+ Years Mobile Development Experience"
+      "text": "6+ Years Mobile Development Experience"
     }
   ],
   "professionalOverview": [],
@@ -66,12 +66,13 @@
       "type": "Full-time",
       "icon": "Briefcase",
       "achievements": [
-        "Led development of enterprise-level Android applications using Kotlin and modern architecture, ensuring scalability, security, and long-term maintainability.",
-        "Served as Sub-Leader of the Mobile Department, coordinating task allocation and technical direction.",
-        "Mentored junior developers and enforced clean architecture and coding standards.",
+        "Lead enterprise Android development with Kotlin and modern architecture, ensuring scalability, security, and long-term maintainability.",
+        "Coordinate task allocation, technical direction, and delivery planning as Sub-Leader of the Mobile Department.",
+        "Mentor junior developers through code reviews and architecture guidance.",
         "Introduced Jetpack Compose into production projects to modernize UI development.",
-        "Collaborated with backend, QA, and product teams to deliver stable, scalable releases.",
-        "Received “Best Rookie” award (Nov 2020)."
+        "Integrate RaonSecure security SDKs, including TouchEn mTranskey, mVaccine, and AppIron.",
+        "Collaborate with backend, QA, and product teams to deliver stable, scalable releases.",
+        "Received the KOSIGN Best Rookie Award (December 2020)."
       ]
     },
     {

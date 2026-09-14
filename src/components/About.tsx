@@ -52,8 +52,8 @@ const About = () => {
                             <div className="h-6 bg-muted rounded mb-4 max-w-2xl mx-auto"></div>
                         </div>
                     </div>
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-                        {[...Array(4)].map((_, index) => (
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
+                        {[...Array(3)].map((_, index) => (
                             <div key={index}
                                  className="text-center p-6 rounded-xl bg-accent/50 backdrop-blur-sm border border-border/50">
                                 <div className="animate-pulse">
@@ -83,7 +83,7 @@ const About = () => {
 
         {/* Stats Section */}
           {aboutData.stats && aboutData.stats.length > 0 && (
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
                   {aboutData.stats.map((stat, index) => {
                       const IconComponent = iconMap[stat.icon] || Code;
               return (

@@ -2,10 +2,9 @@
   "name": "Math Rorpheeyah",
   "titles": [
     "Senior Android Developer",
-    "Mobile Team Lead",
-    "Enterprise Solutions Architect"
+    "Mobile Department Sub-Leader"
   ],
-  "description": "Senior Android Developer & Mobile Team Lead with over 5 years of expertise in building secure, high-performance enterprise applications. Specializing in modern Android architecture and fintech solutions, I lead teams to deliver scalable mobile products that drive business value.",
+  "description": "Senior Android Developer with 6+ years of experience in enterprise Android applications, fintech, security SDK integration, and modern Android architecture. I contribute across new development, features, bug fixes, and maintenance, and mentor junior developers at KOSIGN.",
   "socialLinks": [
     {
       "href": "https://github.com/rorpheeyah",
@@ -29,18 +28,18 @@
   "achievements": [
     {
       "icon": "HiOutlineBriefcase",
-      "title": "5+ Years",
+      "title": "6+ Years",
       "subtitle": "Experience"
     },
     {
       "icon": "HiOutlineUserGroup",
-      "title": "Team Lead",
-      "subtitle": "Mobile"
+      "title": "Sub-Leader",
+      "subtitle": "Mobile Dept"
     },
     {
       "icon": "HiOutlineAcademicCap",
-      "title": "Enterprise",
-      "subtitle": "Solutions"
+      "title": "Fintech",
+      "subtitle": "Security SDKs"
     },
     {
       "icon": "HiOutlineLocationMarker",
