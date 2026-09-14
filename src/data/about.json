@@ -1,6 +1,6 @@
 {
   "title": "About Me",
-  "description": "Senior Android Developer and Sub-Leader of the Mobile Department at KOSIGN, with more than six years in enterprise Android development. My work centres on Kotlin and modern Android architecture across fintech systems and enterprise security SDK integration, in close collaboration with teams in Cambodia and South Korea.",
+  "description": "Senior Android Developer and Sub Leader of the Mobile Department, with 6+ years in enterprise Android development. My work spans Java in established apps and Kotlin in newer ones, across fintech systems and enterprise security SDK integration, in close collaboration with teams in Cambodia and South Korea.",
   "stats": [
     {
       "icon": "Code",
@@ -22,7 +22,7 @@
     {
       "icon": "Award",
       "title": "Best Rookie Award",
-      "description": "KOSIGN, December 2020",
+      "description": "December 2020",
       "highlight": true
     },
     {

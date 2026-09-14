@@ -1,108 +1,25 @@
 ---
 import { skills } from '@/data';
-
-// Category keys in display order, with their headings.
-const CATEGORIES: [string, string][] = [
-  ['mobile', 'Mobile Development'],
-  ['security', 'Security & Protection'],
-  ['backend', 'Backend & Database'],
-  ['frontend', 'Frontend Development'],
-  ['devops', 'DevOps & Tools'],
-  ['design', 'Design & Creative'],
-];
+import Section from '@/components/ui/Section.astro';
 
 const HIGHLIGHTED = ['Kotlin', 'Java', 'Jetpack Compose', 'MVVM', 'Clean Architecture'];
-
-// These blocks were hardcoded in the previous component rather than held in content.
-const summaryCards = [
-  { title: 'Core Android', body: 'Kotlin, Java, MVVM, Clean Architecture, and Jetpack Compose' },
-  { title: 'Security', body: 'Mobile security architecture, data encryption, and security for financial applications' },
-  { title: 'Operations', body: 'Google Play Console, release management, and internal testing' },
-];
-
-const expertise = [
-  {
-    title: 'Financial Security',
-    points: [
-      'Security for banking applications, built to enterprise standards',
-      'Encryption and secure storage for financial data',
-    ],
-  },
-  {
-    title: 'Enterprise Deployment',
-    points: [
-      'On premise security solutions for corporate clients',
-      'Scalable deployment for large corporate applications',
-    ],
-  },
-  {
-    title: 'International Collaboration',
-    points: [
-      'Close collaboration with international development teams',
-      'Consistent technical documentation across teams',
-      'Knowledge sharing across global teams',
-    ],
-  },
-];
+const groups = Object.entries(skills.skills);
 ---
 
-<section id="skills" class="py-20 px-6">
-  <div class="max-w-5xl mx-auto">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">{skills.title}</h2>
-      <p class="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">{skills.subtitle}</p>
-    </div>
-
-    <div class="mb-10 grid grid-cols-1 md:grid-cols-3 gap-4">
-      {summaryCards.map((card) => (
-        <div class="bg-primary/10 rounded-lg p-4 border border-primary/20">
-          <h3 class="font-medium mb-2 text-primary">{card.title}</h3>
-          <p class="text-sm text-foreground">{card.body}</p>
-        </div>
-      ))}
-    </div>
-
-    <div class="mb-10">
-      <h3 class="text-xl font-semibold mb-4 text-center">Areas of Expertise</h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {expertise.map((group) => (
-          <div class="bg-card/30 rounded-lg p-5 border border-border/50 hover:border-primary/30 transition-all duration-300">
-            <h4 class="font-medium mb-3 text-foreground">{group.title}</h4>
-            <ul class="space-y-2">
-              {group.points.map((point) => (
-                <li class="text-sm text-muted-foreground flex items-start gap-2">
-                  <span class="text-primary mt-1 text-xs">&bull;</span>
-                  <span>{point}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+<Section id="skills" eyebrow="Toolkit" title={skills.title} description={skills.subtitle}>
+  <dl class="border-t border-border">
+    {groups.map(([label, items]) => (
+      <div class="grid gap-x-10 gap-y-2 border-b border-border py-6 md:grid-cols-[minmax(0,220px)_1fr]">
+        <dt class="text-sm font-medium text-foreground">{label}</dt>
+        <dd class="text-sm leading-relaxed text-muted-foreground">
+          {items.map((skill, i) => (
+            <Fragment>
+              {i > 0 && <span aria-hidden="true" class="px-1.5 text-border">&middot;</span>}
+              <span class:list={[HIGHLIGHTED.includes(skill) && 'font-medium text-foreground']}>{skill}</span>
+            </Fragment>
+          ))}
+        </dd>
       </div>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {CATEGORIES.map(([key, heading]) =>
-        skills.skills[key]?.length ? (
-          <div class="p-6 rounded-xl border border-border/50 bg-background/50">
-            <h4 class="text-lg font-medium text-foreground mb-4">{heading}</h4>
-            <div class="flex flex-wrap gap-2">
-              {skills.skills[key].map((skill) => (
-                <span
-                  class:list={[
-                    'px-3 py-1 text-xs rounded-full',
-                    HIGHLIGHTED.includes(skill)
-                      ? 'bg-primary/10 text-primary'
-                      : 'bg-muted/40 text-muted-foreground',
-                  ]}
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-        ) : null
-      )}
-    </div>
-  </div>
-</section>
+    ))}
+  </dl>
+</Section>

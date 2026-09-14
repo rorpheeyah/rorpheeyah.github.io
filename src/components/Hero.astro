@@ -2,77 +2,98 @@
 import { Icon } from 'astro-icon/components';
 import { hero } from '@/data';
 import { iconFor } from '@/lib/icons';
+import Button from '@/components/ui/Button.astro';
+import Card from '@/components/ui/Card.astro';
+
+// Quick facts. Kept free of the employer name, which stays out of the hero.
+const facts = [
+  { label: 'Based in', value: 'Phnom Penh, Cambodia' },
+  { label: 'Experience', value: '6+ years in Android' },
+  { label: 'Focus', value: 'Fintech and mobile security' },
+  { label: 'Languages', value: 'Khmer, English, Korean' },
+];
 ---
 
-<section id="hero" class="min-h-screen flex items-center justify-center px-6">
-  <div class="w-full max-w-4xl mx-auto text-center space-y-12">
-    <div class="space-y-8">
-      <h1 class="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-foreground">
-        {hero.name}
-      </h1>
-
-      {/* Titles rotate via CSS; the first is in the markup for crawlers and no-JS. */}
-      <div class="h-12 flex items-center justify-center">
-        <h2 class="text-xl md:text-2xl font-normal tracking-wide text-muted-foreground" data-rotating-title>
-          {hero.titles[0]}
-        </h2>
-      </div>
-
-      <p class="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-light">
-        {hero.description}
-      </p>
-    </div>
-
-    <div class="pt-4">
-      <button
-        type="button"
-        data-open-cv
-        class="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-primary text-primary-foreground font-semibold text-base hover:bg-primary/90 transition-all duration-200"
-      >
-        View CV
-      </button>
-    </div>
-
-    {hero.socialLinks?.length > 0 && (
-      <div class="flex items-center justify-center gap-8 pt-8">
-        {hero.socialLinks.slice(0, 3).map((social) => (
-          <a
-            href={social.href}
-            target={social.external ? '_blank' : undefined}
-            rel={social.external ? 'noopener noreferrer' : undefined}
-            class="text-muted-foreground hover:text-foreground transition-colors duration-300"
-            aria-label={social.label}
-          >
-            <Icon name={iconFor(social.icon)} class="w-6 h-6" />
-          </a>
-        ))}
-      </div>
-    )}
+<section id="hero" class="relative overflow-hidden scroll-mt-16">
+  {/* Subtle grid backdrop, faded out toward the edges. */}
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:56px_56px] opacity-60 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_60%,transparent_100%)]"
+  >
   </div>
 
-  <div class="absolute bottom-12 left-1/2 -translate-x-1/2 hidden md:block">
-    <a
-      href="#about"
-      class="text-muted-foreground/60 hover:text-muted-foreground transition-colors duration-300 block"
-      aria-label="Scroll to learn more"
-    >
-      <Icon name="lucide:arrow-down" class="w-5 h-5 animate-bounce" />
-    </a>
+  <div class="mx-auto max-w-5xl px-6 py-24 md:py-28 lg:py-32">
+    <div class="grid items-center gap-12 lg:grid-cols-5 lg:gap-10">
+      <div class="lg:col-span-3">
+        <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-3 py-1 text-xs font-medium text-muted-foreground">
+          <span class="relative flex h-2 w-2">
+            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
+            <span class="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
+          </span>
+          Available for opportunities
+        </div>
+
+        <h1 class="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+          {hero.name}
+        </h1>
+        <p class="mt-4 text-lg font-medium text-muted-foreground sm:text-xl">
+          {hero.titles.join(' · ')}
+        </p>
+        <p class="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground">
+          {hero.description}
+        </p>
+
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <Button size="lg" data-open-cv>
+            View CV
+            <Icon name="lucide:arrow-right" class="h-4 w-4" />
+          </Button>
+          <Button size="lg" variant="outline" href="#contact">Get in touch</Button>
+        </div>
+
+        {hero.socialLinks?.length > 0 && (
+          <div class="mt-8 flex items-center gap-1">
+            {hero.socialLinks.map((social) => (
+              <a
+                href={social.href}
+                target={social.external ? '_blank' : undefined}
+                rel={social.external ? 'noopener noreferrer' : undefined}
+                aria-label={social.label}
+                class="inline-flex h-11 w-11 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-accent hover:text-foreground md:h-9 md:w-9"
+              >
+                <Icon name={iconFor(social.icon)} class="h-5 w-5" />
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <div class="lg:col-span-2">
+        <Card class="p-1">
+          <div class="flex items-center gap-4 p-5">
+            <img
+              src="/images/profile.png"
+              alt="Math Rorpheeyah"
+              class="h-14 w-14 rounded-full border border-border object-cover"
+              loading="eager"
+              decoding="async"
+            />
+            <div class="min-w-0">
+              <div class="truncate font-semibold text-foreground">{hero.name}</div>
+              <div class="truncate text-sm text-muted-foreground">{hero.titles[0]}</div>
+            </div>
+          </div>
+          <div class="h-px bg-border"></div>
+          <dl class="divide-y divide-border">
+            {facts.map((fact) => (
+              <div class="flex items-center justify-between gap-4 px-5 py-3">
+                <dt class="text-sm text-muted-foreground">{fact.label}</dt>
+                <dd class="text-right text-sm font-medium text-foreground">{fact.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </Card>
+      </div>
+    </div>
   </div>
 </section>
-
-<script is:inline define:vars={{ titles: hero.titles }}>
-  const el = document.querySelector('[data-rotating-title]');
-  if (el && titles.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    let i = 0;
-    el.style.transition = 'opacity 300ms';
-    setInterval(() => {
-      el.style.opacity = '0';
-      setTimeout(() => {
-        i = (i + 1) % titles.length;
-        el.textContent = titles[i];
-        el.style.opacity = '1';
-      }, 300);
-    }, 3000);
-  }
-</script>

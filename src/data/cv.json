@@ -1,6 +1,6 @@
 {
   "title": "Curriculum Vitae",
-  "subtitle": "Senior Android Developer & Sub-Leader, Mobile Department",
+  "subtitle": "Senior Android Developer and Sub Leader, Mobile Department",
   "personal": {
     "name": "Math Rorpheeyah",
     "title": "Senior Android Developer",
@@ -33,11 +33,11 @@
       "description": "Open source projects"
     }
   ],
-  "summary": "Senior Android Developer with more than six years of experience in Kotlin, fintech, security SDK integration, and modern Android architecture. Experienced in technical leadership, mentoring, and collaboration across teams in Cambodia and South Korea.",
+  "summary": "Senior Android Developer with 6+ years of experience, working extensively with Java in older Android projects and Kotlin in newer ones. Experienced in security SDK integration, mentoring developers, and coordinating tasks between teams in Cambodia and South Korea.",
   "highlights": [
     {
       "icon": "Users",
-      "text": "Mentor Junior Developers"
+      "text": "Mentor junior developers"
     },
     {
       "icon": "Trophy",
@@ -45,49 +45,47 @@
     },
     {
       "icon": "Globe",
-      "text": "International Assignment (South Korea)"
+      "text": "International assignment in South Korea"
     },
     {
       "icon": "Briefcase",
-      "text": "Sub-Leader of Mobile Department"
+      "text": "Sub Leader of the Mobile Department"
     },
     {
       "icon": "Zap",
-      "text": "6+ Years Mobile Development Experience"
+      "text": "6+ years in Android development"
     }
   ],
   "professionalOverview": [],
   "experiences": [
     {
-      "title": "Senior Android Developer & Sub-Leader, Mobile Department",
-      "company": "KOSIGN [Korea Software Innovation Global Network]",
+      "title": "Senior Android Developer and Sub Leader, Mobile Department",
+      "company": "KOSIGN (Korea Software Innovation Global Network)",
       "location": "Phnom Penh, Cambodia",
       "period": "March 2020 to Present",
       "type": "Full-time",
       "icon": "Briefcase",
       "achievements": [
-        "Lead enterprise Android development with Kotlin and modern architecture, ensuring scalability, security, and long-term maintainability.",
-        "Coordinate task allocation, technical direction, and delivery planning as Sub-Leader of the Mobile Department.",
-        "Mentor junior developers through code reviews and architecture guidance.",
-        "Introduced Jetpack Compose into production projects to modernize UI development.",
-        "Integrate RaonSecure security SDKs, including TouchEn mTranskey, mVaccine, and AppIron.",
-        "Collaborate with backend, QA, and product teams to deliver stable, scalable releases.",
-        "Received the KOSIGN Best Rookie Award (December 2020)."
+        "Develop and maintain Android apps, working extensively with Java in older projects and Kotlin in newer ones.",
+        "Coordinate development tasks, app issues, updates, and feature requests, and delegate work across the team.",
+        "Mentor junior developers through code reviews, technical guidance, and troubleshooting.",
+        "Use Jetpack Compose in released Android apps.",
+        "Integrate RaonSecure SDKs such as TouchEn mTranskey, mVaccine, and AppIron into fintech apps.",
+        "Manage Google Play submissions, policy checks, and releases.",
+        "Introduced DiffUtil for adapter updates, reduced app size through obfuscation, and led adoption of Android App Bundles."
       ]
     },
     {
-      "title": "International Assignment, Business Trip",
+      "title": "International Assignment",
       "company": "Bizplay (비즈플레이), KOSIGN South Korea Division",
       "location": "Busan, South Korea",
       "period": "October 2022 to August 2023",
       "type": "Assignment",
       "icon": "Briefcase",
       "achievements": [
-        "Selected for a one year assignment working with Korean fintech teams.",
-        "Translated technical requirements into actionable tasks for the Cambodian mobile team.",
-        "Ensured feature consistency across web and mobile platforms.",
-        "Acted as the main liaison between Cambodian and Korean developers, QA, and managers.",
-        "Supported feature planning, QA cycles, and production deployments."
+        "Worked with teams in Cambodia and South Korea to clarify requirements and define development tasks.",
+        "Coordinated and delegated app development, fixes, and updates.",
+        "Tested apps and managed releases."
       ]
     },
     {
@@ -98,55 +96,67 @@
       "type": "Full-time",
       "icon": "Briefcase",
       "achievements": [
-        "Developed responsive web applications using custom CSS.",
-        "Built backend features using PHP and SQL."
+        "Built responsive web pages and backend features using PHP."
       ]
     }
   ],
   "projects": [],
   "skills": {
-    "Mobile Development": [
-      "Kotlin",
+    "Android": [
       "Java",
+      "Kotlin",
       "Android SDK",
-      "Jetpack (ViewModel, LiveData, StateFlow, Room, Navigation, DataStore)",
       "Jetpack Compose",
+      "Jetpack (ViewModel, LiveData, StateFlow, Room, Navigation, DataStore)"
+    ],
+    "Architecture": [
       "MVVM",
       "MVI",
       "Clean Architecture",
-      "modular design",
+      "Modular design",
       "Coroutines",
       "Flow"
     ],
     "Networking & Security": [
-      "RESTful APIs",
+      "REST APIs",
       "Retrofit",
       "OkHttp",
       "HTTPS",
-      "token-based authentication",
+      "Token based authentication",
       "Android Keystore",
-      "encrypted storage",
-      "Secure session and data handling"
+      "Encrypted storage"
     ],
-    "Tools & DevOps": [
-      "Git (GitHub, GitLab)",
+    "Google Play Console": [
+      "App releases",
+      "Internal testing",
+      "Beta distribution",
+      "Policy issue resolution"
+    ],
+    "DevOps & Tools": [
       "Android Studio",
-      "Firebase (Crashlytics, Analytics)"
+      "Git",
+      "GitHub",
+      "GitLab",
+      "Postman",
+      "Firebase",
+      "FCM",
+      "Crashlytics"
     ],
-    "Supporting Skills": [
-      "JavaScript",
-      "HTML",
-      "CSS",
-      "PHP",
-      "SQL (MySQL, PostgreSQL)",
-      "Figma (UI prototyping)"
+    "CI/CD": [
+      "Familiar with concepts, no production experience yet"
+    ],
+    "Additional": [
+      "Figma",
+      "SQL",
+      "MySQL",
+      "PostgreSQL"
     ]
   },
   "education": [
     {
       "degree": "Bachelor of Science, Computer Science",
       "institution": "Royal University of Phnom Penh",
-      "period": "January 2016 to November 2021",
+      "period": "2016 to 2021",
       "details": "",
       "icon": "GraduationCap"
     },
@@ -154,14 +164,14 @@
       "degree": "Advanced Software Development",
       "institution": "Korea Software HRD Center",
       "period": "2019 to 2020",
-      "details": "Specialized in full-stack development with a focus on mobile application research and practical implementation.",
+      "details": "",
       "icon": "BookOpen"
     },
     {
-      "degree": "Professional Development Courses",
+      "degree": "Web and App Development",
       "institution": "Cambodia-Korea Cooperation Center (CKCC)",
       "period": "2018 to 2019",
-      "details": "App Development with JAVA (2018 to 2019), Web Application Development (2018)",
+      "details": "Web Application Development (2018), App Development with Java (2019)",
       "icon": "Code"
     }
   ],
@@ -172,7 +182,7 @@
     },
     {
       "name": "English",
-      "level": "Working Proficiency"
+      "level": "Working proficiency"
     },
     {
       "name": "Korean",

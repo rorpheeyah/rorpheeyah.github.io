@@ -1,0 +1,11 @@
+---
+// shadcn/ui Separator. Horizontal by default.
+interface Props {
+  orientation?: 'horizontal' | 'vertical';
+  class?: string;
+}
+const { orientation = 'horizontal', class: className } = Astro.props;
+const dims = orientation === 'vertical' ? 'h-full w-px' : 'h-px w-full';
+---
+
+<div role="separator" aria-orientation={orientation} class:list={['shrink-0 bg-border', dims, className]}></div>

@@ -81,7 +81,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
     <script>
       // Theme toggling. Buttons opt in with [data-theme-toggle].
       const root = document.documentElement;
-      const apply = (dark: boolean) => {
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+      const setTheme = (dark: boolean) => {
         root.classList.toggle('dark', dark);
         try {
           localStorage.setItem('app-theme', dark ? 'dark' : 'light');
@@ -91,6 +93,18 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
         document
           .querySelectorAll<HTMLElement>('[data-theme-toggle]')
           .forEach((el) => el.setAttribute('aria-pressed', String(dark)));
+      };
+
+      // Quick crossfade between page snapshots, via the View Transitions API
+      // (styled in global.css). Falls back to an instant swap without it or when
+      // motion is reduced.
+      const startViewTransition = (document as any).startViewTransition?.bind(document);
+      const apply = (dark: boolean) => {
+        if (!startViewTransition || reduce.matches) {
+          setTheme(dark);
+          return;
+        }
+        startViewTransition(() => setTheme(dark));
       };
 
       document.querySelectorAll<HTMLElement>('[data-theme-toggle]').forEach((el) => {
@@ -106,7 +120,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
         } catch {
           /* ignore */
         }
-        if (!saved) root.classList.toggle('dark', e.matches);
+        if (!saved) setTheme(e.matches);
       });
     </script>
   </body>

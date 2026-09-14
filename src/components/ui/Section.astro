@@ -1,0 +1,36 @@
+---
+// Section scaffolding for the docs-like layout: one container width, one
+// vertical rhythm, and a left-aligned header (eyebrow label + title +
+// description). A top border divides consecutive sections; pass bordered={false}
+// to drop it (e.g. the first section after the hero if a seam is unwanted).
+interface Props {
+  id: string;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  bordered?: boolean;
+  class?: string;
+}
+const { id, eyebrow, title, description, bordered = true, class: className } = Astro.props;
+const hasHeader = Boolean(eyebrow || title || description);
+---
+
+<section id={id} class:list={['scroll-mt-16', bordered && 'border-t border-border']}>
+  <div class:list={['mx-auto max-w-5xl px-6 py-20 md:py-24', className]}>
+    {hasHeader && (
+      <div class="mb-12 md:mb-16 max-w-2xl">
+        {eyebrow && (
+          <div class="mb-4 flex items-center gap-3">
+            <span class="h-px w-6 bg-border"></span>
+            <span class="font-mono text-xs uppercase tracking-widest text-muted-foreground">{eyebrow}</span>
+          </div>
+        )}
+        {title && <h2 class="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">{title}</h2>}
+        {description && (
+          <p class="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">{description}</p>
+        )}
+      </div>
+    )}
+    <slot />
+  </div>
+</section>

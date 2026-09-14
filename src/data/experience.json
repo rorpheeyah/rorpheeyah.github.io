@@ -3,13 +3,13 @@
   "subtitle": "An overview of my career so far, from enterprise mobile development to an international assignment and, more recently, a technical leadership role.",
   "experiences": [
     {
-      "title": "Senior Android Developer & Sub-Leader, Mobile Department",
+      "title": "Senior Android Developer and Sub Leader, Mobile Department",
       "company": "KOSIGN (Korea Software Innovation Global Network)",
       "period": "March 2020 to Present",
       "location": "Phnom Penh, Cambodia",
       "type": "Full-time",
       "logo": "ic_logo_kosign",
-      "description": "Lead enterprise Android development with Kotlin and modern architecture as Sub-Leader of the Mobile Department. Coordinate task allocation, technical direction, and delivery planning, and integrate enterprise security SDKs into fintech applications.",
+      "description": "Lead enterprise Android development as Sub Leader of the Mobile Department, working with Java in established apps and Kotlin in newer ones. Coordinate task allocation, technical direction, and delivery planning, and integrate enterprise security SDKs into fintech applications.",
       "achievements": [
         "Lead enterprise Android development with Kotlin and modern architecture",
         "Coordinate task allocation, technical direction, and delivery planning as Sub-Leader of the Mobile Department",
@@ -46,7 +46,7 @@
       "location": "Busan, South Korea",
       "type": "International Assignment",
       "logo": "ic_logo_bizplay",
-      "description": "Selected for a one year international assignment to strengthen collaboration between the Cambodian and South Korean mobile teams. Led technical documentation review, defined project requirements, and delivered advanced security solutions for enterprise applications.",
+      "description": "Selected for a one year assignment to strengthen collaboration between the Cambodian and South Korean mobile teams. Clarified requirements, defined development tasks, coordinated delivery, and managed releases.",
       "achievements": [
         "Selected for a one-year assignment to support collaboration between the Cambodian and South Korean mobile development teams",
         "Reviewed technical documents from Korean teams, analyzed project requirements, and prepared task breakdowns for the Cambodia team",

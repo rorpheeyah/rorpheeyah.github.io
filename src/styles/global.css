@@ -111,16 +111,22 @@
   }
 }
 
-@keyframes gradientX {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
 /* Scroll behavior */
 html {
   scroll-behavior: smooth;
+}
+
+/* Theme switch: a quick crossfade between the old and new page snapshots,
+   driven by the toggle in Base.astro. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 160ms;
+  animation-timing-function: ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none !important;
+  }
 }
