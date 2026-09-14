@@ -1,0 +1,110 @@
+---
+import { Icon } from 'astro-icon/components';
+import { branding } from '@/data';
+---
+
+<section id="branding" class="py-20 px-6">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">{branding.title}</h2>
+      {branding.subtitle && <p class="text-muted-foreground max-w-2xl mx-auto">{branding.subtitle}</p>}
+    </div>
+
+    <div class="grid grid-cols-5 md:grid-cols-10 gap-4 mb-12">
+      {branding.assets.map((asset) => (
+        <button
+          type="button"
+          class="group text-center focus:outline-none focus:ring-2 focus:ring-primary rounded"
+          data-brand-asset={JSON.stringify({
+            name: asset.name,
+            description: asset.description,
+            image: asset.image,
+          })}
+        >
+          <span class="w-12 h-12 mx-auto mb-2 flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+            <img src={asset.image} alt={asset.name} loading="lazy" decoding="async" class="max-w-full max-h-full object-contain" />
+          </span>
+          <span class="block text-xs text-muted-foreground group-hover:text-foreground transition-colors">{asset.name}</span>
+        </button>
+      ))}
+    </div>
+
+    {branding.description && (
+      <div class="text-center max-w-2xl mx-auto">
+        <p class="text-muted-foreground leading-relaxed">{branding.description}</p>
+      </div>
+    )}
+  </div>
+
+  <div
+    id="brand-modal"
+    hidden
+    class="fixed inset-0 bg-black/80 backdrop-blur-sm flex justify-center items-center z-50 p-4"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="brand-modal-title"
+  >
+    <div class="bg-card rounded-xl max-w-md w-full relative border border-border" data-modal-panel>
+      <button
+        type="button"
+        data-modal-close
+        aria-label="Close preview"
+        class="absolute top-4 right-4 z-10 p-2 rounded-lg hover:bg-accent text-muted-foreground hover:text-foreground transition-colors duration-200"
+      >
+        <Icon name="lucide:x" class="w-4 h-4" />
+      </button>
+      <div class="p-6">
+        <div class="aspect-square flex items-center justify-center mb-4">
+          <img data-modal-image alt="" class="max-w-full max-h-full object-contain p-4" />
+        </div>
+        <div class="text-center">
+          <h3 id="brand-modal-title" data-modal-name class="text-lg font-medium mb-1"></h3>
+          <p data-modal-description class="text-sm text-muted-foreground"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const modal = document.getElementById('brand-modal');
+  if (modal) {
+    const panel = modal.querySelector('[data-modal-panel]') as HTMLElement;
+    const nameEl = modal.querySelector('[data-modal-name]') as HTMLElement;
+    const descEl = modal.querySelector('[data-modal-description]') as HTMLElement;
+    const imgEl = modal.querySelector('[data-modal-image]') as HTMLImageElement;
+    let lastFocused: HTMLElement | null = null;
+
+    const close = () => {
+      modal.hidden = true;
+      document.body.style.overflow = '';
+      lastFocused?.focus();
+    };
+
+    document.querySelectorAll<HTMLElement>('[data-brand-asset]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        try {
+          const data = JSON.parse(btn.dataset.brandAsset!);
+          lastFocused = btn;
+          nameEl.textContent = data.name;
+          descEl.textContent = data.description ?? '';
+          imgEl.src = data.image;
+          imgEl.alt = data.name;
+          modal.hidden = false;
+          document.body.style.overflow = 'hidden';
+          (modal.querySelector('[data-modal-close]') as HTMLElement)?.focus();
+        } catch {
+          /* malformed entry: leave the dialog closed */
+        }
+      });
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (!panel.contains(e.target as Node)) close();
+    });
+    modal.querySelector('[data-modal-close]')?.addEventListener('click', close);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.hidden) close();
+    });
+  }
+</script>

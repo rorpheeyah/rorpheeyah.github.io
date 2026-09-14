@@ -1,0 +1,109 @@
+---
+import '@/styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Math Rorpheeyah - Senior Android Developer Portfolio',
+  description = 'Senior Android Developer with 6+ years of experience building enterprise-grade mobile applications. Sub-Leader of the Mobile Department at KOSIGN.',
+} = Astro.props;
+
+const ogImage = new URL('/images/og-image.png', Astro.site).href;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Math Rorpheeyah" />
+    <meta
+      name="keywords"
+      content="Android Developer, Mobile Developer, Kotlin, Java, Senior Developer, Enterprise Apps, KOSIGN, Cambodia Developer"
+    />
+    <link rel="canonical" href={canonical} />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="/images/icons/ic_favicon.svg" />
+
+    {/* Applies the stored theme before first paint, so the page does not flash. */}
+    <script is:inline>
+      (() => {
+        try {
+          const saved = localStorage.getItem('app-theme');
+          const dark = saved
+            ? saved === 'dark'
+            : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          document.documentElement.classList.toggle('dark', dark);
+        } catch {
+          /* private mode or blocked storage: fall through to the light default */
+        }
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen bg-background text-foreground">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-background focus:px-4 focus:py-2 focus:ring-2 focus:ring-primary"
+    >
+      Skip to content
+    </a>
+    <slot />
+
+    <script>
+      // Theme toggling. Buttons opt in with [data-theme-toggle].
+      const root = document.documentElement;
+      const apply = (dark: boolean) => {
+        root.classList.toggle('dark', dark);
+        try {
+          localStorage.setItem('app-theme', dark ? 'dark' : 'light');
+        } catch {
+          /* ignore unavailable storage */
+        }
+        document
+          .querySelectorAll<HTMLElement>('[data-theme-toggle]')
+          .forEach((el) => el.setAttribute('aria-pressed', String(dark)));
+      };
+
+      document.querySelectorAll<HTMLElement>('[data-theme-toggle]').forEach((el) => {
+        el.setAttribute('aria-pressed', String(root.classList.contains('dark')));
+        el.addEventListener('click', () => apply(!root.classList.contains('dark')));
+      });
+
+      // Follow the system setting only while the visitor has made no explicit choice.
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        let saved: string | null = null;
+        try {
+          saved = localStorage.getItem('app-theme');
+        } catch {
+          /* ignore */
+        }
+        if (!saved) root.classList.toggle('dark', e.matches);
+      });
+    </script>
+  </body>
+</html>

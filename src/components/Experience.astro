@@ -1,0 +1,80 @@
+---
+import { Icon } from 'astro-icon/components';
+import { experience } from '@/data';
+---
+
+<section id="experience" class="py-20 px-6">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-20">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">{experience.title}</h2>
+      <p class="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+        {experience.subtitle}
+      </p>
+    </div>
+
+    <div class="space-y-16">
+      {experience.experiences.map((exp) => (
+        <div class="bg-card border border-border/50 rounded-lg p-8 hover:border-border transition-colors">
+          <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-6">
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold mb-3">{exp.title}</h3>
+              <div class="flex items-center gap-3 mb-2">
+                <img
+                  class="w-6 h-6 object-contain"
+                  src={`/images/logos/${exp.logo}.png`}
+                  alt={`${exp.company} logo`}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="font-medium text-foreground">{exp.company}</span>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-2 text-sm text-muted-foreground lg:items-end">
+              <div class="flex items-center gap-2">
+                <Icon name="lucide:calendar" class="w-4 h-4" />
+                <span>{exp.period}</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <Icon name="lucide:map-pin" class="w-4 h-4" />
+                <span>{exp.location}</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-muted-foreground leading-relaxed mb-6">{exp.description}</p>
+
+          <div class="flex flex-wrap gap-2">
+            {exp.technologies.slice(0, 6).map((tech) => (
+              <span class="text-sm text-muted-foreground bg-muted/30 px-3 py-1 rounded-full">{tech}</span>
+            ))}
+            {exp.technologies.length > 6 && (
+              <span class="text-sm text-muted-foreground">+{exp.technologies.length - 6} more</span>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-20 text-center">
+      <p class="text-muted-foreground mb-6 max-w-lg mx-auto">
+        Interested in my detailed background and achievements?
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="#contact"
+          class="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors"
+        >
+          Let's connect
+        </a>
+        <button
+          type="button"
+          data-open-cv
+          class="px-6 py-3 border border-border text-foreground rounded-lg font-medium hover:bg-muted/50 transition-colors"
+        >
+          View detailed CV
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

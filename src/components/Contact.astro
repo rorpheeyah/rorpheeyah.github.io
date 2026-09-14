@@ -1,0 +1,79 @@
+---
+import { Icon } from 'astro-icon/components';
+import { contact } from '@/data';
+import { iconFor } from '@/lib/icons';
+
+function statusConfig(status: string) {
+  const s = (status || '').toLowerCase();
+  if (s.includes('available') || s.includes('open')) {
+    return {
+      cls: 'bg-green-500/10 text-green-600',
+      dot: 'bg-green-500',
+      text: 'Available for opportunities',
+    };
+  }
+  if (s.includes('busy') || s.includes('limited')) {
+    return { cls: 'bg-amber-500/10 text-amber-600', dot: 'bg-amber-500', text: 'Limited availability' };
+  }
+  return { cls: 'bg-muted/40 text-muted-foreground', dot: 'bg-muted-foreground', text: status || 'Status unavailable' };
+}
+
+const status = statusConfig(contact.status);
+const year = new Date().getFullYear();
+---
+
+<section id="contact" class="py-20 px-6">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-foreground">{contact.title}</h2>
+      <p class="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">{contact.subtitle}</p>
+    </div>
+
+    <div class="mb-12 flex justify-center">
+      <div class:list={['inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm', status.cls]}>
+        <span class:list={['w-2 h-2 rounded-full', status.dot]}></span>
+        {status.text}
+      </div>
+    </div>
+
+    <div class="mb-16">
+      <h3 class="text-center text-2xl font-bold mb-6 pb-2 border-b border-border/30">Contact Information</h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {contact.social.map((item) => {
+          const external = item.url.startsWith('http');
+          return (
+            <a
+              href={item.url}
+              target={external ? '_blank' : undefined}
+              rel={external ? 'noopener noreferrer' : undefined}
+              class="flex items-center gap-3 p-4 rounded-lg hover:bg-muted/30 transition-colors duration-200"
+            >
+              <Icon name={iconFor(item.icon)} class="w-5 h-5 text-primary flex-shrink-0" />
+              <div class="flex-1">
+                <p class="font-medium text-sm">{item.name}</p>
+                <p class="text-xs text-muted-foreground mb-1">{item.description}</p>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+
+    <div class="text-center mb-8">
+      <p class="text-sm text-muted-foreground">Response time: Usually within 24 hours</p>
+    </div>
+
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-6 pt-8 border-t border-border/10">
+      <p class="text-sm text-muted-foreground">&copy; {year} Math Rorpheeyah</p>
+      <button
+        type="button"
+        data-open-cv
+        class="group inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border/40 bg-muted/30 hover:bg-muted/50 hover:border-border/60 text-sm font-medium text-foreground transition-all duration-200"
+      >
+        View CV
+        <Icon name="lucide:arrow-right" class="w-3 h-3 group-hover:translate-x-0.5 transition-transform duration-200" />
+      </button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,190 @@
+---
+import { Icon } from 'astro-icon/components';
+import { projects } from '@/data';
+
+// Flattened once at build time. The previous component paged these in 16 at a
+// time with an IntersectionObserver; with static HTML there is nothing to defer.
+const allProjects = projects.projectCategories.flatMap((c) =>
+  (c.projects ?? []).map((p) => ({ ...p, categoryTitle: c.title }))
+);
+---
+
+<section id="projects" class="py-24 px-6 lg:px-8 bg-background text-foreground">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-20">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-8">{projects.title}</h2>
+      <p class="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-light">
+        {projects.subtitle}
+      </p>
+    </div>
+
+    <div class="border border-border/50 rounded-2xl p-6 md:p-12 bg-card">
+      <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-6 md:gap-8">
+        {allProjects.map((project) => (
+          <button
+            type="button"
+            class="group cursor-pointer text-center focus:outline-none focus:ring-2 focus:ring-primary rounded-xl"
+            data-project={JSON.stringify({
+              name: project.name,
+              description: project.description,
+              category: project.category,
+              technologies: project.technologies ?? [],
+              link: project.link,
+              image: project.remoteImage || project.image,
+              fallback: project.image || '/images/placeholder.svg',
+            })}
+          >
+            <div class="flex flex-col items-center text-center">
+              <div class="w-12 h-12 md:w-14 md:h-14 mb-2 md:mb-3 rounded-2xl overflow-hidden bg-accent/50 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-border/20 group-hover:border-border/40">
+                <img
+                  src={project.remoteImage || project.image}
+                  data-fallback={project.image || '/images/placeholder.svg'}
+                  alt={project.name}
+                  loading="lazy"
+                  decoding="async"
+                  class="w-full h-full object-cover rounded-xl"
+                />
+              </div>
+              <h3 class="text-xs md:text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                {project.name}
+              </h3>
+            </div>
+          </button>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <div
+    id="project-modal"
+    hidden
+    class="fixed inset-0 bg-black/80 backdrop-blur-sm flex justify-center items-center z-50 p-4"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="project-modal-title"
+  >
+    <div class="bg-card rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto relative border border-border/50 shadow-2xl" data-modal-panel>
+      <button
+        type="button"
+        data-modal-close
+        aria-label="Close project details"
+        class="absolute top-6 right-6 z-10 p-3 rounded-xl bg-accent/60 hover:bg-accent text-muted-foreground hover:text-foreground transition-all duration-300"
+      >
+        <Icon name="lucide:x" class="w-5 h-5" />
+      </button>
+
+      <div class="p-8 md:p-10 border-b border-border/30">
+        <div class="flex items-start space-x-6 md:space-x-8">
+          <div class="w-20 h-20 md:w-24 md:h-24 rounded-2xl overflow-hidden bg-accent/50 flex items-center justify-center flex-shrink-0 border border-border/20">
+            <img data-modal-image alt="" class="w-full h-full object-cover rounded-2xl" />
+          </div>
+          <div class="flex-1">
+            <h3 id="project-modal-title" data-modal-name class="text-2xl md:text-3xl font-semibold text-foreground mb-3"></h3>
+            <span data-modal-category class="text-sm font-medium text-muted-foreground uppercase tracking-wide px-3 py-1 bg-accent/50 rounded-full"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-8 md:p-10">
+        <p data-modal-description class="text-base md:text-lg text-muted-foreground leading-relaxed mb-10"></p>
+
+        <div class="mb-10">
+          <h4 class="text-xl font-semibold mb-6 text-foreground flex items-center">
+            <span class="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center mr-3">
+              <Icon name="lucide:code" class="w-4 h-4 text-primary" />
+            </span>
+            Technologies
+          </h4>
+          <div data-modal-tech class="flex flex-wrap gap-3"></div>
+        </div>
+
+        <div class="flex justify-center">
+          <a
+            data-modal-link
+            target="_blank"
+            rel="noopener noreferrer"
+            hidden
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
+          >
+            View project
+            <Icon name="lucide:external-link" class="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Icon fallbacks for remote artwork that no longer resolves.
+  document.querySelectorAll<HTMLImageElement>('img[data-fallback]').forEach((img) => {
+    img.addEventListener(
+      'error',
+      () => {
+        const fallback = img.dataset.fallback;
+        if (fallback && img.src !== fallback) img.src = fallback;
+      },
+      { once: true }
+    );
+  });
+
+  const modal = document.getElementById('project-modal');
+  if (modal) {
+    const panel = modal.querySelector('[data-modal-panel]') as HTMLElement;
+    const nameEl = modal.querySelector('[data-modal-name]') as HTMLElement;
+    const catEl = modal.querySelector('[data-modal-category]') as HTMLElement;
+    const descEl = modal.querySelector('[data-modal-description]') as HTMLElement;
+    const techEl = modal.querySelector('[data-modal-tech]') as HTMLElement;
+    const imgEl = modal.querySelector('[data-modal-image]') as HTMLImageElement;
+    const linkEl = modal.querySelector('[data-modal-link]') as HTMLAnchorElement;
+    let lastFocused: HTMLElement | null = null;
+
+    const close = () => {
+      modal.hidden = true;
+      document.body.style.overflow = '';
+      lastFocused?.focus();
+    };
+
+    const open = (data: any, trigger: HTMLElement) => {
+      lastFocused = trigger;
+      nameEl.textContent = data.name;
+      catEl.textContent = data.category ?? '';
+      descEl.textContent = data.description ?? '';
+      imgEl.src = data.image;
+      imgEl.alt = data.name;
+      techEl.replaceChildren(
+        ...(data.technologies ?? []).map((tech: string) => {
+          const span = document.createElement('span');
+          span.className =
+            'px-4 py-2 bg-accent/60 text-muted-foreground rounded-xl text-sm font-medium border border-border/20';
+          span.textContent = tech;
+          return span;
+        })
+      );
+      const hasLink = data.link && data.link !== '#';
+      linkEl.hidden = !hasLink;
+      if (hasLink) linkEl.href = data.link;
+      modal.hidden = false;
+      document.body.style.overflow = 'hidden';
+      (modal.querySelector('[data-modal-close]') as HTMLElement)?.focus();
+    };
+
+    document.querySelectorAll<HTMLElement>('[data-project]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        try {
+          open(JSON.parse(btn.dataset.project!), btn);
+        } catch {
+          /* malformed entry: leave the dialog closed */
+        }
+      });
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (!panel.contains(e.target as Node)) close();
+    });
+    modal.querySelector('[data-modal-close]')?.addEventListener('click', close);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.hidden) close();
+    });
+  }
+</script>

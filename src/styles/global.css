@@ -60,6 +60,12 @@
 }
 
 @layer base {
+  /* The [hidden] attribute must win over display utilities such as `flex`,
+     which otherwise keep hidden dialogs visible. */
+  [hidden] {
+    display: none !important;
+  }
+
   * {
     @apply border-border;
   }

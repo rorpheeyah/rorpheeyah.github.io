@@ -1,0 +1,241 @@
+---
+import { Icon } from 'astro-icon/components';
+import { cv } from '@/data';
+import { iconFor } from '@/lib/icons';
+---
+
+<div
+  id="cv-modal"
+  hidden
+  class="fixed inset-0 z-[60] overflow-hidden"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="cv-modal-title"
+>
+  <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" data-cv-backdrop></div>
+
+  <div class="relative h-full overflow-y-auto bg-background" data-cv-panel>
+    <div class="sticky top-0 z-10 bg-background/95 backdrop-blur-sm border-b border-border/50">
+      <div class="max-w-5xl mx-auto px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <button
+            type="button"
+            data-cv-close
+            class="inline-flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium group"
+          >
+            <Icon name="lucide:arrow-left" class="w-4 h-4 transition-transform duration-200 group-hover:-translate-x-1" />
+            <span class="hidden sm:inline">Back to Portfolio</span>
+            <span class="sm:hidden">Back</span>
+          </button>
+
+          <div class="flex items-center gap-3">
+            <button
+              type="button"
+              data-theme-toggle
+              aria-label="Toggle colour theme"
+              class="p-2 text-muted-foreground hover:text-foreground transition-colors duration-200 rounded-lg hover:bg-accent/50"
+            >
+              <Icon name="lucide:sun" class="w-4 h-4 hidden dark:block" />
+              <Icon name="lucide:moon" class="w-4 h-4 block dark:hidden" />
+            </button>
+
+            <a
+              href={cv.downloads?.cv?.path ?? '/cv.pdf'}
+              download={cv.downloads?.cv?.filename ?? 'Math_Rorpheeyah_CV.pdf'}
+              class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-foreground bg-background border border-border rounded-lg hover:bg-accent transition-all duration-200"
+            >
+              <Icon name="lucide:download" class="w-4 h-4" />
+              <span class="hidden sm:inline">Download PDF</span>
+              <span class="sm:hidden">PDF</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-6 lg:px-8 py-12">
+      <header class="grid grid-cols-1 lg:grid-cols-3 gap-10 mb-16">
+        <div class="lg:col-span-2 flex flex-col sm:flex-row items-center sm:items-start gap-6 text-center sm:text-left">
+          {cv.personal?.profileImage && (
+            <img
+              src={cv.personal.profileImage}
+              alt=""
+              class="w-28 h-28 rounded-2xl object-cover border border-border/50"
+              loading="lazy"
+            />
+          )}
+          <div>
+            <h1 id="cv-modal-title" class="text-4xl font-bold text-foreground mb-3">{cv.personal?.name}</h1>
+            <p class="text-lg text-primary font-medium mb-2">{cv.personal?.title}</p>
+            <p class="text-sm text-muted-foreground">{cv.personal?.location}</p>
+            {cv.contacts?.length > 0 && (
+              <div class="flex flex-wrap justify-center sm:justify-start gap-4 mt-4">
+                {cv.contacts.map((c) => (
+                  <a
+                    href={c.href}
+                    class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    <Icon name={iconFor(c.icon)} class="w-4 h-4 text-primary" />
+                    {c.value}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+
+        {cv.highlights?.length > 0 && (
+          <aside class="bg-card/30 rounded-lg p-6 border border-border/50">
+            <h2 class="text-lg font-bold mb-5 flex items-center gap-2">
+              <Icon name="lucide:trophy" class="w-5 h-5 text-primary" />
+              Highlights
+            </h2>
+            <ul class="space-y-3">
+              {cv.highlights.map((h) => (
+                <li class="flex items-start gap-3 text-sm text-muted-foreground">
+                  <Icon name={iconFor(h.icon)} class="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                  <span>{h.text}</span>
+                </li>
+              ))}
+            </ul>
+          </aside>
+        )}
+      </header>
+
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-border/30 flex items-center gap-2">
+          <Icon name="lucide:user" class="w-5 h-5 text-primary" />
+          Professional Summary
+        </h2>
+        <div class="bg-card/30 rounded-lg p-6 border border-border/50">
+          <p class="text-muted-foreground leading-relaxed">{cv.summary}</p>
+        </div>
+      </section>
+
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-border/30 flex items-center gap-2">
+          <Icon name="lucide:briefcase" class="w-5 h-5 text-primary" />
+          Work Experience
+        </h2>
+        <div class="space-y-8">
+          {cv.experiences.map((exp) => (
+            <div class="bg-card/30 rounded-lg p-6 border border-border/50 space-y-4">
+              <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between">
+                <div class="flex-1">
+                  <h3 class="text-lg font-semibold mb-1">{exp.title}</h3>
+                  <p class="text-primary font-medium mb-1">{exp.company}</p>
+                  <p class="text-sm text-muted-foreground">{exp.period} | {exp.location}</p>
+                </div>
+                <div class="mt-3 lg:mt-0">
+                  <span class="inline-flex items-center gap-1 text-xs px-3 py-1 bg-primary/10 text-primary rounded-full">
+                    <Icon name="lucide:briefcase" class="w-3 h-3" />
+                    {exp.type}
+                  </span>
+                </div>
+              </div>
+              <ul class="space-y-2 text-sm text-muted-foreground">
+                {exp.achievements.map((a) => (
+                  <li class="flex items-start gap-3">
+                    <span class="text-primary mt-1 flex-shrink-0">&bull;</span>
+                    <span class="leading-relaxed">{a}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-border/30 flex items-center gap-2">
+          <Icon name="lucide:code" class="w-5 h-5 text-primary" />
+          Technical Skills
+        </h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {Object.entries(cv.skills).map(([category, list]) => (
+            <div class="space-y-3">
+              <h3 class="text-base font-semibold text-foreground">{category}</h3>
+              <ul class="space-y-1">
+                {list.map((skill) => (
+                  <li class="text-sm flex items-start gap-2 text-muted-foreground">
+                    <span class="text-primary mt-1 text-xs">&bull;</span>
+                    <span>{skill}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-border/30 flex items-center gap-2">
+            <Icon name="lucide:graduation-cap" class="w-5 h-5 text-primary" />
+            Education
+          </h2>
+          <div class="space-y-6">
+            {cv.education.map((edu) => (
+              <div class="bg-card/30 rounded-lg p-6 border border-border/50">
+                <h3 class="text-lg font-semibold">{edu.degree}</h3>
+                <p class="text-primary font-medium">{edu.institution}</p>
+                <p class="text-sm text-muted-foreground">{edu.period}</p>
+                {edu.details && <p class="text-sm text-muted-foreground mt-2">{edu.details}</p>}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-border/30 flex items-center gap-2">
+            <Icon name="lucide:globe" class="w-5 h-5 text-primary" />
+            Languages
+          </h2>
+          <div class="space-y-3">
+            {cv.languages.map((lang) => (
+              <div class="flex items-center justify-between bg-card/30 rounded-lg px-5 py-3 border border-border/50">
+                <span class="font-medium">{lang.name}</span>
+                <span class="text-sm text-muted-foreground">{lang.level}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('cv-modal');
+  if (modal) {
+    let lastFocused: HTMLElement | null = null;
+    const title = 'Math Rorpheeyah - Curriculum Vitae';
+    let previousTitle = document.title;
+
+    const close = () => {
+      modal.hidden = true;
+      document.body.style.overflow = '';
+      document.title = previousTitle;
+      lastFocused?.focus();
+    };
+
+    const open = (trigger: HTMLElement) => {
+      lastFocused = trigger;
+      previousTitle = document.title;
+      modal.hidden = false;
+      document.body.style.overflow = 'hidden';
+      document.title = title;
+      modal.scrollTop = 0;
+      (modal.querySelector('[data-cv-close]') as HTMLElement)?.focus();
+    };
+
+    document.querySelectorAll<HTMLElement>('[data-open-cv]').forEach((btn) =>
+      btn.addEventListener('click', () => open(btn))
+    );
+    modal.querySelectorAll('[data-cv-close]').forEach((btn) => btn.addEventListener('click', close));
+    modal.querySelector('[data-cv-backdrop]')?.addEventListener('click', close);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.hidden) close();
+    });
+  }
+</script>
