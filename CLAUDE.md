@@ -58,6 +58,31 @@ This replaced a React setup where seven components each independently fetched th
 - `tsconfig.json` extends `astro/tsconfigs/strict` but relaxes `strictNullChecks` and `noImplicitAny`, carried over from the React setup.
 - Tailwind 3 runs through `postcss.config.js`, not an Astro integration (`@astrojs/tailwind` is deprecated). `tailwind.config.ts` must keep `.astro` in its content globs.
 
+## Identity assets
+
+Marks live in `src/assets/identity/` and come from the 2026-09-14 web identity
+kit at `~/Documents/personal/personal_branding/portfolio-identity-web-2026-09-14`.
+They are painted with `fill="currentColor"`, so they are imported as Astro SVG
+components and **inlined** — an external `<img>` would not inherit the page
+colour and the mark would be invisible in one theme. One CSS `color` per mark:
+ink `#1A1A18` on light, paper `#F2F0EC` on dark.
+
+The kit states a minimum size for each mark. The branding section renders below
+those minimums at the owner's direction; see `docs/identity-size-overrides.md`.
+Navigation is compliant. `docs/` also holds the two asset briefs sent to the
+kit's author, kept as a record.
+
 ## Content caveats
 
-Site copy was reconciled against the owner's CVs; claims that neither CV supported were removed. Two blocks in `Skills.astro` (`summaryCards`, `expertise`) are hardcoded marketing copy rather than content-file data, and include claims no CV backs — "Multi-tenant architecture design", "Secure transaction processing architecture design". They were ported as-is from the React version and are still pending review. Do not treat them as verified.
+Site copy was reconciled against the owner's CVs and claims neither CV supported
+were removed. Two things remain unverified:
+
+- **"30+ Apps Contributed To"** in `about.json` — the owner chose to keep it,
+  reworded from "Built". It rests on Play Console access, not the CVs.
+- **`summaryCards` and `expertise` in `Skills.astro`** — hardcoded marketing copy
+  in component markup rather than content-file data. The worst claims were
+  removed, but what remains tracks CV themes loosely rather than CV text. Do not
+  treat it as verified.
+
+Private data in the source CVs (date of birth, gender, birthplace, phone) must
+not reach the site. It does not today; keep it that way when editing content.
