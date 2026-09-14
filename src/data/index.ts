@@ -96,15 +96,8 @@ export interface Skills {
 export interface Branding {
   title: string;
   subtitle: string;
-  description: string;
-  assets: {
-    id: string;
-    name: string;
-    description: string;
-    category: string;
-    image: string;
-    downloadUrl: string;
-  }[];
+  rights?: string;
+  marks: { id: string; name: string; description: string; minWidth: number }[];
 }
 
 export interface Contact {

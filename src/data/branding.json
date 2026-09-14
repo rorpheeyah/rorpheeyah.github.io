@@ -1,87 +1,31 @@
 {
   "title": "Personal Branding",
-  "subtitle": "",
-  "description": "",
-  "assets": [
+  "subtitle": "My Khmer name, ម៉ាត់រ៉ភីយ៉ះ, as a personal seal.",
+  "rights": "© 2026 Math Rorpheeyah. Not licensed for reuse.",
+  "marks": [
     {
-      "id": "circle",
-      "name": "Circle",
-      "description": "Traditional circular seal format",
-      "category": "seal",
-      "image": "/images/seals/ic_seal_circle.png",
-      "downloadUrl": "/images/seals/ic_seal_circle.png"
+      "id": "seal-open",
+      "name": "Open seal",
+      "description": "Given-name calligraphy without an enclosing field.",
+      "minWidth": 160
     },
     {
-      "id": "circle-filled",
-      "name": "Circle",
-      "description": "Traditional circular seal format",
-      "category": "seal",
-      "image": "/images/seals/ic_seal_circle_filled.png",
-      "downloadUrl": "/images/seals/ic_seal_circle_filled.png"
+      "id": "seal-rounded",
+      "name": "Rounded seal",
+      "description": "Calligraphy reversed out of a filled rounded square.",
+      "minWidth": 160
     },
     {
-      "id": "square",
-      "name": "Square",
-      "description": "Imperial square seal style",
-      "category": "seal",
-      "image": "/images/seals/ic_seal_square.png",
-      "downloadUrl": "/images/seals/ic_seal_square.png"
+      "id": "seal-framed",
+      "name": "Framed seal",
+      "description": "Calligraphy enclosed by its separate frame.",
+      "minWidth": 192
     },
     {
-      "id": "square-filled",
-      "name": "Square",
-      "description": "Imperial square seal style",
-      "category": "seal",
-      "image": "/images/seals/ic_seal_square_filled.png",
-      "downloadUrl": "/images/seals/ic_seal_square_filled.png"
-    },
-    {
-      "id": "rect",
-      "name": "Rectangle",
-      "description": "Rectangular seal variation",
-      "category": "seal",
-      "image": "/images/seals/ic_seal_rect.png",
-      "downloadUrl": "/images/seals/ic_seal_rect.png"
-    },
-    {
-      "id": "rect-filled",
-      "name": "Rectangle",
-      "description": "Rectangular seal variation",
-      "category": "seal",
-      "image": "/images/seals/ic_seal_rect_filled.png",
-      "downloadUrl": "/images/seals/ic_seal_rect_filled.png"
-    },
-    {
-      "id": "favicon-outline",
-      "name": "Favicon",
-      "description": "Digital adaptation for web",
-      "category": "icon",
-      "image": "/images/icons/ic_favicon_rect_outline.svg",
-      "downloadUrl": "/images/icons/ic_favicon_rect_outline.svg"
-    },
-    {
-      "id": "favicon",
-      "name": "Favicon",
-      "description": "Digital adaptation for web",
-      "category": "icon",
-      "image": "/images/icons/ic_favicon.svg",
-      "downloadUrl": "/images/icons/ic_favicon.svg"
-    },
-    {
-      "id": "horizontal",
-      "name": "Horizontal",
-      "description": "Extended horizontal format",
-      "category": "seal",
-      "image": "/images/seals/ic_seal_horizontal.png",
-      "downloadUrl": "/images/seals/ic_seal_horizontal.png"
-    },
-    {
-      "id": "horizontal-filled",
-      "name": "Horizontal",
-      "description": "Extended horizontal format",
-      "category": "seal",
-      "image": "/images/seals/ic_seal_horizontal_filled.png",
-      "downloadUrl": "/images/seals/ic_seal_horizontal_filled.png"
+      "id": "circle-b",
+      "name": "Circle B",
+      "description": "Circular composition with its established lettering and filled disc.",
+      "minWidth": 192
     }
   ]
 }

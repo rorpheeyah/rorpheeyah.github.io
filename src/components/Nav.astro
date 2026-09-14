@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
+import SignatureCompact from '@/assets/identity/signature-compact.svg';
 
 const navItems = [
   { id: 'hero', label: 'Home', icon: 'lucide:home' },
@@ -17,16 +18,9 @@ const navItems = [
   class="fixed top-6 left-1/2 -translate-x-1/2 z-40 transition-all duration-300 hidden md:block bg-background/60 backdrop-blur-lg border border-border/10 rounded-full px-6 py-3"
 >
   <div class="flex items-center space-x-6">
-    <div class="flex items-center space-x-3 mr-2">
-      <img
-        src="/images/seals/ic_seal_horizontal_black_filled.png"
-        data-logo-light="/images/seals/ic_seal_horizontal_black_filled.png"
-        data-logo-dark="/images/seals/ic_seal_horizontal_white_filled.png"
-        alt="Math Rorpheeyah"
-        class="h-6 w-auto"
-      />
-      <span class="w-px h-4 bg-border"></span>
-    </div>
+    <a href="#hero" class="identity identity-desktop" aria-label="Math Rorpheeyah / ម៉ាត់រ៉ភីយ៉ះ — Home">
+      <SignatureCompact width={160} height={40} aria-hidden="true" focusable="false" />
+    </a>
 
     {navItems.map((item) => (
       <a
@@ -56,13 +50,9 @@ const navItems = [
   class="fixed top-0 left-0 right-0 z-50 md:hidden transition-all duration-300 bg-background/90 backdrop-blur-lg border-b border-border/10"
 >
   <div class="flex items-center justify-between px-4 py-3 min-h-[60px]">
-    <img
-      src="/images/seals/ic_seal_horizontal_black_filled.png"
-      data-logo-light="/images/seals/ic_seal_horizontal_black_filled.png"
-      data-logo-dark="/images/seals/ic_seal_horizontal_white_filled.png"
-      alt="Math Rorpheeyah"
-      class="h-8 w-auto"
-    />
+    <a href="#hero" class="identity identity-mobile" aria-label="Math Rorpheeyah / ម៉ាត់រ៉ភីយ៉ះ — Home">
+      <SignatureCompact width={144} height={36} aria-hidden="true" focusable="false" />
+    </a>
 
     <div class="relative">
       <button
@@ -147,20 +137,6 @@ const navItems = [
 <script>
   const SECTIONS = ['hero', 'about', 'experience', 'projects', 'branding', 'contact'];
 
-  // Theme-dependent logo swap (the seal artwork is a raster, not a themed SVG).
-  const syncLogos = () => {
-    const dark = document.documentElement.classList.contains('dark');
-    document.querySelectorAll<HTMLImageElement>('img[data-logo-light]').forEach((img) => {
-      const next = dark ? img.dataset.logoDark! : img.dataset.logoLight!;
-      if (!img.src.endsWith(next)) img.src = next;
-    });
-  };
-  syncLogos();
-  new MutationObserver(syncLogos).observe(document.documentElement, {
-    attributes: true,
-    attributeFilter: ['class'],
-  });
-
   // Mobile menu
   const menu = document.getElementById('mobile-menu');
   const menuBtn = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
@@ -238,3 +214,35 @@ const navItems = [
     window.scrollTo({ top: 0, behavior: 'smooth' })
   );
 </script>
+
+<style>
+  /* One inherited colour for the whole inline lockup: ink on the light ground,
+     paper on the dark one. Clear space is one eighth of the rendered height,
+     per the kit's stated rule. */
+  .identity {
+    display: inline-flex;
+    flex: none;
+    color: #1a1a18;
+  }
+  :global(.dark) .identity {
+    color: #f2f0ec;
+  }
+  .identity :global(svg) {
+    display: block;
+    flex: none;
+  }
+  .identity-desktop {
+    padding: 5px;
+  }
+  .identity-desktop :global(svg) {
+    width: 160px;
+    height: 40px;
+  }
+  .identity-mobile {
+    padding: 4.5px;
+  }
+  .identity-mobile :global(svg) {
+    width: 144px;
+    height: 36px;
+  }
+</style>
