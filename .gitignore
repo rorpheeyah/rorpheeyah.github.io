@@ -36,3 +36,6 @@ coverage/
 # Misc
 *.tmp
 *.local
+
+# Astro
+.astro/

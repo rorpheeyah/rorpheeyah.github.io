@@ -1,30 +1,30 @@
-# Math Rorpheeyah - Portfolio
+# Math Rorpheeyah — Portfolio
 
-Personal portfolio website showcasing my work as a Senior Android Developer.
+Personal portfolio website.
 
-🔗 **[Live Site](https://rorpheeyah.github.io)**
-
-## About
-
-This portfolio highlights my 5+ years of experience building enterprise Android applications, with a focus on security, architecture, and team leadership.
+🔗 **[rorpheeyah.github.io](https://rorpheeyah.github.io)**
 
 ## Tech Stack
 
-- React 18 + TypeScript
-- Vite
+- Astro (static output, zero client-side framework)
+- TypeScript
 - TailwindCSS
 - Hosted on GitHub Pages
 
 ## Development
 
+Requires Node 22.12 or newer.
+
 ```bash
 npm install
-npm run dev
+npm run dev      # localhost:8080
+npm run build    # type-check and build to dist/
+npm run preview  # serve the built output
 ```
 
 ## Deployment
 
-Automated via GitHub Actions on push to `main` branch.
+Automated via GitHub Actions on push to `main`.
 
 ## License
 

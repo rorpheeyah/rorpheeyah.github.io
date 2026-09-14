@@ -1,0 +1,59 @@
+---
+import { branding } from '@/data';
+import Circle from '@/assets/identity/circle.svg';
+import SealFramed from '@/assets/identity/seal-framed.svg';
+import SealOpen from '@/assets/identity/seal-open.svg';
+import SealRounded from '@/assets/identity/seal-rounded.svg';
+
+// The marks are inlined rather than referenced as <img>: they are painted with
+// fill="currentColor", which an external image would not inherit.
+const MARKS: Record<string, any> = {
+  circle: Circle,
+  'seal-framed': SealFramed,
+  'seal-open': SealOpen,
+  'seal-rounded': SealRounded,
+};
+
+// Rendered at the project-icon size, at the owner's direction. This is below
+// the minimums stated in the kit's RULES.md (160-192px); the departure is
+// recorded in docs/identity-size-overrides.md, and branding.json keeps each
+// mark's stated minimum on record.
+---
+
+<section id="branding" class="py-16 px-6">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-2">{branding.title}</h2>
+    <p class="text-sm text-muted-foreground mb-10">{branding.subtitle}</p>
+
+    <div class="flex flex-wrap justify-center gap-8 md:gap-12">
+      {branding.marks.map((mark) => {
+        const Mark = MARKS[mark.id];
+        if (!Mark) return null;
+        return (
+          <figure class="flex flex-col items-center">
+            <span class="identity-mark w-12 h-12 md:w-14 md:h-14 flex items-center justify-center">
+              <Mark width={56} height={56} aria-hidden="true" focusable="false" />
+            </span>
+            <figcaption class="mt-2 md:mt-3 text-xs text-muted-foreground">{mark.name}</figcaption>
+          </figure>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
+<style>
+  /* One inherited colour for the whole inline SVG: ink on the light ground,
+     paper on the dark one. Never a per-component recolour. */
+  .identity-mark {
+    color: #1a1a18;
+  }
+  :global(.dark) .identity-mark {
+    color: #f2f0ec;
+  }
+  .identity-mark :global(svg) {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+</style>

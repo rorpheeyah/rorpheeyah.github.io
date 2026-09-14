@@ -1,0 +1,41 @@
+{
+  "title": "About Me",
+  "description": "Senior Android Developer and Sub-Leader of the Mobile Department at KOSIGN, with 6+ years of experience in enterprise Android development. My work spans Kotlin and modern Android architecture, fintech systems, enterprise security SDK integration, and collaboration across Cambodian and Korean teams.",
+  "stats": [
+    {
+      "icon": "Code",
+      "value": "6+",
+      "label": "Years Experience"
+    },
+    {
+      "icon": "Trophy",
+      "value": "30+",
+      "label": "Apps Contributed To"
+    },
+    {
+      "icon": "Award",
+      "value": "2020",
+      "label": "Best Rookie Award"
+    }
+  ],
+  "achievements": [
+    {
+      "icon": "Award",
+      "title": "Best Rookie Award",
+      "description": "KOSIGN, December 2020",
+      "highlight": true
+    },
+    {
+      "icon": "Code",
+      "title": "Security SDK Integration",
+      "description": "Integrate RaonSecure SDKs, including TouchEn mTranskey, mVaccine, and AppIron, into fintech applications",
+      "highlight": true
+    },
+    {
+      "icon": "BookOpen",
+      "title": "International Experience",
+      "description": "Assignment with Bizplay in Busan, South Korea (Oct 2022 - Aug 2023)",
+      "highlight": false
+    }
+  ]
+}

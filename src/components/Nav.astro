@@ -1,0 +1,249 @@
+---
+import { Icon } from 'astro-icon/components';
+import SignatureCompact from '@/assets/identity/signature-compact.svg';
+
+const navItems = [
+  { id: 'hero', label: 'Home', icon: 'lucide:home' },
+  { id: 'about', label: 'About', icon: 'lucide:user' },
+  { id: 'experience', label: 'Experience', icon: 'lucide:briefcase' },
+  { id: 'projects', label: 'Projects', icon: 'lucide:folder-open' },
+  { id: 'branding', label: 'Identity', icon: 'lucide:palette' },
+  { id: 'contact', label: 'Contact', icon: 'lucide:phone' },
+];
+---
+
+{/* Desktop */}
+<nav
+  data-desktop-nav
+  class="fixed top-6 left-1/2 -translate-x-1/2 z-40 transition-all duration-300 hidden md:block bg-background/60 backdrop-blur-lg border border-border/10 rounded-full px-6 py-3"
+>
+  <div class="flex items-center space-x-6">
+    <a href="#hero" class="identity identity-desktop" aria-label="Math Rorpheeyah / ម៉ាត់រ៉ភីយ៉ះ — Home">
+      <SignatureCompact width={96} height={24} aria-hidden="true" focusable="false" />
+    </a>
+
+    {navItems.map((item) => (
+      <a
+        href={`#${item.id}`}
+        data-nav-link={item.id}
+        class="relative text-sm font-medium transition-all duration-300 hover:text-primary text-muted-foreground"
+      >
+        {item.label}
+      </a>
+    ))}
+
+    <button
+      type="button"
+      data-theme-toggle
+      aria-label="Toggle colour theme"
+      class="text-muted-foreground hover:text-foreground transition-colors"
+    >
+      <Icon name="lucide:sun" class="w-4 h-4 hidden dark:block" />
+      <Icon name="lucide:moon" class="w-4 h-4 block dark:hidden" />
+    </button>
+  </div>
+</nav>
+
+{/* Mobile */}
+<nav
+  data-mobile-nav
+  class="fixed top-0 left-0 right-0 z-50 md:hidden transition-all duration-300 bg-background/90 backdrop-blur-lg border-b border-border/10"
+>
+  <div class="flex items-center justify-between px-4 py-3 min-h-[60px]">
+    <a href="#hero" class="identity identity-mobile" aria-label="Math Rorpheeyah / ម៉ាត់រ៉ភីយ៉ះ — Home">
+      <SignatureCompact width={96} height={24} aria-hidden="true" focusable="false" />
+    </a>
+
+    <div class="relative">
+      <button
+        type="button"
+        data-menu-toggle
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Open menu"
+        class="flex items-center justify-center w-10 h-10 rounded-full bg-accent/50 hover:bg-accent transition-all duration-200"
+      >
+        <Icon name="lucide:menu" class="w-5 h-5 text-foreground" data-menu-icon-open />
+        <Icon name="lucide:x" class="w-5 h-5 text-foreground hidden" data-menu-icon-close />
+      </button>
+
+      <div
+        id="mobile-menu"
+        hidden
+        class="absolute top-full right-0 mt-2 w-56 bg-background/95 backdrop-blur-xl border border-border/30 rounded-xl shadow-lg"
+      >
+        <div class="p-3">
+          <div class="flex items-center space-x-3 px-3 py-2 mb-2">
+            <img src="/images/profile.png" alt="" class="w-10 h-10 rounded-full object-cover" loading="lazy" />
+            <div>
+              <div class="text-sm font-semibold text-foreground">Math Rorpheeyah</div>
+              <div class="text-xs text-muted-foreground">Senior Android Developer</div>
+            </div>
+          </div>
+
+          <div class="border-t border-border/50 pt-2">
+            {navItems.map((item) => (
+              <a
+                href={`#${item.id}`}
+                data-nav-link={item.id}
+                data-menu-item
+                class="w-full flex items-center space-x-3 px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 hover:bg-accent/50 text-muted-foreground hover:text-foreground"
+              >
+                <Icon name={item.icon} class="w-4 h-4" />
+                <span>{item.label}</span>
+              </a>
+            ))}
+
+            <button
+              type="button"
+              data-open-cv
+              class="w-full flex items-center space-x-3 px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 hover:bg-accent/50 text-muted-foreground hover:text-foreground"
+            >
+              <Icon name="lucide:file-text" class="w-4 h-4" />
+              <span>View CV</span>
+            </button>
+
+            <div class="border-t border-border/50 mt-2 pt-2">
+              <button
+                type="button"
+                data-theme-toggle
+                class="w-full flex items-center space-x-3 px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 hover:bg-accent/50 text-muted-foreground hover:text-foreground"
+              >
+                <Icon name="lucide:sun" class="w-4 h-4 hidden dark:block" />
+                <Icon name="lucide:moon" class="w-4 h-4 block dark:hidden" />
+                <span class="hidden dark:inline">Light Mode</span>
+                <span class="inline dark:hidden">Dark Mode</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="h-[60px] md:hidden"></div>
+
+<button
+  type="button"
+  data-go-top
+  hidden
+  aria-label="Go to top"
+  class="fixed bottom-6 right-4 z-40 md:hidden flex items-center justify-center w-12 h-12 bg-primary hover:bg-primary/90 text-primary-foreground rounded-full shadow-lg transition-all duration-300"
+>
+  <Icon name="lucide:chevron-up" class="w-6 h-6" />
+</button>
+
+<script>
+  const SECTIONS = ['hero', 'about', 'experience', 'projects', 'branding', 'contact'];
+
+  // Mobile menu
+  const menu = document.getElementById('mobile-menu');
+  const menuBtn = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+  const iconOpen = document.querySelector<HTMLElement>('[data-menu-icon-open]');
+  const iconClose = document.querySelector<HTMLElement>('[data-menu-icon-close]');
+
+  const setMenu = (open: boolean) => {
+    if (!menu || !menuBtn) return;
+    menu.hidden = !open;
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    iconOpen?.classList.toggle('hidden', open);
+    iconClose?.classList.toggle('hidden', !open);
+  };
+
+  menuBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    setMenu(menu?.hidden ?? true);
+  });
+  document.querySelectorAll('[data-menu-item]').forEach((el) =>
+    el.addEventListener('click', () => setMenu(false))
+  );
+  document.addEventListener('click', (e) => {
+    if (menu && !menu.hidden && !menu.contains(e.target as Node) && e.target !== menuBtn) setMenu(false);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menu && !menu.hidden) setMenu(false);
+  });
+
+  // Active-section highlighting
+  const links = [...document.querySelectorAll<HTMLElement>('[data-nav-link]')];
+  const setActive = (id: string) => {
+    links.forEach((link) => {
+      const on = link.dataset.navLink === id;
+      link.classList.toggle('text-primary', on);
+      link.classList.toggle('text-muted-foreground', !on);
+      if (on) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
+    });
+  };
+
+  // Position-based, not IntersectionObserver: with a shrunken root band a tall
+  // section never reaches a ratio threshold, so the callback would never fire.
+  const sectionEls = SECTIONS.map((id) => document.getElementById(id)).filter(
+    (el): el is HTMLElement => Boolean(el)
+  );
+
+  const updateActive = () => {
+    const pos = window.scrollY + 120;
+    let current = sectionEls[0]?.id;
+    for (const el of sectionEls) {
+      if (el.offsetTop <= pos) current = el.id;
+    }
+    if (current) setActive(current);
+  };
+
+  // Scrolled state + go-to-top
+  const desktopNav = document.querySelector<HTMLElement>('[data-desktop-nav]');
+  const mobileNav = document.querySelector<HTMLElement>('[data-mobile-nav]');
+  const goTop = document.querySelector<HTMLButtonElement>('[data-go-top]');
+
+  const onScroll = () => {
+    const scrolled = window.scrollY > 50;
+    desktopNav?.classList.toggle('bg-background/80', scrolled);
+    desktopNav?.classList.toggle('shadow-sm', scrolled);
+    mobileNav?.classList.toggle('bg-background/95', scrolled);
+    mobileNav?.classList.toggle('shadow-sm', scrolled);
+    if (goTop) goTop.hidden = window.scrollY <= 300;
+    updateActive();
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  goTop?.addEventListener('click', () =>
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  );
+</script>
+
+<style>
+  /* One inherited colour for the whole inline lockup: ink on the light ground,
+     paper on the dark one. Clear space is one eighth of the rendered height,
+     per the kit's stated rule. */
+  .identity {
+    display: inline-flex;
+    flex: none;
+    color: #1a1a18;
+  }
+  :global(.dark) .identity {
+    color: #f2f0ec;
+  }
+  .identity :global(svg) {
+    display: block;
+    flex: none;
+  }
+  /* signature-compact at 96 x 24, sized to sit at the nav's text scale. Below
+     the kit's 144 x 36 minimum, at the owner's direction; see
+     docs/identity-size-overrides.md. Clear space stays at 1/8 of the rendered
+     height. Painted with currentColor, so one inherited colour covers it. */
+  .identity-desktop,
+  .identity-mobile {
+    padding: 3px;
+  }
+  .identity-desktop :global(svg),
+  .identity-mobile :global(svg) {
+    display: block;
+    width: 96px;
+    height: 24px;
+    flex: none;
+  }
+</style>

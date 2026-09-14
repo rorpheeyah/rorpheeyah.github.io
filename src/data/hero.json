@@ -1,0 +1,54 @@
+{
+  "name": "Math Rorpheeyah",
+  "titles": [
+    "Senior Android Developer",
+    "Mobile Department Sub-Leader"
+  ],
+  "description": "Senior Android Developer with 6+ years of experience in enterprise Android applications, fintech, security SDK integration, and modern Android architecture. I contribute across new development, features, bug fixes, and maintenance, and mentor junior developers at KOSIGN.",
+  "socialLinks": [
+    {
+      "href": "https://github.com/rorpheeyah",
+      "icon": "FaGithub",
+      "label": "GitHub",
+      "external": true
+    },
+    {
+      "href": "https://linkedin.com/in/rorpheeyah",
+      "icon": "FaLinkedin",
+      "label": "LinkedIn",
+      "external": true
+    },
+    {
+      "href": "mailto:mathrorpheeyah@gmail.com",
+      "icon": "FaEnvelope",
+      "label": "Email",
+      "external": false
+    }
+  ],
+  "achievements": [
+    {
+      "icon": "HiOutlineBriefcase",
+      "title": "6+ Years",
+      "subtitle": "Experience"
+    },
+    {
+      "icon": "HiOutlineUserGroup",
+      "title": "Sub-Leader",
+      "subtitle": "Mobile Dept"
+    },
+    {
+      "icon": "HiOutlineAcademicCap",
+      "title": "Fintech",
+      "subtitle": "Security SDKs"
+    },
+    {
+      "icon": "HiOutlineLocationMarker",
+      "title": "Cambodia",
+      "subtitle": "Phnom Penh"
+    }
+  ],
+  "availability": {
+    "status": "available",
+    "responseTime": "Usually within 24 hours"
+  }
+}
