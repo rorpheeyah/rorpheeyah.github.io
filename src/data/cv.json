@@ -33,7 +33,7 @@
       "description": "Open source projects"
     }
   ],
-  "summary": "Senior Android Developer with 6+ years of experience, working extensively with Java in older Android projects and Kotlin in newer ones. Experienced in security SDK integration, mentoring developers, and coordinating tasks between teams in Cambodia and South Korea.",
+  "summary": "Senior Android Developer with 6+ years of experience developing and maintaining Android apps using Java and Kotlin. Skilled in MVVM, REST API integration, and Google Play releases. Experienced in security SDK integration, code reviews, mentoring, and coordinating development across Cambodia and South Korea.",
   "highlights": [
     {
       "icon": "Users",
@@ -66,26 +66,25 @@
       "type": "Full-time",
       "icon": "Briefcase",
       "achievements": [
-        "Develop and maintain Android apps, working extensively with Java in older projects and Kotlin in newer ones.",
-        "Coordinate development tasks, app issues, updates, and feature requests, and delegate work across the team.",
-        "Mentor junior developers through code reviews, technical guidance, and troubleshooting.",
-        "Use Jetpack Compose in released Android apps.",
+        "Develop and maintain Android apps using Java and Kotlin, delivering features, updates, and fixes.",
+        "Coordinate feature requests, app updates, and issue resolution, assigning development tasks across the team.",
+        "Mentor junior developers through code reviews, technical guidance, debugging, and troubleshooting.",
+        "Develop Android app interfaces with Jetpack Compose for apps released to users.",
         "Integrate RaonSecure SDKs such as TouchEn mTranskey, mVaccine, and AppIron into fintech apps.",
-        "Manage Google Play submissions, policy checks, and releases.",
-        "Introduced DiffUtil for adapter updates, reduced app size through obfuscation, and led adoption of Android App Bundles."
+        "Manage Google Play submissions, policy compliance checks, and release coordination, publishing approved apps and communicating review outcomes.",
+        "Introduced DiffUtil for adapter updates and led adoption of Android App Bundles (AAB)."
       ]
     },
     {
       "title": "International Assignment",
-      "company": "Bizplay (비즈플레이), KOSIGN South Korea Division",
+      "company": "Bizplay (비즈플레이)",
       "location": "Busan, South Korea",
       "period": "October 2022 to August 2023",
       "type": "Assignment",
       "icon": "Briefcase",
       "achievements": [
         "Worked with teams in Cambodia and South Korea to clarify requirements and define development tasks.",
-        "Coordinated and delegated app development, fixes, and updates.",
-        "Tested apps and managed releases."
+        "Coordinated app development, fixes, and updates; tested apps and managed releases."
       ]
     },
     {
@@ -106,14 +105,12 @@
       "Java",
       "Kotlin",
       "Android SDK",
-      "Jetpack Compose",
-      "Jetpack (ViewModel, LiveData, StateFlow, Room, Navigation, DataStore)"
+      "Jetpack Compose"
     ],
     "Architecture": [
       "MVVM",
       "MVI",
       "Clean Architecture",
-      "Modular design",
       "Coroutines",
       "Flow"
     ],
@@ -121,8 +118,6 @@
       "REST APIs",
       "Retrofit",
       "OkHttp",
-      "HTTPS",
-      "Token based authentication",
       "Android Keystore",
       "Encrypted storage"
     ],
@@ -130,9 +125,9 @@
       "App releases",
       "Internal testing",
       "Beta distribution",
-      "Policy issue resolution"
+      "Google Play policy issue resolution"
     ],
-    "DevOps & Tools": [
+    "Development Tools & Firebase": [
       "Android Studio",
       "Git",
       "GitHub",
@@ -141,9 +136,6 @@
       "Firebase",
       "FCM",
       "Crashlytics"
-    ],
-    "CI/CD": [
-      "Familiar with concepts, no production experience yet"
     ],
     "Additional": [
       "Figma",
@@ -154,7 +146,7 @@
   },
   "education": [
     {
-      "degree": "Bachelor of Science, Computer Science",
+      "degree": "Bachelor of Science in Computer Science",
       "institution": "Royal University of Phnom Penh",
       "period": "2016 to 2021",
       "details": "",

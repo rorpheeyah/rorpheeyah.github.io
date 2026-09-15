@@ -9,7 +9,7 @@
       "location": "Phnom Penh, Cambodia",
       "type": "Full-time",
       "logo": "ic_logo_kosign",
-      "description": "Lead enterprise Android development as Sub Leader of the Mobile Department, working with Java in established apps and Kotlin in newer ones. Coordinate task allocation, technical direction, and delivery planning, and integrate enterprise security SDKs into fintech applications.",
+      "description": "As Sub Leader of the Mobile Department, I develop and maintain Android apps in Java and Kotlin, coordinate feature requests and task allocation, and integrate RaonSecure security SDKs (TouchEn mTranskey, mVaccine, AppIron) into fintech apps. I build interfaces with Jetpack Compose for released apps, mentor developers through code reviews, and manage Google Play submissions, policy checks, and releases.",
       "achievements": [
         "Lead enterprise Android development with Kotlin and modern architecture",
         "Coordinate task allocation, technical direction, and delivery planning as Sub-Leader of the Mobile Department",
@@ -41,12 +41,12 @@
     },
     {
       "title": "Senior Android Developer, International Assignment",
-      "company": "Bizplay (비즈플레이), KOSIGN South Korea Division",
+      "company": "Bizplay (비즈플레이)",
       "period": "October 2022 to August 2023",
       "location": "Busan, South Korea",
       "type": "International Assignment",
       "logo": "ic_logo_bizplay",
-      "description": "Selected for a one year assignment to strengthen collaboration between the Cambodian and South Korean mobile teams. Clarified requirements, defined development tasks, coordinated delivery, and managed releases.",
+      "description": "An assignment to strengthen collaboration between the Cambodian and South Korean teams. I clarified requirements, defined development tasks, coordinated delivery, and tested and released apps.",
       "achievements": [
         "Selected for a one-year assignment to support collaboration between the Cambodian and South Korean mobile development teams",
         "Reviewed technical documents from Korean teams, analyzed project requirements, and prepared task breakdowns for the Cambodia team",
@@ -76,7 +76,7 @@
       "location": "Phnom Penh, Cambodia",
       "type": "Full-time",
       "logo": "ic_logo_planb",
-      "description": "Developed responsive web applications without third-party frameworks using custom CSS. Built backend functionality and logic using PHP for various client projects.",
+      "description": "Built responsive web pages and backend features using PHP for client projects.",
       "achievements": [
         "Developed responsive web applications without third-party frameworks (custom CSS)",
         "Built backend functionality and logic using PHP",

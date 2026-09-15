@@ -22,7 +22,7 @@
       "Retrofit",
       "OkHttp",
       "HTTPS",
-      "Token based authentication",
+      "Token-based authentication",
       "Android Keystore",
       "Encrypted storage"
     ],
@@ -32,7 +32,7 @@
       "Beta distribution",
       "Policy issue resolution"
     ],
-    "DevOps & Tools": [
+    "Development Tools & Firebase": [
       "Android Studio",
       "Git",
       "GitHub",
@@ -41,9 +41,6 @@
       "Firebase",
       "FCM",
       "Crashlytics"
-    ],
-    "CI/CD": [
-      "Familiar with concepts, no production experience yet"
     ],
     "Additional": [
       "Figma",

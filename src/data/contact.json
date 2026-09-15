@@ -1,6 +1,6 @@
 {
   "title": "Let's Connect",
-  "subtitle": "Open to new mobile projects and opportunities in enterprise Android development. I would be glad to hear from you.",
+  "subtitle": "For Android development opportunities or questions about my work, reach me by email or connect on LinkedIn.",
   "status": "Available for opportunities",
   "social": [
     {
@@ -9,13 +9,6 @@
       "value": "mathrorpheeyah@gmail.com",
       "description": "Best way to reach me for work inquiries",
       "icon": "email"
-    },
-    {
-      "name": "Location",
-      "url": "https://maps.google.com/?q=Phnom+Penh,+Cambodia",
-      "value": "Phnom Penh, Cambodia",
-      "description": "Based in Cambodia",
-      "icon": "location"
     },
     {
       "name": "LinkedIn",
@@ -32,18 +25,25 @@
       "icon": "github"
     },
     {
-      "name": "X",
-      "url": "https://x.com/rorpheeyah",
-      "value": "x.com/rorpheeyah",
-      "description": "Tech discussions",
-      "icon": "twitter"
-    },
-    {
       "name": "Telegram",
       "url": "https://t.me/rorpheeyah",
       "value": "t.me/rorpheeyah",
       "description": "Quick messaging",
       "icon": "telegram"
+    },
+    {
+      "name": "Location",
+      "url": "https://maps.google.com/?q=Phnom+Penh,+Cambodia",
+      "value": "Phnom Penh, Cambodia",
+      "description": "Based in Cambodia",
+      "icon": "location"
+    },
+    {
+      "name": "X",
+      "url": "https://x.com/rorpheeyah",
+      "value": "x.com/rorpheeyah",
+      "description": "Tech discussions",
+      "icon": "twitter"
     },
     {
       "name": "Instagram",

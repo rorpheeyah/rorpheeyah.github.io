@@ -70,7 +70,7 @@ const NAV_MARKS: Record<string, any> = {
       id="family"
       eyebrow="Marks"
       title="The seal family"
-      description="Four fields for the same calligraphy, shown at a compliant size. Each is a single colour on a plain ground, the way the kit intends them."
+      description="Four variations of the seal, designed for different spaces and uses."
     >
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {branding.marks.map((mark) => {
@@ -84,7 +84,7 @@ const NAV_MARKS: Record<string, any> = {
               <figcaption>
                 <div class="flex items-baseline justify-between gap-3">
                   <h3 class="font-semibold text-foreground">{mark.name}</h3>
-                  <span class="font-mono text-xs text-muted-foreground">{mark.min}</span>
+                  <span class="font-mono text-xs text-muted-foreground">Min {mark.min}</span>
                 </div>
                 <p class="mt-1 text-sm leading-relaxed text-muted-foreground">{mark.description}</p>
                 {mark.use && <p class="mt-2 text-xs text-muted-foreground">{mark.use}</p>}
@@ -100,7 +100,7 @@ const NAV_MARKS: Record<string, any> = {
       id="navigation"
       eyebrow="Navigation"
       title="In navigation"
-      description="Two ways the identity appears in a header: the full bilingual signature, or the seal on its own where space is tight."
+      description="A bilingual signature for wider headers and a compact seal for smaller spaces."
     >
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {branding.navMarks?.map((mark) => {
@@ -119,7 +119,7 @@ const NAV_MARKS: Record<string, any> = {
               <figcaption>
                 <div class="flex items-baseline justify-between gap-3">
                   <h3 class="font-semibold text-foreground">{mark.name}</h3>
-                  <span class="font-mono text-xs text-muted-foreground">{mark.min}</span>
+                  <span class="font-mono text-xs text-muted-foreground">Min {mark.min}</span>
                 </div>
                 <p class="mt-1 text-sm leading-relaxed text-muted-foreground">{mark.description}</p>
                 {mark.use && <p class="mt-2 text-xs text-muted-foreground">{mark.use}</p>}
@@ -135,7 +135,7 @@ const NAV_MARKS: Record<string, any> = {
       id="palette"
       eyebrow="Colour"
       title="Palette"
-      description="Flat graphic colour only. No gradients, shadows, or tints."
+      description="Three flat colours define the identity: ink, paper, and vermilion."
     >
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
         {branding.palette?.map((c) => (
@@ -169,7 +169,7 @@ const NAV_MARKS: Record<string, any> = {
         ))}
       </ul>
       <p class="mt-8 text-xs text-muted-foreground">
-        The identity is produced for this portfolio; it is not licensed for reuse.
+        This identity was created for my personal portfolio and is not licensed for reuse.
       </p>
     </Section>
 

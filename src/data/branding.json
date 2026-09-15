@@ -9,23 +9,22 @@
     "given": "RORPHEEYAH / រ៉ភីយ៉ះ"
   },
   "story": [
-    "ម៉ាត់រ៉ភីយ៉ះ is my name written in Khmer. Instead of a typed logo, it is drawn as a personal seal. The letterforms are set by hand and preserved as fixed outlines, so the identity never re-renders in a live font.",
-    "The seal appears as a small family: the bare calligraphy, the same letters reversed out of a rounded tile, an enclosing frame, and a circular composition. It uses flat colour only, in ink, paper, and a single seal vermilion, so it reads the same on a browser tab, an avatar, or this page."
+    "ម៉ាត់រ៉ភីយ៉ះ is my name written in Khmer. This personal identity presents the lettering as a seal, with variations for my portfolio, navigation, and profile images. A simple palette of ink, paper, and vermilion connects the designs."
   ],
   "marks": [
-    { "id": "seal-open", "name": "Open seal", "description": "The given-name calligraphy without an enclosing field.", "use": "Decorative identity on large surfaces.", "min": "160 px", "minWidth": 160 },
-    { "id": "seal-rounded", "name": "Rounded seal", "description": "The calligraphy reversed out of a filled rounded square.", "use": "Square avatar. Its vermilion version is the browser favicon.", "min": "160 px", "minWidth": 160 },
-    { "id": "seal-framed", "name": "Framed seal", "description": "The calligraphy enclosed by its separate frame.", "use": "Formal, bounded lockup.", "min": "192 px", "minWidth": 192 },
-    { "id": "circle", "name": "Circle", "description": "A circular composition with the lettering on a filled disc.", "use": "Circular avatar.", "min": "192 px", "minWidth": 192 }
+    { "id": "seal-open", "name": "Open seal", "description": "The lettering without a surrounding shape.", "use": "For larger displays.", "min": "160 px", "minWidth": 160 },
+    { "id": "seal-rounded", "name": "Rounded seal", "description": "The lettering set against a filled rounded square.", "use": "For square profile images; the vermilion version is the browser icon.", "min": "160 px", "minWidth": 160 },
+    { "id": "seal-framed", "name": "Framed seal", "description": "The lettering enclosed by a separate frame.", "use": "A formal, framed version.", "min": "192 px", "minWidth": 192 },
+    { "id": "circle", "name": "Circle", "description": "The lettering arranged within a filled circle.", "use": "For circular profile images.", "min": "192 px", "minWidth": 192 }
   ],
   "navMarks": [
-    { "id": "signature-compact", "name": "Compact signature", "description": "Equal-height seal and bilingual name, split by a divider.", "use": "Primary navigation lockup.", "min": "160 × 40 px" },
-    { "id": "seal-nav", "name": "Navigation seal", "description": "The seal on its own, tuned for small sizes.", "use": "Seal-only home link where space is tight.", "min": "32 × 32 px" }
+    { "id": "signature-compact", "name": "Compact signature", "description": "The seal beside my name in Khmer and English, separated by a vertical line.", "use": "For wider headers.", "min": "160 × 40 px" },
+    { "id": "seal-nav", "name": "Navigation seal", "description": "A compact version of the seal, used as a home link when space is limited.", "use": "For small headers.", "min": "32 × 32 px" }
   ],
   "palette": [
-    { "name": "Ink", "hex": "#1A1A18", "use": "Marks and text on light grounds." },
-    { "name": "Vermilion", "hex": "#B5342A", "use": "The seal red, used for the favicon ground and accents." },
-    { "name": "Paper", "hex": "#F2F0EC", "use": "The warm off-white ground. Marks reverse to paper on dark." }
+    { "name": "Ink", "hex": "#1A1A18", "use": "For lettering and marks on light backgrounds." },
+    { "name": "Vermilion", "hex": "#B5342A", "use": "The seal's red accent, including the favicon background." },
+    { "name": "Paper", "hex": "#F2F0EC", "use": "A warm off-white for light backgrounds and reversed lettering on dark backgrounds." }
   ],
   "usage": [
     "One flat colour per mark: ink on light, paper on dark, or vermilion on paper. Never vermilion on ink.",
