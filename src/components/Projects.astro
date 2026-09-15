@@ -1,5 +1,7 @@
 ---
+import type { ImageMetadata } from 'astro';
 import { Icon } from 'astro-icon/components';
+import { getImage } from 'astro:assets';
 import { projects } from '@/data';
 import Section from '@/components/ui/Section.astro';
 import Button from '@/components/ui/Button.astro';
@@ -11,6 +13,19 @@ const SECTOR: Record<string, string> = {
   finance: 'Finance & Business',
   academic: 'Academic Research',
 };
+
+// Project icons live in src/assets so they can be optimised to webp at build.
+// projects.json's `image` field carries the basename each one is looked up by.
+const iconMods = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/projects/*.{png,webp}',
+  { eager: true }
+);
+const iconSrc: Record<string, string> = {};
+for (const [path, mod] of Object.entries(iconMods)) {
+  const base = path.split('/').pop() ?? '';
+  iconSrc[base] = (await getImage({ src: mod.default, width: 128, format: 'webp' })).src;
+}
+const srcFor = (image: string) => iconSrc[image.split('/').pop() ?? ''] ?? '/images/placeholder.svg';
 
 const allProjects = projects.projectCategories.flatMap((c) =>
   (c.projects ?? []).map((p) => ({ ...p, categoryTitle: c.title }))
@@ -26,6 +41,7 @@ const total = allProjects.length;
   <div data-projects-grid class="grid grid-cols-4 gap-2 sm:grid-cols-2 sm:gap-3 lg:grid-cols-3">
     {allProjects.map((project, i) => {
       const closed = project.status === 'discontinued';
+      const src = srcFor(project.image);
       return (
         <button
           type="button"
@@ -38,16 +54,16 @@ const total = allProjects.length;
             category: SECTOR[project.category] ?? project.categoryTitle,
             technologies: project.technologies ?? [],
             link: project.link,
-            image: project.image,
+            image: src,
             fallback: '/images/placeholder.svg',
             status: project.status ?? null,
           })}
         >
-          {/* Icons are served locally (downloaded from the store CDN) so they no
-              longer depend on a remote host that can block or expire; the onerror
-              fallback covers the few without artwork. width/height avoid CLS. */}
+          {/* Icons are optimised (local webp built from the imported assets) so
+              they no longer depend on a remote host that can block or expire; the
+              onerror fallback is a safety net. width/height avoid layout shift. */}
           <img
-            src={project.image}
+            src={src}
             data-fallback="/images/placeholder.svg"
             alt={project.name}
             width="48"
