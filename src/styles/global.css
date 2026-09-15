@@ -63,20 +63,30 @@
   body {
     @apply bg-background text-foreground font-sans;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-    /* App-like feel: clicking a heading, badge, or label should not drop a
-       text caret or select the label. Real content opts back in below so it
-       can still be copied. */
     cursor: default;
+  }
+
+  /* Text is selectable by default so any label, heading, or badge can be
+     copied. Only genuine interactive chrome — buttons, the nav, the theme
+     switch — opts out, so clicking a control never drops a caret or selects
+     its own label. Opt an individual control back in with [data-selectable];
+     force any element out with [data-no-select]. */
+  button, [role="button"], summary, select, label[for],
+  nav, [data-no-select] {
     -webkit-user-select: none;
     user-select: none;
   }
 
-  /* Genuine reading content stays selectable and shows the text cursor. */
-  p, li, blockquote, a, code, pre, kbd, samp,
-  input, textarea, [contenteditable], [data-selectable] {
-    cursor: auto;
+  [data-selectable] {
     -webkit-user-select: text;
     user-select: text;
+  }
+
+  /* Reading content shows the text cursor to signal it can be selected. */
+  p, li, blockquote, a, code, pre, kbd, samp,
+  h1, h2, h3, h4, h5, h6,
+  input, textarea, [contenteditable], [data-selectable] {
+    cursor: auto;
   }
 
   /* Anything clickable shows the hand cursor, including native buttons,
@@ -128,5 +138,27 @@ html {
   ::view-transition-old(root),
   ::view-transition-new(root) {
     animation: none !important;
+  }
+}
+
+/* Scroll reveal: each section fades and rises as it enters the viewport. Active
+   only when JS adds .reveal-on to <html> (set before first paint), so with no
+   JS, no IntersectionObserver, or reduced motion, every section stays visible. */
+:root.reveal-on #main > section:not(#hero) {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+/* Keep :not(#hero) here too: it lifts the base selector's specificity with an
+   id, so the revealed state must match it to win. */
+:root.reveal-on #main > section:not(#hero).is-revealed {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  :root.reveal-on #main > section:not(#hero) {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }

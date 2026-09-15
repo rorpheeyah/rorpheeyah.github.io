@@ -1,0 +1,240 @@
+---
+// A self-contained animated grid backdrop: dots twinkle on the joins, a few
+// sparks travel the lines, and hovering draws a spiderweb from the cursor to
+// nearby dots. Monochrome (the --foreground token) so it adapts to the theme.
+// Drop it inside a `relative overflow-hidden` parent. Honours reduced motion,
+// pauses off-screen, and supports several instances on a page.
+---
+
+<div
+  aria-hidden="true"
+  class="pointer-events-none absolute inset-0 -z-10 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_60%,transparent_100%)]"
+>
+  <div
+    class="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:56px_56px] opacity-60"
+  >
+  </div>
+  <canvas data-grid-field class="absolute inset-0 h-full w-full"></canvas>
+</div>
+
+<script>
+  type GNode = { x: number; y: number; phase: number };
+  type Spark = { i: number; j: number; dx: number; dy: number; t: number; speed: number };
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const pointer = { x: -9999, y: -9999 };
+  document.addEventListener(
+    'pointermove',
+    (e) => {
+      pointer.x = e.clientX;
+      pointer.y = e.clientY;
+    },
+    { passive: true }
+  );
+
+  document.querySelectorAll<HTMLCanvasElement>('[data-grid-field]').forEach((canvas) => {
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const GAP = 56;
+    const HOVER = 130; // px radius of the cursor web
+    const SPARKS = 6;
+
+    let W = 0;
+    let H = 0;
+    let cols = 0;
+    let rows = 0;
+    let nodes: GNode[] = [];
+    let sparks: Spark[] = [];
+    let fg = '240 10% 4%';
+    let raf = 0;
+    let last = 0;
+    let running = false;
+
+    const col = (a: number) => `hsl(${fg} / ${a})`;
+    const readColor = () => {
+      const v = getComputedStyle(document.documentElement).getPropertyValue('--foreground').trim();
+      if (v) fg = v;
+    };
+
+    const build = () => {
+      const r = canvas.getBoundingClientRect();
+      W = Math.max(1, Math.round(r.width));
+      H = Math.max(1, Math.round(r.height));
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.round(W * dpr);
+      canvas.height = Math.round(H * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      cols = Math.floor(W / GAP);
+      rows = Math.floor(H / GAP);
+      nodes = [];
+      for (let j = 0; j <= rows; j++) {
+        for (let i = 0; i <= cols; i++) {
+          nodes.push({ x: i * GAP, y: j * GAP, phase: Math.random() * Math.PI * 2 });
+        }
+      }
+      sparks = [];
+      for (let s = 0; s < SPARKS; s++) {
+        const h = Math.random() < 0.5;
+        sparks.push({
+          i: Math.floor(Math.random() * (cols + 1)),
+          j: Math.floor(Math.random() * (rows + 1)),
+          dx: h ? (Math.random() < 0.5 ? 1 : -1) : 0,
+          dy: h ? 0 : (Math.random() < 0.5 ? 1 : -1),
+          t: Math.random(),
+          speed: 34 + Math.random() * 26,
+        });
+      }
+    };
+
+    const stepSpark = (s: Spark, dt: number) => {
+      s.t += (s.speed * dt) / GAP;
+      while (s.t >= 1) {
+        s.t -= 1;
+        s.i += s.dx;
+        s.j += s.dy;
+        const opts: { dx: number; dy: number; w: number }[] = [];
+        for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]] as const) {
+          if (dx === -s.dx && dy === -s.dy) continue;
+          const ni = s.i + dx;
+          const nj = s.j + dy;
+          if (ni < 0 || ni > cols || nj < 0 || nj > rows) continue;
+          opts.push({ dx, dy, w: dx === s.dx && dy === s.dy ? 3 : 1 });
+        }
+        if (!opts.length) {
+          s.dx = -s.dx;
+          s.dy = -s.dy;
+        } else {
+          let r = Math.random() * opts.reduce((a, o) => a + o.w, 0);
+          let pick = opts[0];
+          for (const o of opts) {
+            r -= o.w;
+            if (r <= 0) {
+              pick = o;
+              break;
+            }
+          }
+          s.dx = pick.dx;
+          s.dy = pick.dy;
+        }
+        s.i = Math.min(cols, Math.max(0, s.i));
+        s.j = Math.min(rows, Math.max(0, s.j));
+      }
+    };
+
+    const draw = (t: number) => {
+      const animate = !reduce.matches;
+      const r = canvas.getBoundingClientRect();
+      const mx = pointer.x - r.left;
+      const my = pointer.y - r.top;
+      const on = animate && mx >= 0 && my >= 0 && mx <= W && my <= H;
+
+      ctx.clearRect(0, 0, W, H);
+
+      for (const n of nodes) {
+        let a = animate ? 0.07 + 0.12 * (0.5 + 0.5 * Math.sin(t * 0.0012 + n.phase)) : 0.11;
+        if (on) {
+          const d = Math.hypot(n.x - mx, n.y - my);
+          if (d < HOVER) a = Math.min(0.55, a + (1 - d / HOVER) * 0.5);
+        }
+        ctx.fillStyle = col(a);
+        ctx.fillRect(n.x - 0.6, n.y - 0.6, 1.2, 1.2);
+      }
+
+      if (on) {
+        ctx.lineWidth = 1;
+        for (const n of nodes) {
+          const d = Math.hypot(n.x - mx, n.y - my);
+          if (d < HOVER) {
+            ctx.strokeStyle = col((1 - d / HOVER) * 0.22);
+            ctx.beginPath();
+            ctx.moveTo(mx, my);
+            ctx.lineTo(n.x, n.y);
+            ctx.stroke();
+          }
+        }
+        ctx.fillStyle = col(0.5);
+        ctx.beginPath();
+        ctx.arc(mx, my, 2, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      if (animate) {
+        for (const s of sparks) {
+          const x = (s.i + s.dx * s.t) * GAP;
+          const y = (s.j + s.dy * s.t) * GAP;
+          const tx = x - s.dx * 16;
+          const ty = y - s.dy * 16;
+          const g = ctx.createLinearGradient(tx, ty, x, y);
+          g.addColorStop(0, col(0));
+          g.addColorStop(1, col(0.5));
+          ctx.strokeStyle = g;
+          ctx.lineWidth = 1.5;
+          ctx.beginPath();
+          ctx.moveTo(tx, ty);
+          ctx.lineTo(x, y);
+          ctx.stroke();
+          ctx.fillStyle = col(0.14);
+          ctx.beginPath();
+          ctx.arc(x, y, 5, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.fillStyle = col(0.9);
+          ctx.beginPath();
+          ctx.arc(x, y, 2, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+    };
+
+    const frame = (now: number) => {
+      if (!running) return;
+      const dt = Math.min(0.05, (now - last) / 1000 || 0);
+      last = now;
+      for (const s of sparks) stepSpark(s, dt);
+      draw(now);
+      raf = requestAnimationFrame(frame);
+    };
+
+    const start = () => {
+      if (reduce.matches) {
+        draw(0);
+        return;
+      }
+      if (running) return;
+      running = true;
+      last = performance.now();
+      raf = requestAnimationFrame(frame);
+    };
+    const stop = () => {
+      running = false;
+      if (raf) cancelAnimationFrame(raf);
+    };
+
+    new MutationObserver(() => {
+      readColor();
+      if (!running) draw(0);
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+    new ResizeObserver(() => {
+      build();
+      if (!running) draw(0);
+    }).observe(canvas);
+
+    reduce.addEventListener?.('change', () => {
+      stop();
+      start();
+    });
+
+    readColor();
+    build();
+    draw(0);
+
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(([entry]) => (entry.isIntersecting ? start() : stop()), {
+        threshold: 0,
+      }).observe(canvas);
+    } else {
+      start();
+    }
+  });
+</script>

@@ -6,33 +6,37 @@ import SealFramed from '@/assets/identity/seal-framed.svg';
 import SealOpen from '@/assets/identity/seal-open.svg';
 import SealRounded from '@/assets/identity/seal-rounded.svg';
 
-// The marks are inlined rather than referenced as <img>: they are painted with
-// fill="currentColor", which an external image would not inherit.
+// A teaser for the full identity system, which lives at /identity where the
+// marks are shown at their compliant sizes. The marks are inlined rather than
+// referenced as <img>: they are painted with fill="currentColor", which an
+// external image would not inherit.
 const MARKS: Record<string, any> = {
   circle: Circle,
   'seal-framed': SealFramed,
   'seal-open': SealOpen,
   'seal-rounded': SealRounded,
 };
-
-// Rendered at the project-icon size, at the owner's direction. Below the kit's
-// stated minimums; the departure is recorded in docs/identity-size-overrides.md.
 ---
 
-<Section id="branding" eyebrow="Identity" title={branding.title} description={branding.subtitle}>
-  <div class="grid grid-cols-2 gap-x-8 gap-y-10 border-t border-border pt-12 sm:grid-cols-4">
-    {branding.marks.map((mark) => {
-      const Mark = MARKS[mark.id];
-      if (!Mark) return null;
-      return (
-        <figure class="flex flex-col items-center gap-3">
-          <span class="identity-mark flex h-14 w-14 items-center justify-center">
-            <Mark width={56} height={56} aria-hidden="true" focusable="false" />
+<Section
+  id="branding"
+  eyebrow="Identity"
+  title={branding.title}
+  titleHref="/identity"
+  description={branding.subtitle}
+>
+  <div class="flex flex-col items-center sm:items-start">
+    <div class="grid grid-cols-2 gap-7 sm:flex sm:flex-wrap sm:items-center sm:gap-x-12 sm:gap-y-8">
+      {branding.marks.map((mark) => {
+        const Mark = MARKS[mark.id];
+        if (!Mark) return null;
+        return (
+          <span class="identity-mark flex h-[72px] w-[72px] items-center justify-center" title={mark.name}>
+            <Mark width={72} height={72} aria-hidden="true" focusable="false" />
           </span>
-          <figcaption class="text-center text-xs text-muted-foreground">{mark.name}</figcaption>
-        </figure>
-      );
-    })}
+        );
+      })}
+    </div>
   </div>
 </Section>
 

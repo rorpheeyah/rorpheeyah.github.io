@@ -39,7 +39,7 @@ const navItems = [
         <Icon name="lucide:sun" class="h-4 w-4 hidden dark:block" />
         <Icon name="lucide:moon" class="h-4 w-4 block dark:hidden" />
       </Button>
-      <Button size="sm" data-open-cv class="hidden md:inline-flex">View CV</Button>
+      <Button size="sm" href="/cv" class="hidden md:inline-flex">View CV</Button>
 
       {/* Mobile menu trigger */}
       <div class="relative md:hidden">
@@ -85,14 +85,13 @@ const navItems = [
             >
               Identity
             </a>
-            <button
-              type="button"
-              data-open-cv
+            <a
+              href="/cv"
               data-menu-item
-              class="flex w-full items-center rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+              class="flex items-center rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
             >
               View CV
-            </button>
+            </a>
             <div class="my-1 h-px bg-border"></div>
             <button
               type="button"

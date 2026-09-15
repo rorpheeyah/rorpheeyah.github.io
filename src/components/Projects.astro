@@ -16,43 +16,62 @@ const allProjects = projects.projectCategories.flatMap((c) =>
   (c.projects ?? []).map((p) => ({ ...p, categoryTitle: c.title }))
 );
 
-const INITIAL = 9;
+// 12 keeps the initial view a clean grid at every breakpoint (2, 3, and 4
+// columns), and the full 32 divides evenly into the mobile 4-column icon grid.
+const INITIAL = 12;
 const total = allProjects.length;
 ---
 
 <Section id="projects" eyebrow="Portfolio" title={projects.title} description={projects.subtitle}>
-  <div data-projects-grid class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-    {allProjects.map((project, i) => (
-      <button
-        type="button"
-        hidden={i >= INITIAL}
-        data-project-card
-        class="group flex items-center gap-4 rounded-xl border border-border bg-card p-3 text-left transition-all duration-200 hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-md focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-        data-project={JSON.stringify({
-          name: project.name,
-          description: project.description,
-          category: SECTOR[project.category] ?? project.categoryTitle,
-          technologies: project.technologies ?? [],
-          link: project.link,
-          image: project.remoteImage || project.image,
-          fallback: project.image || '/images/placeholder.svg',
-        })}
-      >
-        <img
-          src={project.remoteImage || project.image}
-          data-fallback={project.image || '/images/placeholder.svg'}
-          alt={project.name}
-          loading="lazy"
-          decoding="async"
-          class="h-12 w-12 flex-none rounded-lg border border-border bg-white object-cover"
-        />
-        <div class="min-w-0 flex-1">
-          <div class="truncate text-sm font-medium text-foreground">{project.name}</div>
-          <div class="mt-0.5 truncate text-xs text-muted-foreground">{SECTOR[project.category] ?? project.categoryTitle}</div>
-        </div>
-        <Icon name="lucide:arrow-up-right" class="h-4 w-4 flex-none text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
-      </button>
-    ))}
+  <div data-projects-grid class="grid grid-cols-4 gap-2 sm:grid-cols-2 sm:gap-3 lg:grid-cols-3">
+    {allProjects.map((project, i) => {
+      const closed = project.status === 'discontinued';
+      return (
+        <button
+          type="button"
+          hidden={i >= INITIAL}
+          data-project-card
+          class="group flex aspect-square items-center justify-center rounded-xl border border-border bg-card p-2 text-left transition-all duration-200 hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-md focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring sm:aspect-auto sm:justify-start sm:gap-4 sm:p-3"
+          data-project={JSON.stringify({
+            name: project.name,
+            description: project.description,
+            category: SECTOR[project.category] ?? project.categoryTitle,
+            technologies: project.technologies ?? [],
+            link: project.link,
+            image: project.image,
+            fallback: '/images/placeholder.svg',
+            status: project.status ?? null,
+          })}
+        >
+          {/* Icons are served locally (downloaded from the store CDN) so they no
+              longer depend on a remote host that can block or expire; the onerror
+              fallback covers the few without artwork. width/height avoid CLS. */}
+          <img
+            src={project.image}
+            data-fallback="/images/placeholder.svg"
+            alt={project.name}
+            width="48"
+            height="48"
+            loading="lazy"
+            decoding="async"
+            class:list={[
+              'h-11 w-11 flex-none rounded-lg border border-border bg-white object-cover sm:h-12 sm:w-12',
+              closed && 'opacity-60 grayscale',
+            ]}
+          />
+          <div class="hidden min-w-0 flex-1 sm:block">
+            <div class="truncate text-sm font-medium text-foreground">{project.name}</div>
+            <div class="mt-0.5 flex items-center gap-2">
+              <span class="truncate text-xs text-muted-foreground">{SECTOR[project.category] ?? project.categoryTitle}</span>
+              {closed && (
+                <span class="flex-none rounded bg-muted px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-muted-foreground">Discontinued</span>
+              )}
+            </div>
+          </div>
+          <Icon name="lucide:arrow-up-right" class="hidden h-4 w-4 flex-none text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100 sm:block" />
+        </button>
+      );
+    })}
   </div>
 
   {total > INITIAL && (
@@ -89,8 +108,13 @@ const total = allProjects.length;
         <img data-modal-image alt="" class="h-16 w-16 flex-none rounded-lg border border-border bg-white object-cover" />
         <div class="min-w-0 pr-8">
           <h3 id="project-modal-title" data-modal-name class="text-lg font-semibold leading-tight text-foreground"></h3>
-          <div class="mt-2">
+          <div class="mt-2 flex flex-wrap items-center gap-2">
             <Badge variant="secondary" data-modal-category></Badge>
+            <span
+              data-modal-status
+              hidden
+              class="rounded bg-muted px-2 py-0.5 text-xs font-medium uppercase tracking-wide text-muted-foreground"
+            >Discontinued</span>
           </div>
         </div>
       </div>
@@ -109,7 +133,7 @@ const total = allProjects.length;
         hidden
         class="mt-6 inline-flex h-9 items-center justify-center gap-2 rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
       >
-        View on Google Play
+        <span data-modal-link-label>View on Google Play</span>
         <Icon name="lucide:external-link" class="h-4 w-4" />
       </a>
     </div>
@@ -156,6 +180,8 @@ const total = allProjects.length;
     const techEl = modal.querySelector('[data-modal-tech]') as HTMLElement;
     const imgEl = modal.querySelector('[data-modal-image]') as HTMLImageElement;
     const linkEl = modal.querySelector('[data-modal-link]') as HTMLAnchorElement;
+    const statusEl = modal.querySelector('[data-modal-status]') as HTMLElement;
+    const linkLabelEl = modal.querySelector('[data-modal-link-label]') as HTMLElement;
     let lastFocused: HTMLElement | null = null;
 
     const close = () => {
@@ -175,6 +201,9 @@ const total = allProjects.length;
       const techs: string[] = data.technologies ?? [];
       techWrap.hidden = techs.length === 0;
       techEl.textContent = techs.join(' · ');
+      const closed = data.status === 'discontinued';
+      statusEl.hidden = !closed;
+      linkLabelEl.textContent = closed ? 'Learn more' : 'View on Google Play';
       const hasLink = data.link && data.link !== '#';
       linkEl.hidden = !hasLink;
       if (hasLink) linkEl.href = data.link;

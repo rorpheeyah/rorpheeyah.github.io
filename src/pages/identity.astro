@@ -1,0 +1,198 @@
+---
+import { Icon } from 'astro-icon/components';
+import Base from '@/layouts/Base.astro';
+import Section from '@/components/ui/Section.astro';
+import Button from '@/components/ui/Button.astro';
+import { branding } from '@/data';
+import SignatureCompact from '@/assets/identity/signature-compact.svg';
+import SealNav from '@/assets/identity/seal-nav.svg';
+import Circle from '@/assets/identity/circle.svg';
+import SealFramed from '@/assets/identity/seal-framed.svg';
+import SealOpen from '@/assets/identity/seal-open.svg';
+import SealRounded from '@/assets/identity/seal-rounded.svg';
+
+// The marks are inlined (fill="currentColor"), so a single inherited colour
+// paints each one: ink on the light ground, paper on the dark one.
+const MARKS: Record<string, any> = {
+  circle: Circle,
+  'seal-framed': SealFramed,
+  'seal-open': SealOpen,
+  'seal-rounded': SealRounded,
+};
+const NAV_MARKS: Record<string, any> = {
+  'signature-compact': SignatureCompact,
+  'seal-nav': SealNav,
+};
+---
+
+<Base
+  title="Identity — Math Rorpheeyah"
+  description="The personal seal behind the portfolio: the mark family, palette, and usage for ម៉ាត់រ៉ភីយ៉ះ."
+>
+  <header class="sticky top-0 z-40 w-full border-b border-border bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <div class="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
+      <a href="/" class="identity" aria-label="Math Rorpheeyah / ម៉ាត់រ៉ភីយ៉ះ — Home">
+        <SignatureCompact width={96} height={24} aria-hidden="true" focusable="false" />
+      </a>
+      <div class="flex items-center gap-2">
+        <Button variant="ghost" size="icon" data-theme-toggle aria-label="Toggle colour theme">
+          <Icon name="lucide:sun" class="h-4 w-4 hidden dark:block" />
+          <Icon name="lucide:moon" class="h-4 w-4 block dark:hidden" />
+        </Button>
+        <Button variant="outline" size="sm" href="/" class="group">
+          <Icon name="lucide:arrow-left" class="h-4 w-4 transition-transform group-hover:-translate-x-0.5" />
+          <span class="hidden sm:inline">Back to portfolio</span>
+          <span class="sm:hidden">Back</span>
+        </Button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    {/* Intro */}
+    <section>
+      <div class="mx-auto max-w-5xl px-6 py-16 md:py-20">
+        <div class="mb-6 flex items-center gap-3">
+          <span class="h-px w-6 bg-border"></span>
+          <span class="font-mono text-xs uppercase tracking-widest text-muted-foreground">Identity</span>
+        </div>
+        <span class="identity-mark mb-8 block w-fit">
+          <SignatureCompact width={240} height={60} aria-hidden="true" focusable="false" />
+        </span>
+        <h1 class="max-w-2xl text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+          A name, drawn as a seal
+        </h1>
+        <div class="mt-6 max-w-2xl space-y-4">
+          {branding.story?.map((p) => (
+            <p class="text-base leading-relaxed text-muted-foreground">{p}</p>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* The seal family */}
+    <Section
+      id="family"
+      eyebrow="Marks"
+      title="The seal family"
+      description="Four fields for the same calligraphy, shown at a compliant size. Each is a single colour on a plain ground, the way the kit intends them."
+    >
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        {branding.marks.map((mark) => {
+          const Mark = MARKS[mark.id];
+          if (!Mark) return null;
+          return (
+            <figure class="flex flex-col gap-5 rounded-xl border border-border bg-card p-8 shadow-sm">
+              <div class="identity-mark flex h-48 items-center justify-center">
+                <Mark width={192} height={192} aria-hidden="true" focusable="false" />
+              </div>
+              <figcaption>
+                <div class="flex items-baseline justify-between gap-3">
+                  <h3 class="font-semibold text-foreground">{mark.name}</h3>
+                  <span class="font-mono text-xs text-muted-foreground">{mark.min}</span>
+                </div>
+                <p class="mt-1 text-sm leading-relaxed text-muted-foreground">{mark.description}</p>
+                {mark.use && <p class="mt-2 text-xs text-muted-foreground">{mark.use}</p>}
+              </figcaption>
+            </figure>
+          );
+        })}
+      </div>
+    </Section>
+
+    {/* In navigation */}
+    <Section
+      id="navigation"
+      eyebrow="Navigation"
+      title="In navigation"
+      description="Two ways the identity appears in a header: the full bilingual signature, or the seal on its own where space is tight."
+    >
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        {branding.navMarks?.map((mark) => {
+          const Mark = NAV_MARKS[mark.id];
+          if (!Mark) return null;
+          const seal = mark.id === 'seal-nav';
+          return (
+            <figure class="flex flex-col gap-5 rounded-xl border border-border bg-card p-8 shadow-sm">
+              <div class="identity-mark flex h-24 items-center justify-center">
+                {seal ? (
+                  <Mark width={48} height={48} aria-hidden="true" focusable="false" />
+                ) : (
+                  <Mark width={192} height={48} aria-hidden="true" focusable="false" />
+                )}
+              </div>
+              <figcaption>
+                <div class="flex items-baseline justify-between gap-3">
+                  <h3 class="font-semibold text-foreground">{mark.name}</h3>
+                  <span class="font-mono text-xs text-muted-foreground">{mark.min}</span>
+                </div>
+                <p class="mt-1 text-sm leading-relaxed text-muted-foreground">{mark.description}</p>
+                {mark.use && <p class="mt-2 text-xs text-muted-foreground">{mark.use}</p>}
+              </figcaption>
+            </figure>
+          );
+        })}
+      </div>
+    </Section>
+
+    {/* Palette */}
+    <Section
+      id="palette"
+      eyebrow="Colour"
+      title="Palette"
+      description="Flat graphic colour only. No gradients, shadows, or tints."
+    >
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        {branding.palette?.map((c) => (
+          <div class="overflow-hidden rounded-xl border border-border bg-card shadow-sm">
+            <div class="h-24 w-full border-b border-border" style={`background:${c.hex}`}></div>
+            <div class="p-5">
+              <div class="flex items-baseline justify-between gap-3">
+                <h3 class="font-semibold text-foreground">{c.name}</h3>
+                <span class="font-mono text-xs uppercase text-muted-foreground">{c.hex}</span>
+              </div>
+              <p class="mt-1 text-sm leading-relaxed text-muted-foreground">{c.use}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </Section>
+
+    {/* Usage */}
+    <Section
+      id="usage"
+      eyebrow="Rules"
+      title="Using the marks"
+      description="A few constraints keep the identity consistent everywhere it appears."
+    >
+      <ul class="grid gap-4 sm:grid-cols-2">
+        {branding.usage?.map((rule) => (
+          <li class="flex items-start gap-3 rounded-xl border border-border bg-card p-5 shadow-sm">
+            <Icon name="lucide:check" class="mt-0.5 h-4 w-4 flex-none text-foreground" />
+            <span class="text-sm leading-relaxed text-muted-foreground">{rule}</span>
+          </li>
+        ))}
+      </ul>
+      <p class="mt-8 text-xs text-muted-foreground">
+        The identity is produced for this portfolio; it is not licensed for reuse.
+      </p>
+    </Section>
+  </main>
+</Base>
+
+<style>
+  /* One inherited colour for the inline marks and the header lockup: ink on the
+     light ground, paper on the dark one. Painted with currentColor. */
+  .identity,
+  .identity-mark {
+    color: #1a1a18;
+  }
+  :global(.dark) .identity,
+  :global(.dark) .identity-mark {
+    color: #f2f0ec;
+  }
+  .identity :global(svg),
+  .identity-mark :global(svg) {
+    display: block;
+  }
+</style>

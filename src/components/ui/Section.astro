@@ -3,15 +3,17 @@
 // vertical rhythm, and a left-aligned header (eyebrow label + title +
 // description). A top border divides consecutive sections; pass bordered={false}
 // to drop it (e.g. the first section after the hero if a seam is unwanted).
+import { Icon } from 'astro-icon/components';
 interface Props {
   id: string;
   eyebrow?: string;
   title?: string;
+  titleHref?: string;
   description?: string;
   bordered?: boolean;
   class?: string;
 }
-const { id, eyebrow, title, description, bordered = true, class: className } = Astro.props;
+const { id, eyebrow, title, titleHref, description, bordered = true, class: className } = Astro.props;
 const hasHeader = Boolean(eyebrow || title || description);
 ---
 
@@ -25,7 +27,17 @@ const hasHeader = Boolean(eyebrow || title || description);
             <span class="font-mono text-xs uppercase tracking-widest text-muted-foreground">{eyebrow}</span>
           </div>
         )}
-        {title && <h2 class="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">{title}</h2>}
+        {title && (titleHref ? (
+          <a href={titleHref} class="group inline-flex items-center gap-2 text-foreground">
+            <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">{title}</h2>
+            <Icon
+              name="lucide:arrow-up-right"
+              class="h-6 w-6 flex-none text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground sm:h-7 sm:w-7"
+            />
+          </a>
+        ) : (
+          <h2 class="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">{title}</h2>
+        ))}
         {description && (
           <p class="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">{description}</p>
         )}

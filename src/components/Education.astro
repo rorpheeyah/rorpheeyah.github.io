@@ -1,7 +1,12 @@
 ---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
 import { education } from '@/data';
 import Section from '@/components/ui/Section.astro';
+
+// Logos live in src/assets so the Image component can optimise them.
+const logos = import.meta.glob<{ default: ImageMetadata }>('/src/assets/logos/*.png', { eager: true });
 
 // Previously hardcoded in the component rather than held in content.
 const learningApproach = {
@@ -9,9 +14,9 @@ const learningApproach = {
   philosophy:
     'I place equal value on strong engineering fundamentals and continuous learning. I keep current with new tools and approaches, most recently AI assisted development, and apply them in practical ways that keep products maintainable, performant, and focused on the people who use them.',
   focusAreas: [
-    { area: 'AI Integration', description: 'Building and refining AI harnesses and AI assisted workflows that accelerate delivery and bring intelligent, adaptive experiences to mobile apps.' },
-    { area: 'Mobile Architecture', description: 'Deep native Android work, with clean modular architecture, offline first data, and a performant UI built to scale and stay maintainable as products grow.' },
-    { area: 'System Design', description: 'Scalable architecture and reliable performance under real world load.' },
+    { area: 'AI Integration', icon: 'lucide:sparkles', description: 'Building and refining AI harnesses and AI assisted workflows that accelerate delivery and bring intelligent, adaptive experiences to mobile apps.' },
+    { area: 'Mobile Architecture', icon: 'lucide:smartphone', description: 'Deep native Android work, with clean modular architecture, offline first data, and a performant UI built to scale and stay maintainable as products grow.' },
+    { area: 'System Design', icon: 'lucide:gauge', description: 'Scalable architecture and reliable performance under real world load.' },
   ],
 };
 ---
@@ -23,10 +28,12 @@ const learningApproach = {
         <dt class="text-sm text-muted-foreground md:pt-0.5">{item.period}</dt>
         <dd>
           <div class="flex items-center gap-3">
-            <img
+            <Image
               class="h-7 w-7 flex-none rounded-md border border-border bg-white object-contain p-1"
-              src={`/images/logos/${item.logo}.png`}
+              src={logos[`/src/assets/logos/${item.logo}.png`].default}
               alt={`${item.institution} logo`}
+              width={56}
+              height={56}
               loading="lazy"
               decoding="async"
             />
@@ -54,13 +61,25 @@ const learningApproach = {
     ))}
   </dl>
 
-  <div class="mt-16">
-    <h3 class="mb-6 text-xs font-medium uppercase tracking-widest text-muted-foreground">{learningApproach.title}</h3>
-    <p class="max-w-3xl text-base leading-relaxed text-muted-foreground">{learningApproach.philosophy}</p>
-    <div class="mt-10 grid gap-x-10 gap-y-8 md:grid-cols-3">
+  <div class="mt-16 rounded-2xl border border-border bg-muted/30 p-6 sm:p-8 md:p-10">
+    <div class="flex items-center gap-3">
+      <span class="flex h-9 w-9 flex-none items-center justify-center rounded-lg border border-border bg-background text-foreground shadow-sm">
+        <Icon name="lucide:graduation-cap" class="h-4 w-4" />
+      </span>
+      <div class="flex items-center gap-3">
+        <span class="h-px w-6 bg-border"></span>
+        <span class="font-mono text-xs uppercase tracking-widest text-muted-foreground">Approach</span>
+      </div>
+    </div>
+    <h3 class="mt-4 text-2xl font-semibold tracking-tight text-foreground">{learningApproach.title}</h3>
+    <p class="mt-3 max-w-3xl text-base leading-relaxed text-muted-foreground">{learningApproach.philosophy}</p>
+    <div class="mt-8 grid gap-4 md:grid-cols-3">
       {learningApproach.focusAreas.map((area) => (
-        <div>
-          <h4 class="font-medium text-foreground">{area.area}</h4>
+        <div class="group rounded-xl border border-border bg-background p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-md">
+          <span class="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-background text-foreground shadow-sm transition-shadow group-hover:shadow-md">
+            <Icon name={area.icon} class="h-5 w-5" />
+          </span>
+          <h4 class="mt-4 font-semibold text-foreground">{area.area}</h4>
           <p class="mt-2 text-sm leading-relaxed text-muted-foreground">{area.description}</p>
         </div>
       ))}

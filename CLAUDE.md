@@ -60,17 +60,27 @@ This replaced a React setup where seven components each independently fetched th
 
 ## Identity assets
 
-Marks live in `src/assets/identity/` and come from the 2026-09-14 web identity
-kit at `~/Documents/personal/personal_branding/portfolio-identity-web-2026-09-14`.
-They are painted with `fill="currentColor"`, so they are imported as Astro SVG
-components and **inlined** — an external `<img>` would not inherit the page
-colour and the mark would be invisible in one theme. One CSS `color` per mark:
-ink `#1A1A18` on light, paper `#F2F0EC` on dark.
+Marks live in `src/assets/identity/` and come from the final consolidated
+identity kit (2026-09-15) at
+`~/Projects/myseal/math-rorpheeyah-identity-final`. The display marks are
+painted with `fill="currentColor"`, so they are imported as Astro SVG components
+and **inlined** — an external `<img>` would not inherit the page colour and the
+mark would be invisible in one theme. One CSS `color` per mark: ink `#1A1A18` on
+light, paper `#F2F0EC` on dark. Six marks: `signature-compact` (the primary nav
+lockup — the equal-height signature, seal spanning the full 40px height),
+`seal-nav` (a standalone 32×32 nav seal, supplied but not currently used),
+`circle`, `seal-open`, `seal-rounded`, `seal-framed` (the branding-section
+family).
 
-The kit states a minimum size for each mark. The branding section renders below
-those minimums at the owner's direction; see `docs/identity-size-overrides.md`.
-Navigation is compliant. `docs/` also holds the two asset briefs sent to the
-kit's author, kept as a record.
+The favicon and OG image are **not** these currentColor marks: the favicon is
+the kit's self-coloured V2 square seal (vermilion `#B5342A` on paper, in
+`favicon/`, full ICO + PNG set + 180×180 apple-touch), and `og-image.png` is the
+kit's approved 1200×630 composition. Both are copied into `public/` as-is.
+
+The kit states a minimum size for each mark (signature-compact is 160×40). Both
+the branding section and the navigation render below those minimums at the
+owner's direction; see `docs/identity-size-overrides.md`. `docs/` also holds the
+two asset briefs sent to the kit's author, kept as a record.
 
 ## Content caveats
 

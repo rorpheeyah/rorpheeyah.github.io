@@ -4,6 +4,7 @@ import { hero } from '@/data';
 import { iconFor } from '@/lib/icons';
 import Button from '@/components/ui/Button.astro';
 import Card from '@/components/ui/Card.astro';
+import GridField from '@/components/GridField.astro';
 
 // Quick facts. Kept free of the employer name, which stays out of the hero.
 const facts = [
@@ -15,12 +16,9 @@ const facts = [
 ---
 
 <section id="hero" class="relative overflow-hidden scroll-mt-16">
-  {/* Subtle grid backdrop, faded out toward the edges. */}
-  <div
-    aria-hidden="true"
-    class="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:56px_56px] opacity-60 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_60%,transparent_100%)]"
-  >
-  </div>
+  {/* Animated grid backdrop: dots on the joins, sparks travelling the lines,
+      and a spiderweb that follows the cursor. */}
+  <GridField />
 
   <div class="mx-auto max-w-5xl px-6 py-24 md:py-28 lg:py-32">
     <div class="grid items-center gap-12 lg:grid-cols-5 lg:gap-10">
@@ -44,7 +42,7 @@ const facts = [
         </p>
 
         <div class="mt-8 flex flex-wrap items-center gap-3">
-          <Button size="lg" data-open-cv>
+          <Button size="lg" href="/cv">
             View CV
             <Icon name="lucide:arrow-right" class="h-4 w-4" />
           </Button>

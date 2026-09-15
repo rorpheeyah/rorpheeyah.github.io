@@ -11,18 +11,26 @@ request new resource kit."*
 
 | Mark | Kit minimum | Rendered | Where |
 |---|---:|---:|---|
-| `signature-compact.svg` | 144 × 36 | **96 × 24** | desktop and mobile navigation |
+| `signature-compact.svg` | 160 × 40 | **96 × 24** | desktop and mobile navigation |
 | `seal-open.svg` | 160 × 160 | **48 / 56** | branding section |
 | `seal-rounded.svg` | 160 × 160 | **48 / 56** | branding section |
 | `seal-framed.svg` | 192 × 192 | **48 / 56** | branding section |
 | `circle.svg` | 192 × 192 | **48 / 56** | branding section |
 
-Branding marks render at 48px below the `md` breakpoint and 56px above it,
-matching the project icons in `Projects.astro`.
+On the home page the `Personal Branding` section is a teaser: the four family
+marks render at 56px as a preview, linking to the dedicated `/identity` page.
+That page (`src/pages/identity.astro`) is a **compliant** surface — it shows the
+same marks at their kit minimums (160–192px), where the calligraphy resolves.
+So the below-minimum sizes are a home-page presentation choice, not the only
+place the marks appear.
 
 Navigation uses `signature-compact.svg` at **96 × 24**, sized to sit at the
-nav's text scale (links are 14px with a 20px line-height). The kit states a
-144 × 36 minimum for this mark.
+nav's text scale (links are 14px with a 20px line-height). The final kit
+(2026-09-15) states a 160 × 40 minimum for this mark — the equal-height
+signature, whose seal now spans the full artboard height. The kit also supplies
+`seal-nav.svg` (32 × 32 minimum) as an authorised seal-only navigation
+alternative; the site keeps the full bilingual signature so the owner's name
+stays visible in the header.
 
 ## What this trades away
 
@@ -40,8 +48,8 @@ uniform scaling, and the bilingual accessible name on the navigation home link.
 
 Sizes live in two places:
 
-- `src/components/Nav.astro` — the `SealNav` width/height and the
-  `.identity-desktop` / `.identity-mobile` rules
+- `src/components/Nav.astro` — the `SignatureCompact` width/height and the
+  `.identity` rule
 - `src/components/Branding.astro` — the `w-12 h-12 md:w-14 md:h-14` span
 
 `src/data/branding.json` keeps each mark's kit-stated minimum in `minWidth`, so

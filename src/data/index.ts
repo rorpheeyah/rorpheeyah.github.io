@@ -62,6 +62,7 @@ export interface Project {
   technologies: string[];
   category: string;
   featured?: boolean;
+  status?: 'discontinued';
 }
 
 export interface Projects {
@@ -93,10 +94,25 @@ export interface Skills {
   skills: Record<string, string[]>;
 }
 
+export interface BrandingMark {
+  id: string;
+  name: string;
+  description: string;
+  use?: string;
+  min?: string;
+  minWidth?: number;
+}
+
 export interface Branding {
   title: string;
   subtitle: string;
-  marks: { id: string; name: string; description: string; minWidth: number }[];
+  teaser?: string;
+  name?: { latin: string; khmer: string; surname: string; given: string };
+  story?: string[];
+  marks: BrandingMark[];
+  navMarks?: BrandingMark[];
+  palette?: { name: string; hex: string; use: string }[];
+  usage?: string[];
 }
 
 export interface Contact {
